@@ -14,6 +14,7 @@ var activityService = {
 var eventService = {
 	getTimestamp: function(d) { return d.timestamp; },
 	create: function(d){ d.timestamp = new Date(); },
+	locationUpdate: function(d, l){ d.location = l; },
 };
 
 var observerActivity = app.createDomain('observer-activity');
