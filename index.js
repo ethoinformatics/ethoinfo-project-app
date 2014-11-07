@@ -1,24 +1,36 @@
 var app = require('ethoinformatics-app');
 
-var getStartTime = function(d) { return d.beginTime; };
-var getEndTime = function(d) { return d.endTime; };
-var getTimestamp = function(d) { return d.timestamp; };
+var activityService = {
+	getBeginTime: function(d){ return d.beginTime; },
+	getEndTime: function(d){ return d.endTime; },
+	start: function(d){ d.beginTime = new Date(); },
+	stop: function(d){ d.endTime = new Date(); },
+	locationUpdate: function(d, l){ 
+		d.locations = d.locations || [];
+		d.locations.push(l);
+	},
+};
+
+var eventService = {
+	getTimestamp: function(d) { return d.timestamp; },
+	create: function(d){ d.timestamp = new Date(); },
+};
 
 var observerActivity = app.createDomain('observer-activity');
 observerActivity.register('form-fields', require('./forms/observer-activity.json'));
-observerActivity.register('timeline-activity', getStartTime, getEndTime);
+observerActivity.register('activity', activityService);
 
 var environment = app.createDomain('environment');
 environment.register('form-fields', require('./forms/environment.json'));
-environment.register('timeline-activity', getStartTime, getEndTime);
+observerActivity.register('activity', activityService);
 
 var follow = app.createDomain('follow');
 follow.register('form-fields', require('./forms/follow.json'));
-follow.register('timeline-activity', getStartTime, getEndTime);
+observerActivity.register('activity', activityService);
 
 var sighting = app.createDomain('sighting');
 sighting.register('form-fields', require('./forms/sighting.json'));
-sighting.register('timeline-event', getTimestamp);
+sighting.register('event', eventService);
 
 app.start();
 
