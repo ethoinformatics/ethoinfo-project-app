@@ -19,7 +19,7 @@ var eventService = {
 	locationUpdate: function(d, l){ d.location = l; },
 };
 
-var observerActivity = app.createDomain('observer-activity');
+var observerActivity = app.createDomain({name:'observer-activity', label: 'Observer Activity'});
 observerActivity.register('form-fields', require('./forms/observer-activity.json'));
 observerActivity.register('activity', activityService);
 
@@ -35,5 +35,5 @@ var sighting = app.createDomain('sighting');
 sighting.register('form-fields', require('./forms/sighting.json'));
 sighting.register('event', eventService);
 
-app.start();
-
+module.exports = app.getRegistry();
+alert('registration complete');
