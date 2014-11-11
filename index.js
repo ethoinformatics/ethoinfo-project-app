@@ -25,7 +25,7 @@ observerActivity.register('activity', activityService);
 
 var environment = app.createDomain('environment');
 environment.register('form-fields', require('./forms/environment.json'));
-observerActivity.register('activity', activityService);
+environment.register('activity', activityService);
 
 var follow = app.createDomain('follow');
 follow.register('form-fields', require('./forms/follow.json'));
