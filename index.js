@@ -29,7 +29,7 @@ observerActivity.register('activity', activityService);
 
 var follow = app.createDomain('follow');
 follow.register('form-fields', require('./forms/follow.json'));
-observerActivity.register('activity', activityService);
+follow.register('activity', activityService);
 
 var sighting = app.createDomain('sighting');
 sighting.register('form-fields', require('./forms/sighting.json'));
