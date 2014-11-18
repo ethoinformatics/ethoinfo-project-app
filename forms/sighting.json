@@ -1,5 +1,5 @@
 {
-	"field1": {
+	"sightingName": {
 		"type": "text"
 	},
 	"field2": {

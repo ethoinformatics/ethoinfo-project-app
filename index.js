@@ -1,6 +1,7 @@
 var app = require('ethoinformatics-app');
 
-app.set('couch-base-url', 'http://ec2-54-84-90-63.compute-1.amazonaws.com:5984/');
+app.setting('couch-base-url', 'http://ec2-54-84-90-63.compute-1.amazonaws.com:5984/');
+app.setting('couch-username', 'ro');
 
 var activityService = {
 	getBeginTime: function(d){ return d.beginTime; },
