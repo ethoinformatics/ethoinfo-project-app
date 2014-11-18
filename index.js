@@ -36,4 +36,3 @@ sighting.register('form-fields', require('./forms/sighting.json'));
 sighting.register('event', eventService);
 
 module.exports = app.getRegistry();
-alert('registration complete');
