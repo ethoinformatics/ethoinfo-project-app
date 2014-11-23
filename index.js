@@ -23,17 +23,22 @@ var eventService = {
 var observerActivity = app.createDomain({name:'observer-activity', label: 'Observer Activity'});
 observerActivity.register('form-fields', require('./forms/observer-activity.json'));
 observerActivity.register('activity', activityService);
+observerActivity.register('short-description', 'title');
 
 var environment = app.createDomain('environment');
 environment.register('form-fields', require('./forms/environment.json'));
 environment.register('activity', activityService);
+environment.register('short-description', 'title');
 
 var follow = app.createDomain('follow');
 follow.register('form-fields', require('./forms/follow.json'));
 follow.register('activity', activityService);
+follow.register('short-description', 'title');
 
 var sighting = app.createDomain('sighting');
 sighting.register('form-fields', require('./forms/sighting.json'));
 sighting.register('event', eventService);
+sighting.register('short-description', 'title');
 
 module.exports = app.getRegistry();
+console.dir('exported registry');
