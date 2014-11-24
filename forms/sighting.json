@@ -1,11 +1,16 @@
-{
-	"sightingName": {
-		"type": "text"
-	},
-	"field2": {
-		"type": "text"
-	},
-	"field3": {
-		"type": "text"
+[
+	{
+		"icon": "ion-star",
+		"fields": {
+			"sightingName": {
+				"type": "text"
+			},
+			"field2": {
+				"type": "text"
+			},
+			"field3": {
+				"type": "text"
+			}
+		}
 	}
-}
+]

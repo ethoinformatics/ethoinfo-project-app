@@ -1,11 +1,30 @@
-{
-	"envField": {
-		"type": "text"
+[
+	{
+		"icon": "ion-star",
+		"fields": {
+			"envField": {
+				"type": "text"
+			},
+			"field2": {
+				"type": "text"
+			},
+			"field3": {
+				"type": "text"
+			}
+		}
 	},
-	"field2": {
-		"type": "text"
-	},
-	"field3": {
-		"type": "text"
+	{
+		"icon": "ion-cash",
+		"fields": {
+			"subtotal": {
+				"type": "text"
+			},
+			"tax": {
+				"type": "text"
+			},
+			"total": {
+				"type": "text"
+			}
+		}
 	}
-}
+]

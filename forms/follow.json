@@ -1,11 +1,15 @@
-{
-	"followDescription": {
-		"type": "text"
-	},
-	"field2": {
-		"type": "text"
-	},
-	"field3": {
-		"type": "text"
+[
+	{
+		"icon": "ion-star",
+		"fields": {
+		"followDescription": {
+			"type": "text"
+		},
+		"field2": {
+			"type": "text"
+		},
+		"field3": {
+			"type": "text"
+		}
 	}
-}
+]
