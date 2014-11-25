@@ -1,5 +1,6 @@
 [
 	{
+		"label": "tab one",
 		"icon": "ion-star",
 		"fields": {
 			"envField": {
@@ -14,6 +15,7 @@
 		}
 	},
 	{
+		"label": "tab two",
 		"icon": "ion-cash",
 		"fields": {
 			"subtotal": {
