@@ -23,7 +23,11 @@ var eventService = {
 var observerActivity = app.createDomain({name:'observer-activity', label: 'Observer Activity'});
 observerActivity.register('form-fields', require('./forms/observer-activity.json'));
 observerActivity.register('activity', activityService);
-observerActivity.register('short-description', 'title');
+observerActivity.register('short-description', function(d){
+	return 'Observer Activity - ' + d.title;
+});
+observerActivity.register('child-domains', ['follow', 'sighting']);
+
 
 var environment = app.createDomain({name: 'environment', label: 'Environment'});
 environment.register('form-fields', require('./forms/environment.json'));
