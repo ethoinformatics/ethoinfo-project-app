@@ -1,4 +1,4 @@
-var app = require('ethoinformatics-app');
+var app = require('ethoinfo-framework');
 
 app.setting('couch-base-url', 'http://ec2-54-84-90-63.compute-1.amazonaws.com:5984/');
 app.setting('couch-username', 'ro');
