@@ -24,7 +24,7 @@ var observerActivity = app.createDomain({name:'observer-activity', label: 'Obser
 observerActivity.register('form-fields', require('./forms/observer-activity.json'));
 observerActivity.register('activity', activityService);
 observerActivity.register('short-description', function(d){
-	return 'Observer Activity - ' + d.title;
+	return 'observer - ' + d.title;
 });
 observerActivity.register('child-domains', ['follow', 'sighting']);
 
