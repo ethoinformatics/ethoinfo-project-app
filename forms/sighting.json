@@ -2,14 +2,35 @@
 	{
 		"icon": "ion-star",
 		"fields": {
-			"sightingName": {
+			"taxon": {
+				"type": "select",
+				"items": [
+					{ "value": 1, "label": "Alouatta" },
+					{ "value": 2, "label": "Aotus" },
+					{ "value": 3, "label": "Ateles" },
+					{ "value": 4, "label": "Callicebus" },
+					{ "value": 5, "label": "Cebuella" },
+					{ "value": 6, "label": "Cebus" },
+					{ "value": 7, "label": "Lagothrix" },
+					{ "value": 8, "label": "Pithecia" },
+					{ "value": 9, "label": "Saguinus" },
+					{ "value": 10, "label": "Saimiri" }
+				]
+			},
+			"group": {
+				"type": "select",
+				"items": [
+					{ "value": 1, "label": "Group A" },
+					{ "value": 2, "label": "Group B" },
+					{ "value": 3, "label": "Group C" }
+				]
+			},
+			"title": {
 				"type": "text"
 			},
-			"field2": {
-				"type": "text"
-			},
-			"field3": {
-				"type": "text"
+			"notes": {
+				"label": "Sighting notes",
+				"type": "textarea"
 			}
 		}
 	}

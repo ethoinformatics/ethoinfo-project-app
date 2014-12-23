@@ -8,7 +8,7 @@ var fs = require('fs'),
 
 mkdirp.sync(__dirname + '/ionic/www/bundles');
 
-resolve('ethoinformatics-app', function(err, loc){
+resolve('ethoinfo-framework', function(err, loc){
 	if (err) throw err;
 
 	var appBundleLocation = path.join(path.dirname(loc), 'ionic', 'www', 'bundles', 'app.js');
