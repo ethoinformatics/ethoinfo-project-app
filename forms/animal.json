@@ -1,7 +1,9 @@
 [
 	{
-		"icon": "ion-star",
 		"fields": {
+			"name": {
+				"type": "text"
+			},
 			"taxon": {
 				"type": "lookup",
 				"domain": "taxon"
@@ -9,13 +11,6 @@
 			"group": {
 				"type": "lookup",
 				"domain": "animal-group"
-			},
-			"title": {
-				"type": "text"
-			},
-			"notes": {
-				"label": "Sighting notes",
-				"type": "textarea"
 			}
 		}
 	}
