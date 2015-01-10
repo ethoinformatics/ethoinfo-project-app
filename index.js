@@ -23,18 +23,6 @@ observerActivity.register('short-description', function(d){
 });
 observerActivity.register('child-domains', ['follow', 'sighting']);
 
-// var environment = app.createDomain({name: 'environment', label: 'Environment'});
-// environment.register('form-fields', require('./forms/environment.json'));
-// environment.register('activity', activityService);
-// environment.register('short-description', 'title');
-
-// var follow = app.createDomain({name: 'follow', label: 'Follow'});
-// follow.register('form-fields', require('./forms/follow.json'));
-// follow.register('activity', activityService);
-// follow.register('short-description', 'title');
-
-
-
 var aggressionEvent = app.createDomain({name: 'aggression-event', label:'Aggression'});
 aggressionEvent.register('form-fields', require('./forms/aggression-event.json'));
 aggressionEvent.register('activity', activityService);
@@ -57,5 +45,20 @@ sighting.register('short-description', function(d){
 	return 'Sighting - ' + (d.title || d.sightingName);
 });
 sighting.register(focal);
+
+var animalGroup = app.createDomain({name: 'animal-group', label: 'Animal Group'});
+animalGroup.register('code-domain', true);
+animalGroup.register('form-fields', require('./forms/animal-group.json'));
+animalGroup.register('short-description', function(d){ return d.name; });
+
+var animal = app.createDomain({name: 'animal', label: 'Animal'});
+animal.register('code-domain', true);
+animal.register('form-fields', require('./forms/animal.json'));
+animal.register('short-description', function(d){ return d.name; });
+
+var taxon = app.createDomain({name: 'taxon', label: 'Taxon'});
+taxon.register('code-domain', true);
+taxon.register('form-fields', require('./forms/taxon.json'));
+taxon.register('short-description', function(d){ return d.name; });
 
 module.exports = app.getRegistry();
