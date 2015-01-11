@@ -17,7 +17,8 @@
 				]
 			},
 			"animal": {
-				"type": "text"
+				"type": "lookup",
+				"domain": "animal"
 			},
 			"notes": {
 				"label": "Focal notes",
