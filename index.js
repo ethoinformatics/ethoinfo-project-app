@@ -61,4 +61,9 @@ taxon.register('code-domain', true);
 taxon.register('form-fields', require('./forms/taxon.json'));
 taxon.register('short-description', function(d){ return d.name; });
 
+var user = app.createDomain({name: 'user', label: 'User'});
+user.register('code-domain', true);
+user.register('form-fields', require('./forms/user.json'));
+user.register('short-description', function(d){ return d.name; });
+
 module.exports = app.getRegistry();
