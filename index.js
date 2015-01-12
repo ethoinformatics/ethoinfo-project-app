@@ -1,6 +1,6 @@
 var app = require('ethoinfo-framework');
 
-app.setting('couch-base-url', 'http://ec2-54-84-90-63.compute-1.amazonaws.com:5984/');
+app.setting('couch-base-url', 'http://ec2-54-84-90-63.compute-1.amazonaws.com:5984/mike-test');
 app.setting('couch-username', 'ro');
 
 var activityService = {
@@ -34,7 +34,7 @@ var focal = app.createDomain({name: 'focal', label: 'Focal'});
 focal.register('form-fields', require('./forms/focal.json'));
 focal.register('activity', activityService);
 focal.register('short-description', function(d){
-	return 'Focal - ' + d.animal;
+	return 'Focal - ' + (d.animal || d.notes);
 });
 focal.register(aggressionEvent);
 
@@ -65,5 +65,15 @@ var user = app.createDomain({name: 'user', label: 'User'});
 user.register('code-domain', true);
 user.register('form-fields', require('./forms/user.json'));
 user.register('short-description', function(d){ return d.name; });
+
+var ageClass = app.createDomain({name: 'age-class', label: 'Age class'});
+ageClass.register('code-domain', true);
+ageClass.register('form-fields', require('./forms/age-class.json'));
+ageClass.register('short-description', function(d){ return d.name; });
+
+var sex = app.createDomain({name: 'sex', label: 'Sex'});
+sex.register('code-domain', true);
+sex.register('form-fields', require('./forms/sex.json'));
+sex.register('short-description', function(d){ return d.name; });
 
 module.exports = app.getRegistry();

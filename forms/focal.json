@@ -3,18 +3,12 @@
 		"icon": "ion-star",
 		"fields": {
 			"age": {
-				"type": "select",
-				"items": [
-					{ "value": 1, "label": "Old" },
-					{ "value": 2, "label": "Young" }
-				]
+				"type": "lookup",
+				"domain": "age-class"
 			},
 			"sex": {
-				"type": "select",
-				"items": [
-					{ "value": 1, "label": "Female" },
-					{ "value": 2, "label": "Male" }
-				]
+				"type": "lookup",
+				"domain": "sex"
 			},
 			"animal": {
 				"type": "lookup",
