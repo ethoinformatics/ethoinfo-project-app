@@ -40,6 +40,13 @@ outOfViewState.register('short-description', function(d){
 var focal = app.createDomain({name: 'focal', label: 'Focal'});
 focal.register('form-fields', require('./forms/focal.json'));
 focal.register('activity', activityService);
+focal.register('long-description', function(){
+	var h1 = 'Focal of ' + this.getDescription('animal');
+	var h2 = this.getDescription('age') + ' ' + this.getDescription('sex');
+
+	return '<h1>'+h1+'</h1>' + '<h2>' + h2 + '</h2>';
+});
+
 focal.register('short-description', function(d){
 	return 'Focal - ' + (d.title || d.notes);
 });
@@ -49,6 +56,13 @@ focal.register(outOfViewState);
 var sighting = app.createDomain({name: 'sighting', label: 'Sighting'});
 sighting.register('form-fields', require('./forms/sighting.json'));
 sighting.register('activity', activityService);
+sighting.register('long-description', function(d){
+	var h1 = 'Sighting of ' + this.getDescription('taxon') + ' (' +this.getDescription('group')+ ')';
+	var h2 = d.title;
+
+	return '<h1>'+h1+'</h1>' + '<h2>' + h2 + '</h2>';
+});
+
 sighting.register('short-description', function(d){
 	return 'Sighting - ' + (d.title || d.sightingName);
 });
