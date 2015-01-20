@@ -1,0 +1,14 @@
+[
+	{
+		"icon": "ion-star",
+		"fields": {
+			"state": {
+				"type": "select",
+				"items": [
+					{ "value": "Active" },
+					{ "value": "Inactive" }
+				]
+			}
+		}
+	}
+]

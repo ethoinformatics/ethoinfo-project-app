@@ -11,7 +11,8 @@
 				"domain": "animal-group"
 			},
 			"title": {
-				"type": "text"
+				"type": "text",
+				"required": true
 			},
 			"notes": {
 				"label": "Sighting notes",

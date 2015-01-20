@@ -27,16 +27,24 @@ var aggressionEvent = app.createDomain({name: 'aggression-event', label:'Aggress
 aggressionEvent.register('form-fields', require('./forms/aggression-event.json'));
 aggressionEvent.register('activity', activityService);
 aggressionEvent.register('short-description', function(d){
-	return 'Agreession towards - ' + d.animal;
+	return 'Agression towards - ' + d.animal;
+});
+
+var outOfViewState = app.createDomain({name: 'out-of-view-state', label:'Out of view'});
+outOfViewState.register('form-fields', require('./forms/out-of-view-state.json'));
+outOfViewState.register('activity', activityService);
+outOfViewState.register('short-description', function(d){
+	return 'Out of view: ' + d.state;
 });
 
 var focal = app.createDomain({name: 'focal', label: 'Focal'});
 focal.register('form-fields', require('./forms/focal.json'));
 focal.register('activity', activityService);
 focal.register('short-description', function(d){
-	return 'Focal - ' + (d.animal || d.notes);
+	return 'Focal - ' + (d.title || d.notes);
 });
 focal.register(aggressionEvent);
+focal.register(outOfViewState);
 
 var sighting = app.createDomain({name: 'sighting', label: 'Sighting'});
 sighting.register('form-fields', require('./forms/sighting.json'));
