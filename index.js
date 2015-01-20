@@ -32,8 +32,8 @@ aggressionEvent.register('long-description', function(d){
 	var div = d.notes;
 
 	return '<h1>'+h1+'</h1>' + 
-		'<h2>' + h2 + '</h2>' + 
-		'<div>' + div + '</div>';
+		'<h3>' + h2 + '</h3>' + 
+		'<div style="font-style:italic;">' + div + '</div>';
 });
 aggressionEvent.register('short-description', function(d){
 	return 'Agression towards - ' + d.animal;
@@ -49,11 +49,14 @@ outOfViewState.register('short-description', function(d){
 var focal = app.createDomain({name: 'focal', label: 'Focal'});
 focal.register('form-fields', require('./forms/focal.json'));
 focal.register('activity', activityService);
-focal.register('long-description', function(){
+focal.register('long-description', function(d){
 	var h1 = 'Focal of ' + this.getDescription('animal');
 	var h2 = this.getDescription('age') + ' ' + this.getDescription('sex');
+	var div = d.notes;
 
-	return '<h1>'+h1+'</h1>' + '<h2>' + h2 + '</h2>';
+	return '<h1>'+h1+'</h1>' + 
+		'<h3>' + h2 + '</h3>' + 
+		'<div style="font-style:italic;">' + div + '</div>';
 });
 
 focal.register('short-description', function(d){
