@@ -26,6 +26,15 @@ observerActivity.register('child-domains', ['follow', 'sighting']);
 var aggressionEvent = app.createDomain({name: 'aggression-event', label:'Aggression'});
 aggressionEvent.register('form-fields', require('./forms/aggression-event.json'));
 aggressionEvent.register('activity', activityService);
+aggressionEvent.register('long-description', function(d){
+	var h1 = 'Agression towards ' + this.getDescription('animal');
+	var h2 = this.getDescription('age') + ' ' + this.getDescription('sex');
+	var div = d.notes;
+
+	return '<h1>'+h1+'</h1>' + 
+		'<h2>' + h2 + '</h2>' + 
+		'<div>' + div + '</div>';
+});
 aggressionEvent.register('short-description', function(d){
 	return 'Agression towards - ' + d.animal;
 });
@@ -58,9 +67,10 @@ sighting.register('form-fields', require('./forms/sighting.json'));
 sighting.register('activity', activityService);
 sighting.register('long-description', function(d){
 	var h1 = 'Sighting of ' + this.getDescription('taxon') + ' (' +this.getDescription('group')+ ')';
-	var h2 = d.title;
+	var div = d.notes;
 
-	return '<h1>'+h1+'</h1>' + '<h2>' + h2 + '</h2>';
+	return '<h1>'+h1+'</h1>' + 
+		'<div style="font-style:italic;">' + div + '</div>';
 });
 
 sighting.register('short-description', function(d){
