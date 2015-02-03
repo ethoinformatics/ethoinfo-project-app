@@ -2,6 +2,10 @@
 	{
 		"icon": "ion-star",
 		"fields": {
+			"type": {
+				"type": "lookup",
+				"domain": "social-focal-behavior-type"
+			},
 			"age": {
 				"type": "lookup",
 				"domain": "age-class"
@@ -15,7 +19,7 @@
 				"domain": "animal"
 			},
 			"notes": {
-				"label": "Agression notes",
+				"label": "Notes",
 				"type": "textarea"
 			}
 		}

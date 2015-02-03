@@ -1,7 +1,8 @@
 [
 	{
+		"icon": "ion-star",
 		"fields": {
-			"name": {
+			"location": {
 				"type": "text"
 			}
 		}

@@ -1,0 +1,15 @@
+[
+	{
+		"icon": "ion-star",
+		"fields": {
+			"type": {
+				"type": "lookup",
+				"domain": "focal-behavior-type"
+			},
+			"notes": {
+				"label": "Notes",
+				"type": "textarea"
+			}
+		}
+	}
+]
