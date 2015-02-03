@@ -1,4 +1,5 @@
-var app = require('ethoinfo-framework');
+var app = require('ethoinfo-framework'),
+	_ = require('lodash');
 
 app.setting('couch-base-url', 'http://ec2-54-84-90-63.compute-1.amazonaws.com:5984/mike-test');
 app.setting('couch-username', 'ro');
@@ -29,7 +30,7 @@ contact.register('long-description', function(d){
 });
 
 contact.register('short-description', function(d){
-	return 'Sighting - ' + (d.title || d.sightingName);
+	return 'Contact - ' + (d.title || d.sightingName);
 });
 
 // ****************************************************************************
@@ -43,16 +44,14 @@ observerActivity.register('short-description', function(d){
 });
 
 
-// var outOfViewState = app.createDomain({name: 'out-of-view-state', label:'Out of view'});
-// outOfViewState.register('form-fields', require('./forms/out-of-view-state.json'));
-// outOfViewState.register('activity', activityService);
-// outOfViewState.register('short-description', function(d){
-// 	return 'Out of view: ' + d.state;
-// });
-
+// ****************************************************************************
+// * OBSERVER ACTIVITY                                                        *
+// ****************************************************************************
 var focalSample = app.createDomain({name: 'focal', label: 'Focal'});
+
 focalSample.register('form-fields', require('./forms/focal-sample.json'));
 focalSample.register('activity', activityService);
+focalSample.register('concurrent', false);
 focalSample.register('long-description', function(d){
 	var h1 = 'Focal of ' + this.getDescription('animal');
 	var h2 = this.getDescription('age') + ' ' + this.getDescription('sex');
@@ -130,6 +129,9 @@ poopSample.register('long-description', function(){
 	return '<h1>'+h1+'</h1>' + 
 		'<h3>' + h2 + '</h3>' + 
 		'<div style="font-style:italic;">' + div + '</div>';
+});
+poopSample.register('short-description', function(){
+	return 'Poop sample';
 });
 
 
