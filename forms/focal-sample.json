@@ -2,17 +2,10 @@
 	{
 		"icon": "ion-star",
 		"fields": {
-			"age": {
-				"type": "lookup",
-				"domain": "age-class"
-			},
-			"sex": {
-				"type": "lookup",
-				"domain": "sex"
-			},
 			"animal": {
 				"type": "lookup",
-				"domain": "animal"
+				"domain": "animal",
+				"features": [ "inline-create" ]
 			},
 			"title": {
 				"type": "text"
