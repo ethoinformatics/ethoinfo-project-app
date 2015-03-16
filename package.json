@@ -1,5 +1,5 @@
 {
-  "name": "timeline-reference-implementation",
+  "name": "ethoinfo-project-app",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -9,10 +9,12 @@
   "author": "",
   "license": "not sure",
   "dependencies": {
-    "browserify": "^5.9.1",
+    "ethoinfo-framework": "git+ssh://git@github.com/ethoinformatics/ethoinfo-framework#master"
+  },
+  "devDependencies": {
     "mkdirp": "^0.5.0",
     "node-lessify": "0.0.5",
-    "resolve": "^1.0.0",
+    "browserify": "^9.0.3",
     "vashify": "^0.4.0"
   }
 }

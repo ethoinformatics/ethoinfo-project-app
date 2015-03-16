@@ -1,3 +1,4 @@
+console.log('wts');
 var app = require('ethoinfo-framework'),
 	_ = require('lodash');
 
@@ -185,4 +186,4 @@ focalSample.register('behaviors', socialFocalBehavior);
 focalSample.register('behaviors', focalBehavior);
 focalSample.register('collections', poopSample);
 
-module.exports = app.getRegistry();
+app.run();
