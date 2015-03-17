@@ -1,7 +1,7 @@
 console.log('wts');
 var app = require('ethoinfo-framework');
 
-app.setting('couch-base-url', 'http://ec2-54-84-90-63.compute-1.amazonaws.com:5984/mike-test');
+app.setting('couch-base-url', 'http://104.236.9.143/:5984/mike-test');
 app.setting('couch-username', 'ro');
 
 var activityService = {
