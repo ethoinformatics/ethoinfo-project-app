@@ -1,19 +1,53 @@
 console.log('wts');
 var app = require('ethoinfo-framework');
 
-app.setting('couch-base-url', 'http://104.236.9.143/:5984/mike-test');
-app.setting('couch-username', 'ro');
+app.setting('couch-base-url', 'http://104.236.9.143:5984/monkey_data');
+app.setting('couch-username', 'monkey_app');
 
 var activityService = {
 	getBeginTime: function(d){ return d.beginTime || d.timestamp; },
 	getEndTime: function(d){ return d.endTime; },
 	start: function(d){ d.beginTime = new Date(); },
 	stop: function(d){ d.endTime = new Date(); },
-	locationUpdate: function(d, l){ 
-		d.locations = d.locations || [];
-		d.locations.push(l);
-	},
 };
+
+var diaryLocationService = {
+	update: function(diary, locationData){
+		console.log('diary location service');
+
+		if (!diary.footprint){
+			diary.footprint = {
+				type: 'LineString',
+				coordinates: [ ]
+			};
+		}
+
+		diary.footprint.coordinates.push([
+				locationData.coords.longitude,
+				locationData.coords.latitude,
+				locationData.coords.altitude,
+			]);
+
+		console.dir(diary);
+	}
+};
+
+
+// ****************************************************************************
+// * DIARY                                                                    *
+// ****************************************************************************
+var diary = app.createDomain({name: 'diary', label: 'Diary'});
+diary.register('form-fields', require('./forms/diary.json'));
+diary.register('activity', activityService);
+diary.register('short-description', function(){ return 'Diary'; });
+diary.register('long-description', function(d){
+	var h1 = 'Diary for ' + d.eventDate;
+	var div = d.eventRemarks;
+
+	return '<h1>'+h1+'</h1>' + 
+		'<div style="font-style:italic;">' + div + '</div>';
+});
+diary.register('location-aware', diaryLocationService);
 
 // ****************************************************************************
 // * CONTACT                                                                  *

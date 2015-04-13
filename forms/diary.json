@@ -1,0 +1,14 @@
+[
+	{
+		"fields": {
+			"eventDate": {
+				"type": "date",
+				"label": "Date"
+			},
+			"eventRemarks": {
+				"type": "textarea",
+				"label": "Remarks"
+			}
+		}
+	}
+]
