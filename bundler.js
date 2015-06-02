@@ -12,7 +12,7 @@ var bundle = b.bundle();
 
 	
 bundle.on('error', function(err){ console.dir(err); });
-bundle.pipe(fs.createWriteStream('bundle.js'));
+bundle.pipe(fs.createWriteStream(__dirname+'/etho/www/bundle.js'));
 
 
 

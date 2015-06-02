@@ -1,8 +1,8 @@
 console.log('wts');
 var app = require('ethoinfo-framework');
 
-app.setting('couch-base-url', 'http://104.236.9.143:5984/monkey_data');
-app.setting('couch-username', 'monkey_app');
+app.setting('couch-base-url', 'http://demo.ethoinformatics.org:5984/monkey_data');
+app.setting('couch-username', 'supermonkey');
 
 var activityService = {
 	getBeginTime: function(d){ return d.beginTime || d.timestamp; },
