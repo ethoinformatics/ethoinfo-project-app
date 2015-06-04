@@ -10,9 +10,16 @@ var activityService = {
 	stop: function(d){ d.endTime = new Date(); },
 };
 
+function dateEqual(d1, d2){
+	return d1.getFullYear() === d2.getFullYear() && 
+		d1.getMonth() === d2.getMonth() && 
+		d1.getDate() === d2.getDate();
+}
+
 var diaryLocationService = {
-	update: function(diary, locationData){
-		console.log('diary location service');
+	update: function(diary, locationData, settings){
+		if (!dateEqual(new Date(), diary.beginTime)) return;
+		if (settings.user !== diary.observerId) return;
 
 		if (!diary.footprint){
 			diary.footprint = {
