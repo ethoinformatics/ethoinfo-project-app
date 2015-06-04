@@ -1,7 +1,6 @@
-console.log('wts');
 var app = require('ethoinfo-framework');
 
-app.setting('couch-base-url', 'http://demo.ethoinformatics.org:5984/monkey_data');
+app.setting('couch-base-url', 'http://demo.ethoinformatics.org:5984/location_test');
 app.setting('couch-username', 'supermonkey');
 
 var activityService = {
