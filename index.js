@@ -182,12 +182,14 @@ function createSimpleCodeDomain(name, label){
 }
 
 createSimpleCodeDomain('animal-group', 'Animal Group');
-createSimpleCodeDomain('user', 'User');
 createSimpleCodeDomain('taxon', 'Taxon');
 createSimpleCodeDomain('age-class', 'Age class');
 createSimpleCodeDomain('sex', 'Sex');
 createSimpleCodeDomain('focal-behavior-type', 'Behavior type');
 createSimpleCodeDomain('social-focal-behavior-type', 'Social behavior type');
+
+var user = createSimpleCodeDomain('user', 'User');
+user.register('setting-lookup', true);
 
 var animal = app.createDomain({name: 'animal', label: 'Animal'});
 animal.register('code-domain', true);
