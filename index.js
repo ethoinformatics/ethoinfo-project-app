@@ -1,4 +1,5 @@
 var app = require('ethoinfo-framework');
+var moment = require('moment');
 
 app.setting('couch-base-url', 'http://demo.ethoinformatics.org:5984/location_test');
 app.setting('couch-username', 'supermonkey');
@@ -39,16 +40,39 @@ var diaryLocationService = {
 };
 
 
+var createIdGenerator = function(field){
+	return function(entity){
+		return entity.domainName +'-'+entity[field];
+	};
+};
+
 // ****************************************************************************
 // * DIARY                                                                    *
 // ****************************************************************************
 var diary = app.createDomain({name: 'diary', label: 'Diary'});
+diary.register('color', '#40301F');
+diary.register('uuid-generator', function(entity){
+	var date = new Date(entity.eventDate);
+	return 'diary-' + 
+		date.getFullYear() + '-' +
+		(date.getMonth()+1) + '-' +
+		date.getDate();
+});
 diary.register('form-fields', require('./forms/diary.json'));
-diary.register('activity', activityService);
+diary.register('activity', {
+	getBeginTime: function(d){ 
+		return moment(d.eventDate).startOf('day').toDate(); 
+	},
+	getEndTime: function(d){ 
+		return moment(d.eventDate).endOf('day').toDate();
+	},
+	start: function(){  },
+	stop: function(){  },
+});
 diary.register('short-description', function(){ return 'Diary'; });
 diary.register('long-description', function(d){
 	var h1 = 'Diary for ' + d.eventDate;
-	var div = d.eventRemarks;
+	var div = d.remarks;
 
 	return '<h1>'+h1+'</h1>' + 
 		'<div style="font-style:italic;">' + div + '</div>';
@@ -59,18 +83,19 @@ diary.register('location-aware', diaryLocationService);
 // * CONTACT                                                                  *
 // ****************************************************************************
 var contact = app.createDomain({name: 'contact', label: 'Contact'});
+contact.register('color', '#40301F');
 contact.register('form-fields', require('./forms/contact.json'));
 contact.register('activity', activityService);
 contact.register('long-description', function(d){
-	var h1 = 'Contact with ' + this.getDescription('taxon') + ' (' +this.getDescription('group')+ ')';
+	var h1 = 'Contact with ' + ' ' +this.getDescription('subjectId');
 	var div = d.notes;
 
 	return '<h1>'+h1+'</h1>' + 
 		'<div style="font-style:italic;">' + div + '</div>';
 });
 
-contact.register('short-description', function(d){
-	return 'Contact - ' + (d.title || d.sightingName);
+contact.register('short-description', function(){
+	return 'Contact' ;//+ this.getDescription('subjectId');
 });
 
 // ****************************************************************************
@@ -183,6 +208,7 @@ function createSimpleCodeDomain(name, label){
 	domain.register('code-domain', true);
 	domain.register('form-fields', [ { fields: { name: { type: 'text' } } } ]);
 	domain.register('short-description', function(d){ return d.name; });
+	domain.register('uuid-generator', createIdGenerator('name'));
 
 	return domain;
 }

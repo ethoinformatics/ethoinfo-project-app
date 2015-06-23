@@ -6,7 +6,7 @@
 				"type": "lookup",
 				"domain": "taxon"
 			},
-			"group": {
+			"subjectId": {
 				"type": "lookup",
 				"domain": "animal-group"
 			},
@@ -14,8 +14,14 @@
 				"type": "text",
 				"required": true
 			},
-			"notes": {
-				"label": "Notes",
+			"samplingProtocol": {
+				"type": "text"
+			},
+			"basisOfRecord": {
+				"type": "text"
+			},
+			"remarks": {
+				"label": "remarks",
 				"type": "textarea"
 			}
 		}

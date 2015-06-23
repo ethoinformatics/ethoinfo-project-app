@@ -5,7 +5,7 @@
 				"type": "date",
 				"label": "Date"
 			},
-			"eventRemarks": {
+			"remarks": {
 				"type": "textarea",
 				"label": "Remarks"
 			}

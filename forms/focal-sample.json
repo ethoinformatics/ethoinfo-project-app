@@ -10,8 +10,11 @@
 			"title": {
 				"type": "text"
 			},
-			"notes": {
-				"label": "Focal notes",
+			"samplingProtocol": {
+				"type": "text"
+			},
+			"remarks": {
+				"label": "remarks",
 				"type": "textarea"
 			}
 		}
