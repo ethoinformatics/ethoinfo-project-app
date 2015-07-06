@@ -2,7 +2,7 @@
 	{
 		"icon": "ion-star",
 		"fields": {
-			"animal": {
+			"subjectId": {
 				"type": "lookup",
 				"domain": "animal",
 				"features": [ "inline-create" ]

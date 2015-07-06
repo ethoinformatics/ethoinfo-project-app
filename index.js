@@ -1,7 +1,7 @@
 var app = require('ethoinfo-framework');
 var moment = require('moment');
 
-app.setting('couch-base-url', 'http://demo.ethoinformatics.org:5984/location_test');
+app.setting('couch-base-url', 'http://demo.ethoinformatics.org:5984/app_focals');
 app.setting('couch-username', 'supermonkey');
 
 var activityService = {
@@ -50,7 +50,7 @@ var createIdGenerator = function(field){
 // * DIARY                                                                    *
 // ****************************************************************************
 var diary = app.createDomain({name: 'diary', label: 'Diary'});
-diary.register('color', '#40301F');
+diary.register('color', '#3D9720');
 diary.register('uuid-generator', function(entity){
 	var date = new Date(entity.eventDate);
 	return 'diary-' + 
@@ -74,6 +74,7 @@ diary.register('long-description', function(d){
 	var h1 = 'Diary for ' + d.eventDate;
 	var div = d.remarks;
 
+
 	return '<h1>'+h1+'</h1>' + 
 		'<div style="font-style:italic;">' + div + '</div>';
 });
@@ -83,12 +84,12 @@ diary.register('location-aware', diaryLocationService);
 // * CONTACT                                                                  *
 // ****************************************************************************
 var contact = app.createDomain({name: 'contact', label: 'Contact'});
-contact.register('color', '#40301F');
+contact.register('color', '#EECF20');
 contact.register('form-fields', require('./forms/contact.json'));
 contact.register('activity', activityService);
 contact.register('long-description', function(d){
 	var h1 = 'Contact with ' + ' ' +this.getDescription('subjectId');
-	var div = d.notes;
+	var div = d.remarks;
 
 	return '<h1>'+h1+'</h1>' + 
 		'<div style="font-style:italic;">' + div + '</div>';
@@ -110,26 +111,24 @@ observerActivity.register('short-description', function(d){
 
 
 // ****************************************************************************
-// * OBSERVER ACTIVITY                                                        *
+// * FOCAL
 // ****************************************************************************
 var focalSample = app.createDomain({name: 'focal', label: 'Focal'});
-
+focalSample.register('color', '#FB6725');
 focalSample.register('form-fields', require('./forms/focal-sample.json'));
 focalSample.register('activity', activityService);
 focalSample.register('concurrent', false);
 focalSample.register('long-description', function(d){
-	var h1 = 'Focal of ' + this.getDescription('animal');
+	var h1 = 'Focal (' + this.getDescription('subjectId') + ')';
 	var h2 = this.getDescription('age') + ' ' + this.getDescription('sex');
-	var div = d.notes;
+	var div = d.remarks;
 
 	return '<h1>'+h1+'</h1>' + 
 		'<h3>' + h2 + '</h3>' + 
 		'<div style="font-style:italic;">' + div + '</div>';
 });
 
-focalSample.register('short-description', function(d){
-	return 'Focal - ' + (d.title || d.notes);
-});
+focalSample.register('short-description', function(){ return 'Focal' });
 
 
 // var feedingBout = app.createDomain({name: 'feeding-bout', label: 'Feeding Bout'});
@@ -245,6 +244,8 @@ animal.register('short-description', function(d){ return d.name; });
 // contact.register(focal, 'resourcePatches');
 // focalSample.register(feedingBout, 'feedingBouts');
 // focalSample.register(feedingBout, 'feedingBouts');
+
+diary.register('contacts', contact);
 
 contact.register('focalSamples', focalSample);
 contact.register('collections', poopSample);
