@@ -69,14 +69,13 @@ diary.register('activity', {
 	start: function(){  },
 	stop: function(){  },
 });
-diary.register('short-description', function(){ return 'Diary'; });
+diary.register('short-description', function(d){
+	return d._id.split('-')[1];
+	});
 diary.register('long-description', function(d){
 	var h1 = 'Diary for ' + d.eventDate;
-	var div = d.remarks;
 
-
-	return '<h1>'+h1+'</h1>' + 
-		'<div style="font-style:italic;">' + div + '</div>';
+	return '<h1>'+h1+'</h1>';
 });
 diary.register('location-aware', diaryLocationService);
 
@@ -89,14 +88,12 @@ contact.register('form-fields', require('./forms/contact.json'));
 contact.register('activity', activityService);
 contact.register('long-description', function(d){
 	var h1 = 'Contact with ' + ' ' +this.getDescription('subjectId');
-	var div = d.remarks;
 
-	return '<h1>'+h1+'</h1>' + 
-		'<div style="font-style:italic;">' + div + '</div>';
+	return '<h1>'+h1+'</h1>';
 });
 
-contact.register('short-description', function(){
-	return 'Contact' ;//+ this.getDescription('subjectId');
+contact.register('short-description', function(d){
+	return d._id.split('-')[1];
 });
 
 // ****************************************************************************
@@ -121,11 +118,9 @@ focalSample.register('concurrent', false);
 focalSample.register('long-description', function(d){
 	var h1 = 'Focal (' + this.getDescription('subjectId') + ')';
 	var h2 = this.getDescription('age') + ' ' + this.getDescription('sex');
-	var div = d.remarks;
 
 	return '<h1>'+h1+'</h1>' + 
-		'<h3>' + h2 + '</h3>' + 
-		'<div style="font-style:italic;">' + div + '</div>';
+		'<h3>' + h2 + '</h3>';
 });
 
 focalSample.register('short-description', function(){ return 'Focal' });

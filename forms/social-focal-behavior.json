@@ -17,10 +17,6 @@
 			"animal": {
 				"type": "lookup",
 				"domain": "animal"
-			},
-			"notes": {
-				"label": "Notes",
-				"type": "textarea"
 			}
 		}
 	}

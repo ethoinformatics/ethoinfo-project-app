@@ -4,10 +4,6 @@
 			"eventDate": {
 				"type": "date",
 				"label": "Date"
-			},
-			"remarks": {
-				"type": "textarea",
-				"label": "Remarks"
 			}
 		}
 	}

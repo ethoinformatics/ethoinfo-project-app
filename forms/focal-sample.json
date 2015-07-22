@@ -12,10 +12,6 @@
 			},
 			"samplingProtocol": {
 				"type": "text"
-			},
-			"remarks": {
-				"label": "remarks",
-				"type": "textarea"
 			}
 		}
 	}
