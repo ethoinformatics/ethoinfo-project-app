@@ -4,12 +4,14 @@ var moment = require('moment');
 app.setting('couch-base-url', 'http://demo.ethoinformatics.org:5984/app_focals');
 app.setting('couch-username', 'supermonkey');
 
-var activityService = {
-	getBeginTime: function(d){ return d.beginTime || d.timestamp; },
-	getEndTime: function(d){ return d.endTime; },
-	start: function(d){ d.beginTime = new Date(); },
-	stop: function(d){ d.endTime = new Date(); },
-};
+//var activityService = {
+function registerStartAndEndServices(domain){
+	domain.register('get-begin-time', function(d){ return d.beginTime || d.timestamp; });
+	domain.register('get-end-time', function(d){ return d.endTime; });
+	domain.register('set-begin-time', function(d){ d.beginTime = new Date(); });
+	domain.register('set-end-time', function(d){ d.endTime = new Date(); });
+}
+//};
 
 function dateEqual(d1, d2){
 	return d1.getFullYear() === d2.getFullYear() && 
@@ -51,6 +53,10 @@ var createIdGenerator = function(field){
 // ****************************************************************************
 var diary = app.createDomain({name: 'diary', label: 'Diary'});
 diary.register('color', '#3D9720');
+diary.register('form-fields', {
+		eventDate: { type: 'date', label: 'Date' }
+	});
+
 diary.register('uuid-generator', function(entity){
 	var date = new Date(entity.eventDate);
 	return 'diary-' + 
@@ -58,20 +64,16 @@ diary.register('uuid-generator', function(entity){
 		(date.getMonth()+1) + '-' +
 		date.getDate();
 });
-diary.register('form-fields', require('./forms/diary.json'));
-diary.register('activity', {
-	getBeginTime: function(d){ 
-		return moment(d.eventDate).startOf('day').toDate(); 
-	},
-	getEndTime: function(d){ 
-		return moment(d.eventDate).endOf('day').toDate();
-	},
-	start: function(){  },
-	stop: function(){  },
-});
+diary.register('sort-by', 'eventDate');
+diary.register('get-begin-time', function(d){ return moment(d.eventDate).startOf('day').toDate(); });
+diary.register('get-end-time', function(d){ return moment(d.eventDate).endOf('day').toDate(); });
+diary.register('set-begin-time', function(){ });
+diary.register('set-end-time', function(){ });
+
 diary.register('short-description', function(d){
-	return d._id.split('-')[1];
-	});
+	var date = new Date(d.eventDate);
+	return moment(date).format('MM/DD/YY');
+});
 diary.register('long-description', function(d){
 	var h1 = 'Diary for ' + d.eventDate;
 
@@ -85,8 +87,8 @@ diary.register('location-aware', diaryLocationService);
 var contact = app.createDomain({name: 'contact', label: 'Contact'});
 contact.register('color', '#EECF20');
 contact.register('form-fields', require('./forms/contact.json'));
-contact.register('activity', activityService);
-contact.register('long-description', function(d){
+registerStartAndEndServices(contact);
+contact.register('long-description', function(){
 	var h1 = 'Contact with ' + ' ' +this.getDescription('subjectId');
 
 	return '<h1>'+h1+'</h1>';
@@ -101,7 +103,7 @@ contact.register('short-description', function(d){
 // ****************************************************************************
 var observerActivity = app.createDomain({name:'observer-activity', label: 'Observer Activity'});
 observerActivity.register('form-fields', require('./forms/observer-activity.json'));
-observerActivity.register('activity', activityService);
+registerStartAndEndServices(observerActivity);
 observerActivity.register('short-description', function(d){
 	return 'observer - ' + d.title;
 });
@@ -113,14 +115,14 @@ observerActivity.register('short-description', function(d){
 var focalSample = app.createDomain({name: 'focal', label: 'Focal'});
 focalSample.register('color', '#FB6725');
 focalSample.register('form-fields', require('./forms/focal-sample.json'));
-focalSample.register('activity', activityService);
+registerStartAndEndServices(focalSample);
 focalSample.register('concurrent', false);
 focalSample.register('long-description', function(d){
 	var h1 = 'Focal (' + this.getDescription('subjectId') + ')';
-	var h2 = this.getDescription('age') + ' ' + this.getDescription('sex');
+	//var h2 = this.getDescription('age') + ' ' + this.getDescription('sex');
 
-	return '<h1>'+h1+'</h1>' + 
-		'<h3>' + h2 + '</h3>';
+	return '<h1>'+h1+'</h1>';
+		//'<h3>' + h2 + '</h3>';
 });
 
 focalSample.register('short-description', function(){ return 'Focal' });
@@ -142,11 +144,11 @@ focalSample.register('short-description', function(){ return 'Focal' });
 // });
 
 // ****************************************************************************
-// * FOCAL BEHAVIOR                                                           *
+// * FOCAL OBSERVATION                                                        *
 // ****************************************************************************
 var focalBehavior = app.createDomain({name: 'focal-behavior', label:'Behavior'});
 focalBehavior.register('form-fields', require('./forms/focal-behavior.json'));
-focalBehavior.register('activity', activityService);
+registerStartAndEndServices(focalBehavior);
 focalBehavior.register('long-description', function(d){
 	var h1 = 'Aggression towards ' + this.getDescription('animal');
 	var h2 = this.getDescription('age') + ' ' + this.getDescription('sex');
@@ -162,7 +164,7 @@ focalBehavior.register('long-description', function(d){
 // ****************************************************************************
 var socialFocalBehavior = app.createDomain({name: 'social-focal-behavior', label:'Social behavior'});
 socialFocalBehavior.register('form-fields', require('./forms/social-focal-behavior.json'));
-socialFocalBehavior.register('activity', activityService);
+registerStartAndEndServices(socialFocalBehavior);
 socialFocalBehavior.register('long-description', function(d){
 	var h1 = this.getDescription('type') + ' towards ' + this.getDescription('animal');
 	var h2 = this.getDescription('age') + ' ' + this.getDescription('sex');
@@ -179,7 +181,7 @@ socialFocalBehavior.register('long-description', function(d){
 // ****************************************************************************
 var poopSample = app.createDomain({name: 'poop-sample', label:'Poop sample'});
 poopSample.register('form-fields', require('./forms/poop-sample.json'));
-poopSample.register('activity', activityService);
+registerStartAndEndServices(poopSample);
 poopSample.register('long-description', function(){
 	var h1 = 'Poop sample from ' + this.getDescription('animal');
 	var h2 = '';
@@ -242,11 +244,11 @@ animal.register('short-description', function(d){ return d.name; });
 
 diary.register('contacts', contact);
 
-contact.register('focalSamples', focalSample);
+contact.register('focals', focalSample);
 contact.register('collections', poopSample);
 
-focalSample.register('behaviors', socialFocalBehavior);
-focalSample.register('behaviors', focalBehavior);
+focalSample.register('observations', socialFocalBehavior, {inline: true});
+focalSample.register('observations', focalBehavior, {inline: true});
 focalSample.register('collections', poopSample);
 
 app.run();
