@@ -28,3 +28,4 @@ node_modules
 .lock-wscript
 bundle.js
 etho/platforms
+/dist/www/index.html

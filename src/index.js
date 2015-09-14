@@ -86,7 +86,14 @@ diary.register('location-aware', diaryLocationService);
 // ****************************************************************************
 var contact = app.createDomain({name: 'contact', label: 'Contact'});
 contact.register('color', '#EECF20');
-contact.register('form-fields', require('./forms/contact.json'));
+contact.register('form-fields', {
+	taxon: { type: "lookup", domain: "taxon" },
+	subjectId: { type: "lookup", domain: "animal-group" },
+	title: { type: "text", required: true },
+	samplingProtocol: { type: "text" }, 
+	basisOfRecord: { type: "text" } 
+});
+
 registerStartAndEndServices(contact);
 contact.register('long-description', function(){
 	var h1 = 'Contact with ' + ' ' +this.getDescription('subjectId');
@@ -102,11 +109,15 @@ contact.register('short-description', function(d){
 // * OBSERVER ACTIVITY                                                        *
 // ****************************************************************************
 var observerActivity = app.createDomain({name:'observer-activity', label: 'Observer Activity'});
-observerActivity.register('form-fields', require('./forms/observer-activity.json'));
-registerStartAndEndServices(observerActivity);
+observerActivity.register('form-fields', {
+	title: { label: "Title", type: "text" },
+	notes: { label: "Notes", type: "long-text" },
+	sampleId: { label: "Sample ID", type: "text" }
+});
 observerActivity.register('short-description', function(d){
 	return 'observer - ' + d.title;
 });
+registerStartAndEndServices(observerActivity);
 
 
 // ****************************************************************************
@@ -114,7 +125,11 @@ observerActivity.register('short-description', function(d){
 // ****************************************************************************
 var focalSample = app.createDomain({name: 'focal', label: 'Focal'});
 focalSample.register('color', '#FB6725');
-focalSample.register('form-fields', require('./forms/focal-sample.json'));
+focalSample.register('form-fields', {
+	"subjectId": { "type": "lookup", "domain": "animal", "features": [ "inline-create" ] },
+	"title": { "type": "text" },
+	"samplingProtocol": { "type": "text" }
+});
 registerStartAndEndServices(focalSample);
 focalSample.register('concurrent', false);
 focalSample.register('long-description', function(d){
@@ -147,7 +162,10 @@ focalSample.register('short-description', function(){ return 'Focal' });
 // * FOCAL OBSERVATION                                                        *
 // ****************************************************************************
 var focalBehavior = app.createDomain({name: 'focal-behavior', label:'Behavior'});
-focalBehavior.register('form-fields', require('./forms/focal-behavior.json'));
+focalBehavior.register('form-fields', {
+	"type": { "type": "lookup", "domain": "focal-behavior-type" },
+	"notes": { "label": "Notes", "type": "textarea" }
+});
 registerStartAndEndServices(focalBehavior);
 focalBehavior.register('long-description', function(d){
 	var h1 = 'Aggression towards ' + this.getDescription('animal');
@@ -163,7 +181,12 @@ focalBehavior.register('long-description', function(d){
 // * SOCIAL FOCAL BEHAVIOR                                                           *
 // ****************************************************************************
 var socialFocalBehavior = app.createDomain({name: 'social-focal-behavior', label:'Social behavior'});
-socialFocalBehavior.register('form-fields', require('./forms/social-focal-behavior.json'));
+socialFocalBehavior.register('form-fields', {
+	"type": { "type": "lookup", "domain": "social-focal-behavior-type" },
+	"age": { "type": "lookup", "domain": "age-class" },
+	"sex": { "type": "lookup", "domain": "sex" },
+	"animal": { "type": "lookup", "domain": "animal" }
+});
 registerStartAndEndServices(socialFocalBehavior);
 socialFocalBehavior.register('long-description', function(d){
 	var h1 = this.getDescription('type') + ' towards ' + this.getDescription('animal');
@@ -180,7 +203,9 @@ socialFocalBehavior.register('long-description', function(d){
 // * POOP SAMPLE                                                              *
 // ****************************************************************************
 var poopSample = app.createDomain({name: 'poop-sample', label:'Poop sample'});
-poopSample.register('form-fields', require('./forms/poop-sample.json'));
+poopSample.register('form-fields', {
+	"location": { "type": "text" }
+});
 registerStartAndEndServices(poopSample);
 poopSample.register('long-description', function(){
 	var h1 = 'Poop sample from ' + this.getDescription('animal');
@@ -221,7 +246,13 @@ user.register('setting-lookup', true);
 
 var animal = app.createDomain({name: 'animal', label: 'Animal'});
 animal.register('code-domain', true);
-animal.register('form-fields', require('./forms/animal.json'));
+animal.register('form-fields', {
+	"name": { "type": "text" },
+	"taxon": { "type": "lookup", "domain": "taxon" },
+	"age": { "type": "lookup", "domain": "age-class" },
+	"sex": { "type": "lookup", "domain": "sex" },
+	"group": { "type": "lookup", "domain": "animal-group" }
+});
 animal.register('short-description', function(d){ return d.name; });
 
 
