@@ -10,6 +10,7 @@
   "license": "not sure",
   "dependencies": {
     "browserify": "^9.0.3",
+    "envify": "^3.4.0",
     "ethoinfo-framework": "git+ssh://git@github.com/ethoinformatics/ethoinfo-framework#master",
     "moment": "^2.10.3",
     "pouchdb-upsert": "^1.1.1"
