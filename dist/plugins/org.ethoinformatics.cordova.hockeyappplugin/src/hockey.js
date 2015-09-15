@@ -4,11 +4,12 @@ module.exports.configure = function(opt, cb) {
 	}
 
 	function onError(err){
-		window.alert('error');
+		window.alert('hockey app plugin error');
+		window.alert('error: ' + err.toString());
+		console.error(err);
+
 		if (typeof cb == 'function')
 			cb(err);
-		else 
-			console.error(err);
 	}
 
 
