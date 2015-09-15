@@ -6,3 +6,4 @@ A research project-specific application in PhoneGap that is built upon the [Etho
 In the current experimental phase, we are using data structures tailored to Tony DiFiore's Proyecto project. 
 
 [Android](https://rink.hockeyapp.net/apps/c5acd084f91517ee7f801bceb7950ac5)
+[iOS](https://rink.hockeyapp.net/apps/7960fabed892089fcb6eb53fc7af51ee)
