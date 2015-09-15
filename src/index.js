@@ -1,3 +1,4 @@
+require('./update-check');
 var app = require('ethoinfo-framework');
 var moment = require('moment');
 

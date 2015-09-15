@@ -1,4 +1,5 @@
 (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
+require('./update-check');
 var app = require('ethoinfo-framework');
 var moment = require('moment');
 
@@ -285,7 +286,7 @@ focalSample.register('collections', poopSample);
 
 app.run();
 
-},{"ethoinfo-framework":175,"moment":206}],2:[function(require,module,exports){
+},{"./update-check":207,"ethoinfo-framework":175,"moment":206}],2:[function(require,module,exports){
 var vash = require('/home/mchevett/code/ez-build/d3-timeline/node_modules/vashify/node_modules/vash/build/vash-runtime-all.min.js');
 module.exports = vash.link(function anonymous(model, html, __vopts, vash) {
     try {
@@ -4685,135 +4686,6 @@ module.exports = vash.link(function anonymous(model, html, __vopts, vash) {
         html.options = __vopts;
         model = model || {};
         html.vl = 1, html.vc = 0;
-        __vbuffer.push('<div class="pane list-page">');
-        html.vl = 1, html.vc = 28;
-        __vbuffer.push('\n');
-        html.vl = 2, html.vc = 0;
-        __vbuffer.push('\t');
-        html.vl = 2, html.vc = 1;
-        __vbuffer.push('<div class="scroll-wrapper">');
-        html.vl = 2, html.vc = 29;
-        __vbuffer.push('\n');
-        html.vl = 3, html.vc = 0;
-        __vbuffer.push('\t');
-        html.vl = 3, html.vc = 1;
-        __vbuffer.push('\t');
-        html.vl = 3, html.vc = 2;
-        __vbuffer.push('<div class="scroller">');
-        html.vl = 3, html.vc = 24;
-        __vbuffer.push('\n');
-        html.vl = 4, html.vc = 0;
-        __vbuffer.push('\t');
-        html.vl = 4, html.vc = 1;
-        __vbuffer.push('\t');
-        html.vl = 4, html.vc = 2;
-        __vbuffer.push('\t');
-        html.vl = 4, html.vc = 3;
-        __vbuffer.push('<ul class="list">');
-        html.vl = 4, html.vc = 20;
-        __vbuffer.push('\n');
-        html.vl = 5, html.vc = 0;
-        __vbuffer.push('\t');
-        html.vl = 5, html.vc = 1;
-        __vbuffer.push('\t');
-        html.vl = 5, html.vc = 2;
-        __vbuffer.push('\t');
-        html.vl = 5, html.vc = 3;
-        __vbuffer.push('</ul>');
-        html.vl = 5, html.vc = 8;
-        __vbuffer.push('\n');
-        html.vl = 6, html.vc = 0;
-        __vbuffer.push('\t');
-        html.vl = 6, html.vc = 1;
-        __vbuffer.push('\t');
-        html.vl = 6, html.vc = 2;
-        __vbuffer.push('</div>');
-        html.vl = 6, html.vc = 8;
-        __vbuffer.push('\n');
-        html.vl = 7, html.vc = 0;
-        __vbuffer.push('\t');
-        html.vl = 7, html.vc = 1;
-        __vbuffer.push('</div>');
-        html.vl = 7, html.vc = 7;
-        __vbuffer.push('\n');
-        html.vl = 8, html.vc = 0;
-        __vbuffer.push('</div>');
-        html.vl = 8, html.vc = 6;
-        __vbuffer.push('\n');
-        __vopts && __vopts.onRenderEnd && __vopts.onRenderEnd(null, html);
-        return __vopts && __vopts.asContext ? html : html.toString();
-    } catch (e) {
-        html.reportError(e, html.vl, html.vc, '<div class="pane list-page">!LB!\t<div class="scroll-wrapper">!LB!\t\t<div class="scroller">!LB!\t\t\t<ul class="list">!LB!\t\t\t</ul>!LB!\t\t</div>!LB!\t</div>!LB!</div>!LB!');
-    }
-}, {
-    'simple': false,
-    'modelName': 'model',
-    'helpersName': 'html'
-});
-},{"/home/mchevett/code/ez-build/ethoinfo-framework/node_modules/vashify/node_modules/vash/build/vash-runtime-all.min.js":35}],32:[function(require,module,exports){
-var vash = require('/home/mchevett/code/ez-build/ethoinfo-framework/node_modules/vashify/node_modules/vash/build/vash-runtime-all.min.js');
-module.exports = vash.link(function anonymous(model, html, __vopts, vash) {
-    try {
-        var __vbuffer = html.buffer;
-        html.options = __vopts;
-        model = model || {};
-        html.vl = 1, html.vc = 0;
-        __vbuffer.push('<li class="item js-item" data-id="');
-        html.vl = 1, html.vc = 35;
-        __vbuffer.push(html.escape(model.id).toHtmlString());
-        html.vl = 1, html.vc = 41;
-        html.vl = 1, html.vc = 43;
-        __vbuffer.push('"');
-        html.vl = 1, html.vc = 44;
-        __vbuffer.push(' ');
-        html.vl = 1, html.vc = 45;
-        __vbuffer.push('data');
-        html.vl = 1, html.vc = 49;
-        __vbuffer.push('-');
-        html.vl = 1, html.vc = 50;
-        __vbuffer.push('domain');
-        html.vl = 1, html.vc = 56;
-        __vbuffer.push('=');
-        html.vl = 1, html.vc = 57;
-        __vbuffer.push('"');
-        html.vl = 1, html.vc = 59;
-        __vbuffer.push(html.escape(model.domainName).toHtmlString());
-        html.vl = 1, html.vc = 65;
-        html.vl = 1, html.vc = 75;
-        __vbuffer.push('"');
-        html.vl = 1, html.vc = 76;
-        __vbuffer.push('>');
-        html.vl = 1, html.vc = 77;
-        __vbuffer.push('\n');
-        html.vl = 2, html.vc = 0;
-        __vbuffer.push('\t');
-        html.vl = 2, html.vc = 2;
-        __vbuffer.push(html.escape(model.label).toHtmlString());
-        html.vl = 2, html.vc = 8;
-        html.vl = 2, html.vc = 13;
-        __vbuffer.push('\n');
-        html.vl = 3, html.vc = 0;
-        __vbuffer.push('</li>');
-        html.vl = 3, html.vc = 5;
-        __vbuffer.push('\n');
-        __vopts && __vopts.onRenderEnd && __vopts.onRenderEnd(null, html);
-        return __vopts && __vopts.asContext ? html : html.toString();
-    } catch (e) {
-        html.reportError(e, html.vl, html.vc, '<li class="item js-item" data-id="@model.id" data-domain="@model.domainName">!LB!\t@model.label!LB!</li>!LB!');
-    }
-}, {
-    'simple': false,
-    'modelName': 'model',
-    'helpersName': 'html'
-});
-},{"/home/mchevett/code/ez-build/ethoinfo-framework/node_modules/vashify/node_modules/vash/build/vash-runtime-all.min.js":35}],33:[function(require,module,exports){
-var vash = require('/home/mchevett/code/ez-build/ethoinfo-framework/node_modules/vashify/node_modules/vash/build/vash-runtime-all.min.js');
-module.exports = vash.link(function anonymous(model, html, __vopts, vash) {
-    try {
-        var __vbuffer = html.buffer;
-        html.options = __vopts;
-        model = model || {};
-        html.vl = 1, html.vc = 0;
         __vbuffer.push('<div id="left-menu" class="js-side-menu">');
         html.vl = 1, html.vc = 41;
         __vbuffer.push('\n');
@@ -5145,6 +5017,135 @@ module.exports = vash.link(function anonymous(model, html, __vopts, vash) {
         return __vopts && __vopts.asContext ? html : html.toString();
     } catch (e) {
         html.reportError(e, html.vl, html.vc, '<div id="left-menu" class="js-side-menu">!LB!\t<div class="bar bar-header bar-stable">!LB!\t  <h1 id="left-title" class="title"></h1>!LB!\t</div>!LB!\t<ul class="list stable">!LB!\t\t<ul class="list">!LB!\t\t\t<li class="js-settings item item-icon-left">!LB!\t\t\t\t<i class="icon ion-gear-b"></i>!LB!\t\t\t\tSettings!LB!\t\t\t\t<!-- <span class="item-note">Settings</span> -->!LB!\t\t\t</li>!LB!\t\t\t<li class="js-upload item item-icon-left">!LB!\t\t\t\t<i class="icon ion-code-working"></i>!LB!\t\t\t\tData sync!LB!\t\t\t\t<!-- <span class="item-note">Sync to a server</span> -->!LB!\t\t\t</li>!LB!\t\t\t<li class="js-code-manager item item-icon-left">!LB!\t\t\t\t<i class="icon ion-search"></i>!LB!\t\t\t\tCoded fields!LB!\t\t\t\t<!-- <span class="item-note">Manage coded fields</span> -->!LB!\t\t\t</li>!LB!\t\t</ul>!LB!\t</ul>!LB!</div>!LB!');
+    }
+}, {
+    'simple': false,
+    'modelName': 'model',
+    'helpersName': 'html'
+});
+},{"/home/mchevett/code/ez-build/ethoinfo-framework/node_modules/vashify/node_modules/vash/build/vash-runtime-all.min.js":35}],32:[function(require,module,exports){
+var vash = require('/home/mchevett/code/ez-build/ethoinfo-framework/node_modules/vashify/node_modules/vash/build/vash-runtime-all.min.js');
+module.exports = vash.link(function anonymous(model, html, __vopts, vash) {
+    try {
+        var __vbuffer = html.buffer;
+        html.options = __vopts;
+        model = model || {};
+        html.vl = 1, html.vc = 0;
+        __vbuffer.push('<div class="pane list-page">');
+        html.vl = 1, html.vc = 28;
+        __vbuffer.push('\n');
+        html.vl = 2, html.vc = 0;
+        __vbuffer.push('\t');
+        html.vl = 2, html.vc = 1;
+        __vbuffer.push('<div class="scroll-wrapper">');
+        html.vl = 2, html.vc = 29;
+        __vbuffer.push('\n');
+        html.vl = 3, html.vc = 0;
+        __vbuffer.push('\t');
+        html.vl = 3, html.vc = 1;
+        __vbuffer.push('\t');
+        html.vl = 3, html.vc = 2;
+        __vbuffer.push('<div class="scroller">');
+        html.vl = 3, html.vc = 24;
+        __vbuffer.push('\n');
+        html.vl = 4, html.vc = 0;
+        __vbuffer.push('\t');
+        html.vl = 4, html.vc = 1;
+        __vbuffer.push('\t');
+        html.vl = 4, html.vc = 2;
+        __vbuffer.push('\t');
+        html.vl = 4, html.vc = 3;
+        __vbuffer.push('<ul class="list">');
+        html.vl = 4, html.vc = 20;
+        __vbuffer.push('\n');
+        html.vl = 5, html.vc = 0;
+        __vbuffer.push('\t');
+        html.vl = 5, html.vc = 1;
+        __vbuffer.push('\t');
+        html.vl = 5, html.vc = 2;
+        __vbuffer.push('\t');
+        html.vl = 5, html.vc = 3;
+        __vbuffer.push('</ul>');
+        html.vl = 5, html.vc = 8;
+        __vbuffer.push('\n');
+        html.vl = 6, html.vc = 0;
+        __vbuffer.push('\t');
+        html.vl = 6, html.vc = 1;
+        __vbuffer.push('\t');
+        html.vl = 6, html.vc = 2;
+        __vbuffer.push('</div>');
+        html.vl = 6, html.vc = 8;
+        __vbuffer.push('\n');
+        html.vl = 7, html.vc = 0;
+        __vbuffer.push('\t');
+        html.vl = 7, html.vc = 1;
+        __vbuffer.push('</div>');
+        html.vl = 7, html.vc = 7;
+        __vbuffer.push('\n');
+        html.vl = 8, html.vc = 0;
+        __vbuffer.push('</div>');
+        html.vl = 8, html.vc = 6;
+        __vbuffer.push('\n');
+        __vopts && __vopts.onRenderEnd && __vopts.onRenderEnd(null, html);
+        return __vopts && __vopts.asContext ? html : html.toString();
+    } catch (e) {
+        html.reportError(e, html.vl, html.vc, '<div class="pane list-page">!LB!\t<div class="scroll-wrapper">!LB!\t\t<div class="scroller">!LB!\t\t\t<ul class="list">!LB!\t\t\t</ul>!LB!\t\t</div>!LB!\t</div>!LB!</div>!LB!');
+    }
+}, {
+    'simple': false,
+    'modelName': 'model',
+    'helpersName': 'html'
+});
+},{"/home/mchevett/code/ez-build/ethoinfo-framework/node_modules/vashify/node_modules/vash/build/vash-runtime-all.min.js":35}],33:[function(require,module,exports){
+var vash = require('/home/mchevett/code/ez-build/ethoinfo-framework/node_modules/vashify/node_modules/vash/build/vash-runtime-all.min.js');
+module.exports = vash.link(function anonymous(model, html, __vopts, vash) {
+    try {
+        var __vbuffer = html.buffer;
+        html.options = __vopts;
+        model = model || {};
+        html.vl = 1, html.vc = 0;
+        __vbuffer.push('<li class="item js-item" data-id="');
+        html.vl = 1, html.vc = 35;
+        __vbuffer.push(html.escape(model.id).toHtmlString());
+        html.vl = 1, html.vc = 41;
+        html.vl = 1, html.vc = 43;
+        __vbuffer.push('"');
+        html.vl = 1, html.vc = 44;
+        __vbuffer.push(' ');
+        html.vl = 1, html.vc = 45;
+        __vbuffer.push('data');
+        html.vl = 1, html.vc = 49;
+        __vbuffer.push('-');
+        html.vl = 1, html.vc = 50;
+        __vbuffer.push('domain');
+        html.vl = 1, html.vc = 56;
+        __vbuffer.push('=');
+        html.vl = 1, html.vc = 57;
+        __vbuffer.push('"');
+        html.vl = 1, html.vc = 59;
+        __vbuffer.push(html.escape(model.domainName).toHtmlString());
+        html.vl = 1, html.vc = 65;
+        html.vl = 1, html.vc = 75;
+        __vbuffer.push('"');
+        html.vl = 1, html.vc = 76;
+        __vbuffer.push('>');
+        html.vl = 1, html.vc = 77;
+        __vbuffer.push('\n');
+        html.vl = 2, html.vc = 0;
+        __vbuffer.push('\t');
+        html.vl = 2, html.vc = 2;
+        __vbuffer.push(html.escape(model.label).toHtmlString());
+        html.vl = 2, html.vc = 8;
+        html.vl = 2, html.vc = 13;
+        __vbuffer.push('\n');
+        html.vl = 3, html.vc = 0;
+        __vbuffer.push('</li>');
+        html.vl = 3, html.vc = 5;
+        __vbuffer.push('\n');
+        __vopts && __vopts.onRenderEnd && __vopts.onRenderEnd(null, html);
+        return __vopts && __vopts.asContext ? html : html.toString();
+    } catch (e) {
+        html.reportError(e, html.vl, html.vc, '<li class="item js-item" data-id="@model.id" data-domain="@model.domainName">!LB!\t@model.label!LB!</li>!LB!');
     }
 }, {
     'simple': false,
@@ -89857,8 +89858,8 @@ var $ = require('jquery'),
 	Scroll = require('iscroll'),
 	app = require('app')(),
 	ViewExistingDialog = require('../view-existing-dialog'),
-	pageTemplate = require("/home/mchevett/code/ez-build/ethoinfo-framework/node_modules/vashify/.temp/6_index.vash.js"),
-	itemTemplate = require("/home/mchevett/code/ez-build/ethoinfo-framework/node_modules/vashify/.temp/7_item.vash.js");
+	pageTemplate = require("/home/mchevett/code/ez-build/ethoinfo-framework/node_modules/vashify/.temp/7_index.vash.js"),
+	itemTemplate = require("/home/mchevett/code/ez-build/ethoinfo-framework/node_modules/vashify/.temp/8_item.vash.js");
 
 
 function _getTopLevelDomains(){
@@ -89956,7 +89957,7 @@ function ListPage(){
 
 module.exports = ListPage;
 
-},{"../view-existing-dialog":199,"./index.less":193,"/home/mchevett/code/ez-build/ethoinfo-framework/node_modules/vashify/.temp/6_index.vash.js":31,"/home/mchevett/code/ez-build/ethoinfo-framework/node_modules/vashify/.temp/7_item.vash.js":32,"app":158,"iscroll":62,"jquery":64,"lodash":67,"q":155}],193:[function(require,module,exports){
+},{"../view-existing-dialog":199,"./index.less":193,"/home/mchevett/code/ez-build/ethoinfo-framework/node_modules/vashify/.temp/7_index.vash.js":32,"/home/mchevett/code/ez-build/ethoinfo-framework/node_modules/vashify/.temp/8_item.vash.js":33,"app":158,"iscroll":62,"jquery":64,"lodash":67,"q":155}],193:[function(require,module,exports){
 (function() { var head = document.getElementsByTagName('head')[0]; style = document.createElement('style'); style.type = 'text/css';var css = ".list-page .item.item-icon-right .icon.color-box{display:inline-block;width:6px;right:0}.list-page .scroll-wrapper{overflow:hidden;position:relative;top:0;bottom:0;width:100%}";if (style.styleSheet){ style.styleSheet.cssText = css; } else { style.appendChild(document.createTextNode(css)); } head.appendChild(style);}())
 },{}],194:[function(require,module,exports){
 require('./index.less');
@@ -90066,7 +90067,7 @@ module.exports = CodeManager;
 var velocity = require('velocity-animate'),
 	$ = require('jquery'),
 	EventEmitter = require('events').EventEmitter,
-	template = require("/home/mchevett/code/ez-build/ethoinfo-framework/node_modules/vashify/.temp/8_index.vash.js");
+	template = require("/home/mchevett/code/ez-build/ethoinfo-framework/node_modules/vashify/.temp/6_index.vash.js");
 
 function SideMenu(opt){
 	var $content = $(opt.content);
@@ -90116,7 +90117,7 @@ function SideMenu(opt){
 
 module.exports = SideMenu;
 
-},{"/home/mchevett/code/ez-build/ethoinfo-framework/node_modules/vashify/.temp/8_index.vash.js":33,"events":42,"jquery":64,"velocity-animate":156}],197:[function(require,module,exports){
+},{"/home/mchevett/code/ez-build/ethoinfo-framework/node_modules/vashify/.temp/6_index.vash.js":31,"events":42,"jquery":64,"velocity-animate":156}],197:[function(require,module,exports){
 require('./index.less');
 
 var DB_NAME = 'new_pp_db';
@@ -94076,4 +94077,15 @@ module.exports = TimelineTab;
     return _moment;
 
 }));
-},{}]},{},[1]);
+},{}],207:[function(require,module,exports){
+(function (process){
+function onDeviceReady(){
+	window.hockeyApp.configure({
+		appId: process.env.HOCKEY_APP_ID
+	});
+}
+
+window.document.addEventListener("deviceready", onDeviceReady, false);
+
+}).call(this,require('_process'))
+},{"_process":45}]},{},[1]);
