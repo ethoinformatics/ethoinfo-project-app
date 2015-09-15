@@ -1,5 +1,6 @@
 var fs = require('fs'),
-	browserify = require('browserify');
+	browserify = require('browserify'),
+	envify = require('envify');
 
 var b = browserify();
 
@@ -7,8 +8,10 @@ b.on('error', function(err){
 	console.error(err);
 });
 
-b.add('./src/index.js');
 var bundle = b.bundle();
+b.transform(envify);
+
+b.add('./src/index.js');
 
 bundle.on('error', function(err){ 
 	console.log('there was an error while creating bundle.js');
