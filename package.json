@@ -9,14 +9,9 @@
   "author": "",
   "license": "not sure",
   "dependencies": {
+    "browserify": "^9.0.3",
     "ethoinfo-framework": "git+ssh://git@github.com/ethoinformatics/ethoinfo-framework#master",
     "moment": "^2.10.3",
     "pouchdb-upsert": "^1.1.1"
   },
-  "devDependencies": {
-    "mkdirp": "^0.5.0",
-    "node-lessify": "0.0.5",
-    "browserify": "^9.0.3",
-    "vashify": "^0.4.0"
-  }
 }
