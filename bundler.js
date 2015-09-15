@@ -1,5 +1,6 @@
 var fs = require('fs'),
-	browserify = require('browserify');
+	browserify = require('browserify'),
+	envify = require('envify');
 
 var b = browserify();
 b.transform(envify);
