@@ -13,5 +13,5 @@
     "ethoinfo-framework": "git+ssh://git@github.com/ethoinformatics/ethoinfo-framework#master",
     "moment": "^2.10.3",
     "pouchdb-upsert": "^1.1.1"
-  },
+  }
 }
