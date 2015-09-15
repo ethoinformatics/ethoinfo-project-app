@@ -3,13 +3,13 @@ var fs = require('fs'),
 	envify = require('envify');
 
 var b = browserify();
+b.transform(envify);
 
 b.on('error', function(err){
 	console.error(err);
 });
 
 var bundle = b.bundle();
-b.transform(envify);
 
 b.add('./src/index.js');
 
