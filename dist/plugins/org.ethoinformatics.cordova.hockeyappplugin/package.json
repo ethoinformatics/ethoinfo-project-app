@@ -1,0 +1,36 @@
+{
+  "name": "org.ethoinformatics.cordova.hockeyappplugin",
+  "version": "0.1.0",
+  "description": "HockeyApp Plugin",
+  "cordova": {
+    "id": "org.ethoinformatics.cordova.hockeyappplugin",
+    "platforms": [
+      "android",
+      "ios"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ethoinformatics/cordova-plugin-hockeyapp.git"
+  },
+  "keywords": [
+    "hockeyapp",
+    "crash reporting",
+    "update",
+    "ecosystem:cordova",
+    "cordova-android",
+    "cordova-ios"
+  ],
+  "engines": [
+    {
+      "name": "cordova",
+      "version": ">4.0.0"
+    }
+  ],
+  "author": "wnyc",
+  "license": "--",
+  "bugs": {
+    "url": "https://github.com/ethoinformatics/cordova-plugin-hockeyapp/issues"
+  },
+  "homepage": "https://github.com/ethoinformatics/cordova-plugin-hockeyapp#readme"
+}
