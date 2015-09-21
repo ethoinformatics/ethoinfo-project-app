@@ -29,6 +29,14 @@
                         {
                             "xml": "<uses-permission android:name=\"android.permission.WRITE_EXTERNAL_STORAGE\" />",
                             "count": 1
+                        },
+                        {
+                            "xml": "<uses-permission android:name=\"android.permission.ACCESS_COARSE_LOCATION\" />",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<uses-permission android:name=\"android.permission.ACCESS_FINE_LOCATION\" />",
+                            "count": 1
                         }
                     ],
                     "/manifest/application": [
@@ -46,6 +54,9 @@
             "PACKAGE_NAME": "com.deliveryrelay.rider"
         },
         "org.ethoinformatics.cordova.hockeyappplugin": {
+            "PACKAGE_NAME": "com.deliveryrelay.rider"
+        },
+        "cordova-plugin-geolocation": {
             "PACKAGE_NAME": "com.deliveryrelay.rider"
         }
     },
