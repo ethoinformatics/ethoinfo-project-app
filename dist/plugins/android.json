@@ -15,6 +15,10 @@
                         {
                             "xml": "<feature name=\"HockeyAppPlugin\"><param name=\"android-package\" value=\"org.ethoinformatics.cordova.hockeyappplugin.HockeyAppPlugin\" /><param name=\"onload\" value=\"true\" /></feature>",
                             "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"Device\"><param name=\"android-package\" value=\"org.apache.cordova.device.Device\" /></feature>",
+                            "count": 1
                         }
                     ]
                 }
@@ -57,6 +61,9 @@
             "PACKAGE_NAME": "com.deliveryrelay.rider"
         },
         "cordova-plugin-geolocation": {
+            "PACKAGE_NAME": "com.deliveryrelay.rider"
+        },
+        "cordova-plugin-device": {
             "PACKAGE_NAME": "com.deliveryrelay.rider"
         }
     },

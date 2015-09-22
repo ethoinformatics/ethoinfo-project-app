@@ -20,26 +20,29 @@ function dateEqual(d1, d2){
 		d1.getDate() === d2.getDate();
 }
 
-var diaryLocationService = {
-	update: function(diary, locationData, settings){
-		if (!dateEqual(new Date(), diary.beginTime)) return;
-		if (settings.user !== diary.observerId) return;
+var createPointLocationService = function(entity, locationData){
+};
 
-		if (!diary.footprint){
-			diary.footprint = {
-				type: 'LineString',
-				coordinates: [ ]
-			};
-		}
+var diaryLocationService = function(diary, locationData, settings){
+	createPointLocationService(diary, locationData, settings);
 
-		diary.footprint.coordinates.push([
-				locationData.coords.longitude,
-				locationData.coords.latitude,
-				locationData.coords.altitude,
-			]);
+	if (!dateEqual(new Date(), diary.beginTime)) return false;
+	if (settings.user !== diary.observerId) return false;
 
-		console.dir(diary);
+	if (!diary.geo.footprint){
+		diary.footprint = {
+			type: 'LineString',
+			coordinates: [ ]
+		};
 	}
+
+	diary.footprint.coordinates.push([
+			locationData.coords.longitude,
+			locationData.coords.latitude,
+			locationData.coords.altitude,
+		]);
+
+	return true;
 };
 
 
@@ -80,7 +83,7 @@ diary.register('long-description', function(d){
 
 	return '<h1>'+h1+'</h1>';
 });
-diary.register('location-aware', diaryLocationService);
+diary.register('geo-aware', diaryLocationService);
 
 // ****************************************************************************
 // * CONTACT                                                                  *
@@ -103,8 +106,9 @@ contact.register('long-description', function(){
 });
 
 contact.register('short-description', function(d){
-	return d._id.split('-')[1];
+	return (d._id || d.id).split('-')[1];
 });
+contact.register('geo-aware', createPointLocationService);
 
 // ****************************************************************************
 // * OBSERVER ACTIVITY                                                        *
@@ -142,7 +146,7 @@ focalSample.register('long-description', function(d){
 });
 
 focalSample.register('short-description', function(){ return 'Focal' });
-
+focalSample.register('geo-aware', createPointLocationService);
 
 // var feedingBout = app.createDomain({name: 'feeding-bout', label: 'Feeding Bout'});
 // feedingBout.register('form-fields', require('./forms/placeholder.json'));
@@ -177,7 +181,7 @@ focalBehavior.register('long-description', function(d){
 		'<h3>' + h2 + '</h3>' + 
 		'<div style="font-style:italic;">' + div + '</div>';
 });
-
+focalBehavior.register('geo-aware', createPointLocationService);
 // ****************************************************************************
 // * SOCIAL FOCAL BEHAVIOR                                                           *
 // ****************************************************************************
@@ -198,7 +202,7 @@ socialFocalBehavior.register('long-description', function(d){
 		'<h3>' + h2 + '</h3>' + 
 		'<div style="font-style:italic;">' + div + '</div>';
 });
-
+socialFocalBehavior.register('geo-aware', createPointLocationService);
 
 // ****************************************************************************
 // * POOP SAMPLE                                                              *

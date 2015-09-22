@@ -21,26 +21,29 @@ function dateEqual(d1, d2){
 		d1.getDate() === d2.getDate();
 }
 
-var diaryLocationService = {
-	update: function(diary, locationData, settings){
-		if (!dateEqual(new Date(), diary.beginTime)) return;
-		if (settings.user !== diary.observerId) return;
+var createPointLocationService = function(entity, locationData){
+};
 
-		if (!diary.footprint){
-			diary.footprint = {
-				type: 'LineString',
-				coordinates: [ ]
-			};
-		}
+var diaryLocationService = function(diary, locationData, settings){
+	createPointLocationService(diary, locationData, settings);
 
-		diary.footprint.coordinates.push([
-				locationData.coords.longitude,
-				locationData.coords.latitude,
-				locationData.coords.altitude,
-			]);
+	if (!dateEqual(new Date(), diary.beginTime)) return false;
+	if (settings.user !== diary.observerId) return false;
 
-		console.dir(diary);
+	if (!diary.geo.footprint){
+		diary.footprint = {
+			type: 'LineString',
+			coordinates: [ ]
+		};
 	}
+
+	diary.footprint.coordinates.push([
+			locationData.coords.longitude,
+			locationData.coords.latitude,
+			locationData.coords.altitude,
+		]);
+
+	return true;
 };
 
 
@@ -81,7 +84,7 @@ diary.register('long-description', function(d){
 
 	return '<h1>'+h1+'</h1>';
 });
-diary.register('location-aware', diaryLocationService);
+diary.register('geo-aware', diaryLocationService);
 
 // ****************************************************************************
 // * CONTACT                                                                  *
@@ -104,8 +107,9 @@ contact.register('long-description', function(){
 });
 
 contact.register('short-description', function(d){
-	return d._id.split('-')[1];
+	return (d._id || d.id).split('-')[1];
 });
+contact.register('geo-aware', createPointLocationService);
 
 // ****************************************************************************
 // * OBSERVER ACTIVITY                                                        *
@@ -143,7 +147,7 @@ focalSample.register('long-description', function(d){
 });
 
 focalSample.register('short-description', function(){ return 'Focal' });
-
+focalSample.register('geo-aware', createPointLocationService);
 
 // var feedingBout = app.createDomain({name: 'feeding-bout', label: 'Feeding Bout'});
 // feedingBout.register('form-fields', require('./forms/placeholder.json'));
@@ -178,7 +182,7 @@ focalBehavior.register('long-description', function(d){
 		'<h3>' + h2 + '</h3>' + 
 		'<div style="font-style:italic;">' + div + '</div>';
 });
-
+focalBehavior.register('geo-aware', createPointLocationService);
 // ****************************************************************************
 // * SOCIAL FOCAL BEHAVIOR                                                           *
 // ****************************************************************************
@@ -199,7 +203,7 @@ socialFocalBehavior.register('long-description', function(d){
 		'<h3>' + h2 + '</h3>' + 
 		'<div style="font-style:italic;">' + div + '</div>';
 });
-
+socialFocalBehavior.register('geo-aware', createPointLocationService);
 
 // ****************************************************************************
 // * POOP SAMPLE                                                              *
@@ -87531,11 +87535,13 @@ function _getDeviceSettingsObject(){
 
 module.exports = function(){
 	function onLocationUpdate(data){
+		alert('got an update');
 
 		_getDeviceSettingsObject()
 			.then(function(settings){
-				var savePromises = _.chain(app.getDomains('location-aware'))
+				var savePromises = _.chain(app.getDomains('geo-aware'))
 					.map(function(domain){
+						debugger
 
 						var locationService = domain.getService('location-aware');
 						var entityManager = domain.getService('entity-manager');
@@ -87545,13 +87551,16 @@ module.exports = function(){
 							.then(function(entities){
 								return entities
 									.map(function(entity){
-										locationService.update(entity, data, settings);
+										var needSave = locationService(entity, data, settings);
+										if (!needSave) return false;
+
 										return entityManager.save(entity);
 									});
 							});
 						
 						return savePromises;
 					})
+					.filter(Boolean)
 					.flatten()
 					.value();
 
@@ -87742,7 +87751,7 @@ var template = require("/home/mchevett/code/ez-build/ethoinfo-framework/node_mod
 	geolocation = require('geolocation'),
 	$ = require('jquery');
 
-L.Icon.Default.imagePath = 'node_modules/leaflet/dist/images/';
+L.Icon.Default.imagePath = 'images';
 
 var GEOJSON_STYLE = {
 	//color: "#ff7800",
@@ -87760,13 +87769,13 @@ function _ensureProperSize(map){
 function _trackLocationOnMap(map){
 	var currentLocationMarker; 
 
-	function locationUpdate(data){
-		var latLng = L.latLng(data.coords.latitude, data.coords.longitude);
-		if (!currentLocationMarker){
-			currentLocationMarker = L.userMarker(latLng, {pulsing:true, accuracy:data.coords.accuracy || 1000, smallIcon:true});
-			currentLocationMarker.addTo(map);
-		}
-		currentLocationMarker.setLatLng(latLng);
+	function locationUpdate(err, data){
+		// var latLng = L.latLng(data.coords.latitude, data.coords.longitude);
+		// if (!currentLocationMarker){
+		// 	currentLocationMarker = L.userMarker(latLng, {pulsing:true, accuracy:data.coords.accuracy || 1000, smallIcon:true});
+		// 	currentLocationMarker.addTo(map);
+		// }
+		// currentLocationMarker.setLatLng(latLng);
 	}
 
 	function locationError(err){
@@ -87774,7 +87783,7 @@ function _trackLocationOnMap(map){
 	}
 
 
-	geolocation.watch(locationUpdate, locationError);
+	geolocation.watch(locationUpdate);
 }
 
 function _getBounds(){
@@ -87793,15 +87802,18 @@ function MapView(){
 		.css('height', window.innerHeight-78)
 		.css('width', window.innerWidth);
 
+
 	var map = L.map($map[0],{
 		//center: [-13.4484, 28.072],
 		//maxBounds: bounds,
 		center: [40.774484, -73.917],
 		zoom: 15,
 	});
+	self.getLeaflet = function(){return L;};
+	self.getLeafletMap = function(){return map;};
 
 	//var tiles = 'http://{s}.tile.cloudmade.com/BC9A493B41014CAABB98F0471D759707/997/256/{z}/{x}/{y}.png';
-	L.tileLayer('http://{s}.tile.thunderforest.com/outdoors/{z}/{x}/{y}.png', {
+	L.tileLayer('http://{s}.tile.openstreetmap.se/hydda/full/{z}/{x}/{y}.png', {
 	//L.tileLayer('lib/img/MapQuest/{z}/{x}/{y}.jpg', {
 	//L.tileLayer(tiles, {
 		maxZoom: 17,
@@ -87809,20 +87821,17 @@ function MapView(){
 		id: 'examples.map-i875mjb7'
 	}).addTo(map);
 
+
+
 	var geoJsonLayer;
-	self.showGeoJson = function(geojson, color){
+	self.showGeoJson = function(geojson){
 		_ensureProperSize(map);
 
-		if (!geojson) return;
-		if (geoJsonLayer)
-			map.removeLayer(map);
+		// if (!geojson) return;
+		// if (geoJsonLayer)
+		// 	map.removeLayer(map);
 
 
-		geoJsonLayer = L.geoJson(geojson, {style: GEOJSON_STYLE}).addTo(map);
-
-		setTimeout(function(){
-			map.fitBounds(geoJsonLayer.getBounds());
-		},500);
 	};
 
 	self.show = _ensureProperSize.bind(null, map);
@@ -89218,7 +89227,7 @@ var DEFAULTS = {
 		},
 		getColor: function(d){
 			var domain = app.getDomain(d.domainName);
-			return domain.getService('color');
+			return domain.getService('color') || 'purple';
 		},
 		getKey: function(d){
 			return d.id || d._id;
@@ -89445,6 +89454,7 @@ module.exports = CodeManager;
 require('./index.less');
 
 var Modal = require('modal'),
+	geolocation = require('geolocation'),
 	_ = require('lodash'),
 	q = require('q'),
 	$ = require('jquery'),
@@ -89494,28 +89504,43 @@ function CreateNewDialog(opt){
 	function _handleSave(keepOpen){
 		var now = Date.now();
 
-		var data = {
+		var entity = {
 				domainName: domain.name,
 				beginTime: now,
 				endTime: keepOpen ? null : now,
+				geo: {},
 			};
 
-		data = _.extend(data, form.getData());
+		entity = _.extend(entity, form.getData());
 
 		var activityService = domain.getService('activity');
 		if (activityService){
-			activityService.start(data);
+			activityService.start(entity);
 		}
 
 		var eventService = domain.getService('event');
 		if (eventService){
-			eventService.create(data);
+			eventService.create(entity);
 		}
 
-		return deviceSettings()
-			.then(function(settings){
-				data.observerId = settings.user;
-				return data;
+		return q.all([
+				deviceSettings(),
+				geolocation.once(),
+			])
+			.spread(function(settings, locationData){
+				entity.observerId = settings.user;
+				entity.geo.create = {
+					type: 'Point',
+					coordinates: [
+						locationData.coords.longitude,
+						locationData.coords.latitude,
+						locationData.coords.altitude,
+					],
+					properties: {
+						timestamp: Date.now(),
+					},
+				};
+				return entity;
 			});
 	}
 
@@ -89796,6 +89821,7 @@ require('./index.less');
 
 var $ = require('jquery'),
 	tmpl = require("/home/mchevett/code/ez-build/ethoinfo-framework/node_modules/vashify/.temp/6_index.vash.js"),
+	velocity = require('velocity-animate'),
 	geolocation = require('geolocation'),
 	Modal = require('modal');
 
@@ -89805,13 +89831,23 @@ function GeolocationViewer(){
 		$pre = $element.find('pre'),
 		$status = $element.find('.status');
 
+		function _resetColor(){
+			setTimeout(function(){
+				velocity($status, {'backgroundColor': '#FFFFFF', color:'#000000'}, {
+					duration: 600, 
+				});
+			}, 1400);
+		}
+
 	var watch = function(err, result){
+		_resetColor();
 		if (err){
 			console.log('geo error');
 			console.dir(err);
+
 			$status.text('Failure!')
-				.removeClass('success')
-				.addClass('failure');
+				.css('color', 'white')
+				.css('background-color', 'red');
 
 			$pre.empty()
 				.text(JSON.stringify(err, '\t', 2));
@@ -89819,22 +89855,20 @@ function GeolocationViewer(){
 			return;
 		}
 
-
-		console.dir('good');
-		console.dir(result);
 		$status.text('Success!')
-			.addClass('success')
-			.removeClass('failure');
+			.css('color', 'white')
+			.css('background-color', 'green');
 
 		$pre.empty()
 			.text(JSON.stringify(result, '\t', 2));
+
 	};
 	
 
 	geolocation.watch(watch);
 
 	var modal = new Modal({
-		title: 'Coded field manager',
+		title: 'Geolocation viewer',
 		$content: $element,
 		hideOkay: true,
 	});
@@ -89857,8 +89891,8 @@ function GeolocationViewer(){
 
 module.exports = GeolocationViewer;
 
-},{"./index.less":193,"/home/mchevett/code/ez-build/ethoinfo-framework/node_modules/vashify/.temp/6_index.vash.js":32,"geolocation":180,"jquery":65,"modal":166}],193:[function(require,module,exports){
-(function() { var head = document.getElementsByTagName('head')[0]; style = document.createElement('style'); style.type = 'text/css';var css = "#geolocation-viewer .success{color:green}#geolocation-viewer .failure{color:#8b0000}";if (style.styleSheet){ style.styleSheet.cssText = css; } else { style.appendChild(document.createTextNode(css)); } head.appendChild(style);}())
+},{"./index.less":193,"/home/mchevett/code/ez-build/ethoinfo-framework/node_modules/vashify/.temp/6_index.vash.js":32,"geolocation":180,"jquery":65,"modal":166,"velocity-animate":157}],193:[function(require,module,exports){
+(function() { var head = document.getElementsByTagName('head')[0]; style = document.createElement('style'); style.type = 'text/css';var css = "#geolocation-viewer{padding:8px}#geolocation-viewer .success{color:green}#geolocation-viewer .failure{color:#8b0000}";if (style.styleSheet){ style.styleSheet.cssText = css; } else { style.appendChild(document.createTextNode(css)); } head.appendChild(style);}())
 },{}],194:[function(require,module,exports){
 require('./index.less');
 
@@ -89952,8 +89986,11 @@ function ListPage(){
 		var domain = app.getDomain(domainName),
 			entityManager = domain.getService('entity-manager');
 
+		console.log('opening: ' + domainName + ' ' + _id);
+
 		entityManager.byId(_id)
 			.then(function(entity){
+				if (!entity) return window.alert('unable to find entity');
 				var m = new ViewExistingDialog({ entity: entity, });
 				m.show();
 			})
@@ -90292,8 +90329,13 @@ function ViewExistingDialog(opts){
 	_changeEntity(opts.entity || opts.rootEntity);
 
 	function _getColor(entity){
-		var color = app.getDomain(entity.domainName).getService('color');
-		return color;
+		var domain = app.getDomain(entity.domainName),
+			service;
+
+		if (domain)
+			service = domain.getService('color');
+
+		return service || 'pink';
 	}
 
 	crumbs = _.chain(crumbs)
@@ -90316,8 +90358,13 @@ function ViewExistingDialog(opts){
 	function _changeEntity(entityToLoad){
 		if (entityToLoad == entity) return false;
 
+		if (!entityToLoad.domainName) return window.alert('missing domainName property');
+		var myDomain = app.getDomain(entityToLoad.domainName);
+		if (!myDomain) return window.alert('cannot find domain for ' + entityToLoad.domainName);
+
 		entity = entityToLoad;
-		domain = app.getDomain(entity.domainName);
+		domain = myDomain;
+
 		descManager = descManagerCache[entity.domainName] = descManagerCache[entity.domainName] || domain.getService('description-manager');
 
 		myDomains = domain.getChildren();
@@ -90408,6 +90455,9 @@ function ViewExistingDialog(opts){
 	function descendContext(newEntity){
 		_changeEntity(newEntity);
 
+		tabMap.descend(newEntity);
+
+		
 		breadcrumb.add({
 			context: newEntity, 
 			label: _getLabel(newEntity), 
@@ -90421,8 +90471,8 @@ function ViewExistingDialog(opts){
 			entity: entity,
 			domain: domain,
 			descManager: descManager,
-			getChildren: function(){
-				return _.chain(entity)
+			getChildren: function(myEntity){
+				return _.chain(myEntity || entity)
 					.values()
 					.filter(_.isArray)
 					.flatten()
@@ -90846,6 +90896,7 @@ module.exports = EditTab;
 (function() { var head = document.getElementsByTagName('head')[0]; style = document.createElement('style'); style.type = 'text/css';var css = ".section-header{margin-bottom:-21px;text-transform:capitalize}.accordian .header{margin-bottom:1px;text-transform:capitalize}.accordian .header .button-small.header-button{min-width:28px;min-height:20px}.accordian .item-container{margin-top:2px;padding:0;border:0}.accordian .item-container li{border-top:1px solid #ddd}.accordian .item-container .form-builder .list-inset{margin-top:0}.accordian .item-container .etho-inline-header{margin-bottom:1px;margin-top:0}.accordian .item-container .etho-inline-header i.ion{min-width:12px}.accordian .item-container .etho-inline-header li{padding-left:12px}.accordian .item-container:first-child .etho-inline-header{margin-top:20px}";if (style.styleSheet){ style.styleSheet.cssText = css; } else { style.appendChild(document.createTextNode(css)); } head.appendChild(style);}())
 },{}],205:[function(require,module,exports){
 var $ = require('jquery'),
+	_ = require('lodash'),
 	MapView = require('map');
 
 
@@ -90855,18 +90906,65 @@ function MapTab(){
 	var self = this,
 		_context;
 	var map = new MapView();
+	var L = map.getLeaflet();
+
 	self.label = 'Map';
 
 	self.$element = $(tmpl({}));
 	self.$element.append(map.$element);
 
+	var lmap = map.getLeafletMap();
+
 	self.setContext = function(ctx){
 		_context = ctx;
 	};
 
+	var geojsonMarkerOptions = {
+		radius: 8,
+		fillColor: "#ff7800",
+		color: "#000",
+		weight: 1,
+		opacity: 1,
+		fillOpacity: 0.8
+	};
+
+	function _renderChildren(entity, depth){
+		var children = _context.getChildren(entity);
+
+		var arr = [];
+		_.chain(children)
+			.toArray()
+			.value()
+			.forEach(function(child){
+				_.values(child.geo)
+					.forEach(function(geojson){
+						var geoJsonLayer = L.geoJson(geojson, {
+							//style: GEOJSON_STYLE,
+							pointToLayer: function (feature, latlng) {
+								var options = _.extend({draggable: true}, geojsonMarkerOptions);
+								debugger
+								var marker = L.circleMarker(latlng, options);
+								marker.bindPopup('this is a test');
+								return marker;
+							},
+						});
+
+						arr.push(geoJsonLayer);
+					});
+			});
+
+		var group = L.layerGroup(arr);
+		group.addTo(lmap);
+	}
+
+	self.descend = function(){
+	};
 	self.show = function(){
 		self.$element.show();
-		map.showGeoJson(_context.entity.footprint);
+
+		//var children = _context.getChildren();
+		_renderChildren(_context.entity, 0);
+		map.show();
 	};
 }
 
@@ -90874,7 +90972,7 @@ module.exports = MapTab;
 
 
 
-},{"/home/mchevett/code/ez-build/ethoinfo-framework/node_modules/vashify/.temp/27_index.vash.js":23,"jquery":65,"map":163}],206:[function(require,module,exports){
+},{"/home/mchevett/code/ez-build/ethoinfo-framework/node_modules/vashify/.temp/27_index.vash.js":23,"jquery":65,"lodash":68,"map":163}],206:[function(require,module,exports){
 var insertAtCaret = require('insert-at-caret'),
 	tmpl = require("/home/mchevett/code/ez-build/ethoinfo-framework/node_modules/vashify/.temp/28_index.vash.js"),
 	$ = require('jquery'),
@@ -90933,7 +91031,7 @@ function TimelineTab(){
 
 	var timeline = createTimeline({
 		height: (window.innerHeight-175),
-		getColor: function(){return 'red';},
+		//getColor: function(){return 'red';},
 	});
 
 	timeline.on('activity-click', function(d){
