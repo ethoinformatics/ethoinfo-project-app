@@ -1,5 +1,6 @@
 (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
 require('./update-check');
+require('./background-mode');
 var app = require('ethoinfo-framework');
 var moment = require('moment');
 
@@ -279,7 +280,7 @@ focalSample.register('collections', poopSample);
 
 app.run();
 
-},{"./update-check":209,"ethoinfo-framework":175,"moment":208}],2:[function(require,module,exports){
+},{"./background-mode":209,"./update-check":210,"ethoinfo-framework":175,"moment":208}],2:[function(require,module,exports){
 var vash = require('/home/mchevett/code/ez-build/d3-timeline/node_modules/vashify/node_modules/vash/build/vash-runtime-all.min.js');
 module.exports = vash.link(function anonymous(model, html, __vopts, vash) {
     try {
@@ -87525,7 +87526,6 @@ function _getDeviceSettingsObject(){
 
 module.exports = function(){
 	function onLocationUpdate(err, data){
-		alert('got an update');
 		if (err){
 			console.log('geolocation error');
 			return console.error(err);
@@ -89973,14 +89973,16 @@ function ListPage(){
 	};
 
 	self.$element.on('click', '.js-item', function(){
+		console.log('got a item click');
+
 		var $this = $(this),
 			_id = $this.data('id').toString(),
 			domainName = $this.data('domain');
 
+		console.log('opening: ' + domainName + ' ' + _id);
 		var domain = app.getDomain(domainName),
 			entityManager = domain.getService('entity-manager');
 
-		console.log('opening: ' + domainName + ' ' + _id);
 
 		entityManager.byId(_id)
 			.then(function(entity){
@@ -94268,6 +94270,15 @@ module.exports = TimelineTab;
 
 }));
 },{}],209:[function(require,module,exports){
+function onDeviceReady(){
+	cordova.plugins.backgroundMode.setDefaults({ text:'Ethoinformatics is still running'});
+	cordova.plugins.backgroundMode.enable();
+
+}
+
+window.document.addEventListener("deviceready", onDeviceReady, false);
+
+},{}],210:[function(require,module,exports){
 (function (process){
 function onDeviceReady(){
 	window.hockeyApp.configure({
