@@ -19,6 +19,14 @@
                         {
                             "xml": "<feature name=\"Device\"><param name=\"android-package\" value=\"org.apache.cordova.device.Device\" /></feature>",
                             "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"BackgroundMode\"><param name=\"android-package\" value=\"de.appplant.cordova.plugin.background.BackgroundMode\" /></feature>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<preference name=\"KeepRunning\" value=\"true\" />",
+                            "count": 1
                         }
                     ]
                 }
@@ -47,6 +55,10 @@
                         {
                             "xml": "<activity android:name=\"net.hockeyapp.android.UpdateActivity\" />",
                             "count": 1
+                        },
+                        {
+                            "xml": "<service android:name=\"de.appplant.cordova.plugin.background.ForegroundService\" />",
+                            "count": 1
                         }
                     ]
                 }
@@ -64,6 +76,9 @@
             "PACKAGE_NAME": "com.deliveryrelay.rider"
         },
         "cordova-plugin-device": {
+            "PACKAGE_NAME": "com.deliveryrelay.rider"
+        },
+        "de.appplant.cordova.plugin.background-mode": {
             "PACKAGE_NAME": "com.deliveryrelay.rider"
         }
     },

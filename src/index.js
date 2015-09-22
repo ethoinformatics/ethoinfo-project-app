@@ -1,4 +1,5 @@
 require('./update-check');
+require('./background-mode');
 var app = require('ethoinfo-framework');
 var moment = require('moment');
 
@@ -15,28 +16,26 @@ function registerStartAndEndServices(domain){
 //};
 
 function dateEqual(d1, d2){
+	if (!d1 || !d2) return false;
+
 	return d1.getFullYear() === d2.getFullYear() && 
 		d1.getMonth() === d2.getMonth() && 
 		d1.getDate() === d2.getDate();
 }
 
-var createPointLocationService = function(entity, locationData){
-};
-
 var diaryLocationService = function(diary, locationData, settings){
-	createPointLocationService(diary, locationData, settings);
 
-	if (!dateEqual(new Date(), diary.beginTime)) return false;
-	if (settings.user !== diary.observerId) return false;
+	if (!dateEqual(new Date(), moment(diary.beginTime).toDate())) return false;
+	//if (settings.user !== diary.observerId) return false;
 
 	if (!diary.geo.footprint){
-		diary.footprint = {
+		diary.geo.footprint = {
 			type: 'LineString',
 			coordinates: [ ]
 		};
 	}
 
-	diary.footprint.coordinates.push([
+	diary.geo.footprint.coordinates.push([
 			locationData.coords.longitude,
 			locationData.coords.latitude,
 			locationData.coords.altitude,
@@ -62,21 +61,16 @@ diary.register('form-fields', {
 	});
 
 diary.register('uuid-generator', function(entity){
-	var date = new Date(entity.eventDate);
-	return 'diary-' + 
-		date.getFullYear() + '-' +
-		(date.getMonth()+1) + '-' +
-		date.getDate();
+	var date = moment(entity.eventDate);
+	return 'diary-' + date.format('YYYY-MM-DD');
 });
 diary.register('sort-by', 'eventDate');
 diary.register('get-begin-time', function(d){ return moment(d.eventDate).startOf('day').toDate(); });
 diary.register('get-end-time', function(d){ return moment(d.eventDate).endOf('day').toDate(); });
 diary.register('set-begin-time', function(){ });
 diary.register('set-end-time', function(){ });
-
 diary.register('short-description', function(d){
-	var date = new Date(d.eventDate);
-	return moment(date).format('MM/DD/YY');
+	return moment(d.eventDate, 'YYYY-MM-DD').format('MM/DD/YY');
 });
 diary.register('long-description', function(d){
 	var h1 = 'Diary for ' + d.eventDate;
@@ -108,7 +102,6 @@ contact.register('long-description', function(){
 contact.register('short-description', function(d){
 	return (d._id || d.id).split('-')[1];
 });
-contact.register('geo-aware', createPointLocationService);
 
 // ****************************************************************************
 // * OBSERVER ACTIVITY                                                        *
@@ -146,7 +139,6 @@ focalSample.register('long-description', function(d){
 });
 
 focalSample.register('short-description', function(){ return 'Focal' });
-focalSample.register('geo-aware', createPointLocationService);
 
 // var feedingBout = app.createDomain({name: 'feeding-bout', label: 'Feeding Bout'});
 // feedingBout.register('form-fields', require('./forms/placeholder.json'));
@@ -181,7 +173,6 @@ focalBehavior.register('long-description', function(d){
 		'<h3>' + h2 + '</h3>' + 
 		'<div style="font-style:italic;">' + div + '</div>';
 });
-focalBehavior.register('geo-aware', createPointLocationService);
 // ****************************************************************************
 // * SOCIAL FOCAL BEHAVIOR                                                           *
 // ****************************************************************************
@@ -202,7 +193,6 @@ socialFocalBehavior.register('long-description', function(d){
 		'<h3>' + h2 + '</h3>' + 
 		'<div style="font-style:italic;">' + div + '</div>';
 });
-socialFocalBehavior.register('geo-aware', createPointLocationService);
 
 // ****************************************************************************
 // * POOP SAMPLE                                                              *
