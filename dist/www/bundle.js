@@ -280,7 +280,7 @@ focalSample.register('collections', poopSample);
 
 app.run();
 
-},{"./background-mode":209,"./update-check":210,"ethoinfo-framework":175,"moment":208}],2:[function(require,module,exports){
+},{"./background-mode":208,"./update-check":209,"ethoinfo-framework":174,"moment":207}],2:[function(require,module,exports){
 var vash = require('/home/mchevett/code/ez-build/d3-timeline/node_modules/vashify/node_modules/vash/build/vash-runtime-all.min.js');
 module.exports = vash.link(function anonymous(model, html, __vopts, vash) {
     try {
@@ -4822,6 +4822,135 @@ module.exports = vash.link(function anonymous(model, html, __vopts, vash) {
         html.options = __vopts;
         model = model || {};
         html.vl = 1, html.vc = 0;
+        __vbuffer.push('<div class="pane list-page">');
+        html.vl = 1, html.vc = 28;
+        __vbuffer.push('\n');
+        html.vl = 2, html.vc = 0;
+        __vbuffer.push('\t');
+        html.vl = 2, html.vc = 1;
+        __vbuffer.push('<div class="scroll-wrapper">');
+        html.vl = 2, html.vc = 29;
+        __vbuffer.push('\n');
+        html.vl = 3, html.vc = 0;
+        __vbuffer.push('\t');
+        html.vl = 3, html.vc = 1;
+        __vbuffer.push('\t');
+        html.vl = 3, html.vc = 2;
+        __vbuffer.push('<div class="scroller">');
+        html.vl = 3, html.vc = 24;
+        __vbuffer.push('\n');
+        html.vl = 4, html.vc = 0;
+        __vbuffer.push('\t');
+        html.vl = 4, html.vc = 1;
+        __vbuffer.push('\t');
+        html.vl = 4, html.vc = 2;
+        __vbuffer.push('\t');
+        html.vl = 4, html.vc = 3;
+        __vbuffer.push('<ul class="list">');
+        html.vl = 4, html.vc = 20;
+        __vbuffer.push('\n');
+        html.vl = 5, html.vc = 0;
+        __vbuffer.push('\t');
+        html.vl = 5, html.vc = 1;
+        __vbuffer.push('\t');
+        html.vl = 5, html.vc = 2;
+        __vbuffer.push('\t');
+        html.vl = 5, html.vc = 3;
+        __vbuffer.push('</ul>');
+        html.vl = 5, html.vc = 8;
+        __vbuffer.push('\n');
+        html.vl = 6, html.vc = 0;
+        __vbuffer.push('\t');
+        html.vl = 6, html.vc = 1;
+        __vbuffer.push('\t');
+        html.vl = 6, html.vc = 2;
+        __vbuffer.push('</div>');
+        html.vl = 6, html.vc = 8;
+        __vbuffer.push('\n');
+        html.vl = 7, html.vc = 0;
+        __vbuffer.push('\t');
+        html.vl = 7, html.vc = 1;
+        __vbuffer.push('</div>');
+        html.vl = 7, html.vc = 7;
+        __vbuffer.push('\n');
+        html.vl = 8, html.vc = 0;
+        __vbuffer.push('</div>');
+        html.vl = 8, html.vc = 6;
+        __vbuffer.push('\n');
+        __vopts && __vopts.onRenderEnd && __vopts.onRenderEnd(null, html);
+        return __vopts && __vopts.asContext ? html : html.toString();
+    } catch (e) {
+        html.reportError(e, html.vl, html.vc, '<div class="pane list-page">!LB!\t<div class="scroll-wrapper">!LB!\t\t<div class="scroller">!LB!\t\t\t<ul class="list">!LB!\t\t\t</ul>!LB!\t\t</div>!LB!\t</div>!LB!</div>!LB!');
+    }
+}, {
+    'simple': false,
+    'modelName': 'model',
+    'helpersName': 'html'
+});
+},{"/home/mchevett/code/ez-build/ethoinfo-framework/node_modules/vashify/node_modules/vash/build/vash-runtime-all.min.js":36}],34:[function(require,module,exports){
+var vash = require('/home/mchevett/code/ez-build/ethoinfo-framework/node_modules/vashify/node_modules/vash/build/vash-runtime-all.min.js');
+module.exports = vash.link(function anonymous(model, html, __vopts, vash) {
+    try {
+        var __vbuffer = html.buffer;
+        html.options = __vopts;
+        model = model || {};
+        html.vl = 1, html.vc = 0;
+        __vbuffer.push('<li class="item js-item" data-id="');
+        html.vl = 1, html.vc = 35;
+        __vbuffer.push(html.escape(model.id).toHtmlString());
+        html.vl = 1, html.vc = 41;
+        html.vl = 1, html.vc = 43;
+        __vbuffer.push('"');
+        html.vl = 1, html.vc = 44;
+        __vbuffer.push(' ');
+        html.vl = 1, html.vc = 45;
+        __vbuffer.push('data');
+        html.vl = 1, html.vc = 49;
+        __vbuffer.push('-');
+        html.vl = 1, html.vc = 50;
+        __vbuffer.push('domain');
+        html.vl = 1, html.vc = 56;
+        __vbuffer.push('=');
+        html.vl = 1, html.vc = 57;
+        __vbuffer.push('"');
+        html.vl = 1, html.vc = 59;
+        __vbuffer.push(html.escape(model.domainName).toHtmlString());
+        html.vl = 1, html.vc = 65;
+        html.vl = 1, html.vc = 75;
+        __vbuffer.push('"');
+        html.vl = 1, html.vc = 76;
+        __vbuffer.push('>');
+        html.vl = 1, html.vc = 77;
+        __vbuffer.push('\n');
+        html.vl = 2, html.vc = 0;
+        __vbuffer.push('\t');
+        html.vl = 2, html.vc = 2;
+        __vbuffer.push(html.escape(model.label).toHtmlString());
+        html.vl = 2, html.vc = 8;
+        html.vl = 2, html.vc = 13;
+        __vbuffer.push('\n');
+        html.vl = 3, html.vc = 0;
+        __vbuffer.push('</li>');
+        html.vl = 3, html.vc = 5;
+        __vbuffer.push('\n');
+        __vopts && __vopts.onRenderEnd && __vopts.onRenderEnd(null, html);
+        return __vopts && __vopts.asContext ? html : html.toString();
+    } catch (e) {
+        html.reportError(e, html.vl, html.vc, '<li class="item js-item" data-id="@model.id" data-domain="@model.domainName">!LB!\t@model.label!LB!</li>!LB!');
+    }
+}, {
+    'simple': false,
+    'modelName': 'model',
+    'helpersName': 'html'
+});
+},{"/home/mchevett/code/ez-build/ethoinfo-framework/node_modules/vashify/node_modules/vash/build/vash-runtime-all.min.js":36}],35:[function(require,module,exports){
+var vash = require('/home/mchevett/code/ez-build/ethoinfo-framework/node_modules/vashify/node_modules/vash/build/vash-runtime-all.min.js');
+module.exports = vash.link(function anonymous(model, html, __vopts, vash) {
+    try {
+        var __vbuffer = html.buffer;
+        html.options = __vopts;
+        model = model || {};
+        html.vl = 1, html.vc = 0;
         __vbuffer.push('<div id="left-menu" class="js-side-menu">');
         html.vl = 1, html.vc = 41;
         __vbuffer.push('\n');
@@ -5245,135 +5374,6 @@ module.exports = vash.link(function anonymous(model, html, __vopts, vash) {
         return __vopts && __vopts.asContext ? html : html.toString();
     } catch (e) {
         html.reportError(e, html.vl, html.vc, '<div id="left-menu" class="js-side-menu">!LB!\t<div class="bar bar-header bar-stable">!LB!\t  <h1 id="left-title" class="title"></h1>!LB!\t</div>!LB!\t<ul class="list stable">!LB!\t\t<ul class="list">!LB!\t\t\t<li class="js-settings item item-icon-left">!LB!\t\t\t\t<i class="icon ion-gear-b"></i>!LB!\t\t\t\tSettings!LB!\t\t\t\t<!-- <span class="item-note">Settings</span> -->!LB!\t\t\t</li>!LB!\t\t\t<li class="js-upload item item-icon-left">!LB!\t\t\t\t<i class="icon ion-code-working"></i>!LB!\t\t\t\tData sync!LB!\t\t\t\t<!-- <span class="item-note">Sync to a server</span> -->!LB!\t\t\t</li>!LB!\t\t\t<li class="js-code-manager item item-icon-left">!LB!\t\t\t\t<i class="icon ion-search"></i>!LB!\t\t\t\tCoded fields!LB!\t\t\t\t<!-- <span class="item-note">Manage coded fields</span> -->!LB!\t\t\t</li>!LB!\t\t\t<li class="js-geolocation-viewer item item-icon-left">!LB!\t\t\t\t<i class="icon ion-pinpoint"></i>!LB!\t\t\t\tGeolocation viewer!LB!\t\t\t\t<!-- <span class="item-note">Manage coded fields</span> -->!LB!\t\t\t</li>!LB!\t\t</ul>!LB!\t</ul>!LB!</div>!LB!');
-    }
-}, {
-    'simple': false,
-    'modelName': 'model',
-    'helpersName': 'html'
-});
-},{"/home/mchevett/code/ez-build/ethoinfo-framework/node_modules/vashify/node_modules/vash/build/vash-runtime-all.min.js":36}],34:[function(require,module,exports){
-var vash = require('/home/mchevett/code/ez-build/ethoinfo-framework/node_modules/vashify/node_modules/vash/build/vash-runtime-all.min.js');
-module.exports = vash.link(function anonymous(model, html, __vopts, vash) {
-    try {
-        var __vbuffer = html.buffer;
-        html.options = __vopts;
-        model = model || {};
-        html.vl = 1, html.vc = 0;
-        __vbuffer.push('<div class="pane list-page">');
-        html.vl = 1, html.vc = 28;
-        __vbuffer.push('\n');
-        html.vl = 2, html.vc = 0;
-        __vbuffer.push('\t');
-        html.vl = 2, html.vc = 1;
-        __vbuffer.push('<div class="scroll-wrapper">');
-        html.vl = 2, html.vc = 29;
-        __vbuffer.push('\n');
-        html.vl = 3, html.vc = 0;
-        __vbuffer.push('\t');
-        html.vl = 3, html.vc = 1;
-        __vbuffer.push('\t');
-        html.vl = 3, html.vc = 2;
-        __vbuffer.push('<div class="scroller">');
-        html.vl = 3, html.vc = 24;
-        __vbuffer.push('\n');
-        html.vl = 4, html.vc = 0;
-        __vbuffer.push('\t');
-        html.vl = 4, html.vc = 1;
-        __vbuffer.push('\t');
-        html.vl = 4, html.vc = 2;
-        __vbuffer.push('\t');
-        html.vl = 4, html.vc = 3;
-        __vbuffer.push('<ul class="list">');
-        html.vl = 4, html.vc = 20;
-        __vbuffer.push('\n');
-        html.vl = 5, html.vc = 0;
-        __vbuffer.push('\t');
-        html.vl = 5, html.vc = 1;
-        __vbuffer.push('\t');
-        html.vl = 5, html.vc = 2;
-        __vbuffer.push('\t');
-        html.vl = 5, html.vc = 3;
-        __vbuffer.push('</ul>');
-        html.vl = 5, html.vc = 8;
-        __vbuffer.push('\n');
-        html.vl = 6, html.vc = 0;
-        __vbuffer.push('\t');
-        html.vl = 6, html.vc = 1;
-        __vbuffer.push('\t');
-        html.vl = 6, html.vc = 2;
-        __vbuffer.push('</div>');
-        html.vl = 6, html.vc = 8;
-        __vbuffer.push('\n');
-        html.vl = 7, html.vc = 0;
-        __vbuffer.push('\t');
-        html.vl = 7, html.vc = 1;
-        __vbuffer.push('</div>');
-        html.vl = 7, html.vc = 7;
-        __vbuffer.push('\n');
-        html.vl = 8, html.vc = 0;
-        __vbuffer.push('</div>');
-        html.vl = 8, html.vc = 6;
-        __vbuffer.push('\n');
-        __vopts && __vopts.onRenderEnd && __vopts.onRenderEnd(null, html);
-        return __vopts && __vopts.asContext ? html : html.toString();
-    } catch (e) {
-        html.reportError(e, html.vl, html.vc, '<div class="pane list-page">!LB!\t<div class="scroll-wrapper">!LB!\t\t<div class="scroller">!LB!\t\t\t<ul class="list">!LB!\t\t\t</ul>!LB!\t\t</div>!LB!\t</div>!LB!</div>!LB!');
-    }
-}, {
-    'simple': false,
-    'modelName': 'model',
-    'helpersName': 'html'
-});
-},{"/home/mchevett/code/ez-build/ethoinfo-framework/node_modules/vashify/node_modules/vash/build/vash-runtime-all.min.js":36}],35:[function(require,module,exports){
-var vash = require('/home/mchevett/code/ez-build/ethoinfo-framework/node_modules/vashify/node_modules/vash/build/vash-runtime-all.min.js');
-module.exports = vash.link(function anonymous(model, html, __vopts, vash) {
-    try {
-        var __vbuffer = html.buffer;
-        html.options = __vopts;
-        model = model || {};
-        html.vl = 1, html.vc = 0;
-        __vbuffer.push('<li class="item js-item" data-id="');
-        html.vl = 1, html.vc = 35;
-        __vbuffer.push(html.escape(model.id).toHtmlString());
-        html.vl = 1, html.vc = 41;
-        html.vl = 1, html.vc = 43;
-        __vbuffer.push('"');
-        html.vl = 1, html.vc = 44;
-        __vbuffer.push(' ');
-        html.vl = 1, html.vc = 45;
-        __vbuffer.push('data');
-        html.vl = 1, html.vc = 49;
-        __vbuffer.push('-');
-        html.vl = 1, html.vc = 50;
-        __vbuffer.push('domain');
-        html.vl = 1, html.vc = 56;
-        __vbuffer.push('=');
-        html.vl = 1, html.vc = 57;
-        __vbuffer.push('"');
-        html.vl = 1, html.vc = 59;
-        __vbuffer.push(html.escape(model.domainName).toHtmlString());
-        html.vl = 1, html.vc = 65;
-        html.vl = 1, html.vc = 75;
-        __vbuffer.push('"');
-        html.vl = 1, html.vc = 76;
-        __vbuffer.push('>');
-        html.vl = 1, html.vc = 77;
-        __vbuffer.push('\n');
-        html.vl = 2, html.vc = 0;
-        __vbuffer.push('\t');
-        html.vl = 2, html.vc = 2;
-        __vbuffer.push(html.escape(model.label).toHtmlString());
-        html.vl = 2, html.vc = 8;
-        html.vl = 2, html.vc = 13;
-        __vbuffer.push('\n');
-        html.vl = 3, html.vc = 0;
-        __vbuffer.push('</li>');
-        html.vl = 3, html.vc = 5;
-        __vbuffer.push('\n');
-        __vopts && __vopts.onRenderEnd && __vopts.onRenderEnd(null, html);
-        return __vopts && __vopts.asContext ? html : html.toString();
-    } catch (e) {
-        html.reportError(e, html.vl, html.vc, '<li class="item js-item" data-id="@model.id" data-domain="@model.domainName">!LB!\t@model.label!LB!</li>!LB!');
     }
 }, {
     'simple': false,
@@ -87448,83 +87448,6 @@ return function (global, window, document, undefined) {
 Velocity, however, doesn't make this distinction. Thus, converting to or from the % unit with these subproperties
 will produce an inaccurate conversion value. The same issue exists with the cx/cy attributes of SVG circles and ellipses. */
 },{}],158:[function(require,module,exports){
-var geolocation = require('geolocation'),
-	q = require('q'),
-	app = require('app')(),
-	_ = require('lodash');
-
-function _getDeviceSettingsObject(){
-	var settingsDomain = app.getDomain('_etho-settings');
-	var entityManager = settingsDomain.getService('entity-manager');
-
-	return entityManager.getAll()
-		.then(function(entities){
-			return {};
-			var mySettings = _.find(entities, function(entity){
-				return entity.deviceId == device.uuid;
-			});
-
-			if (!mySettings) return { deviceId: device.uuid };
-
-			return mySettings;
-		});
-}
-
-module.exports = function(){
-	function onLocationUpdate(err, data){
-		if (err){
-			console.log('geolocation error');
-			return console.error(err);
-		}
-
-		_getDeviceSettingsObject()
-			.then(function(settings){
-				var savePromises = _.chain(app.getDomains('geo-aware'))
-					.map(function(domain){
-						debugger
-
-						var locationService = domain.getService('geo-aware');
-						var entityManager = domain.getService('entity-manager');
-
-						// todo: figure out how to query for this in a more sane way
-						var savePromises = entityManager.getAll()
-							.then(function(entities){
-								return entities
-									.map(function(entity){
-										var needSave = locationService(entity, data, settings);
-										if (!needSave) return false;
-
-										return entityManager.save(entity);
-									});
-							});
-						
-						return savePromises;
-					})
-					.filter(Boolean)
-					.flatten()
-					.value();
-
-				q.all(savePromises)
-					.then(function(results){
-						console.log('location update success.');
-						console.dir(results);
-					})
-					.catch(function(err){
-						console.log('location update fail.');
-						console.error(err);
-					});
-			});
-	}
-
-	function onLocationError(err){
-		console.log('location retrieve fail.');
-		console.error(err);
-	}
-
-	geolocation.watch(onLocationUpdate, onLocationError);
-};
-
-},{"app":159,"geolocation":180,"lodash":68,"q":156}],159:[function(require,module,exports){
 var myApp;
 
 module.exports = function(app){
@@ -87535,7 +87458,7 @@ module.exports = function(app){
 };
 
 
-},{}],160:[function(require,module,exports){
+},{}],159:[function(require,module,exports){
 require('./index.less');
 
 var EventEmitter = require('events').EventEmitter;
@@ -87609,9 +87532,9 @@ function Breadcrumb(opt){
 util.inherits(Breadcrumb, EventEmitter);
 module.exports = Breadcrumb;
 
-},{"./index.less":161,"/home/mchevett/code/ez-build/ethoinfo-framework/node_modules/vashify/.temp/22_index.vash.js":18,"/home/mchevett/code/ez-build/ethoinfo-framework/node_modules/vashify/.temp/23_crumb.vash.js":19,"events":43,"jquery":65,"lodash":68,"util":48,"velocity-animate":157}],161:[function(require,module,exports){
+},{"./index.less":160,"/home/mchevett/code/ez-build/ethoinfo-framework/node_modules/vashify/.temp/22_index.vash.js":18,"/home/mchevett/code/ez-build/ethoinfo-framework/node_modules/vashify/.temp/23_crumb.vash.js":19,"events":43,"jquery":65,"lodash":68,"util":48,"velocity-animate":157}],160:[function(require,module,exports){
 (function() { var head = document.getElementsByTagName('head')[0]; style = document.createElement('style'); style.type = 'text/css';var css = ".etho-breadcrumb .breadcrumb{width:1000px;white-space:nowrap;height:39px;display:inline-block;box-shadow:0 0 15px 1px rgba(0,0,0,.35);overflow:hidden;border-radius:5px;font-style:bold}.etho-breadcrumb .breadcrumb .ion-home{font-size:20px}.etho-breadcrumb .breadcrumb .spacer{width:0;height:0;position:relative;display:block;float:left;right:19px}.etho-breadcrumb .breadcrumb .spacer .space{float:left;color:#fff;transition:all .5s;position:absolute;top:0;width:36px;height:36px;transform:scale(0.707) rotate(45deg);z-index:1;background:#444;box-shadow:2px -2px 0 2px rgba(0,0,0,.4),3px -3px 0 2px rgba(255,255,255,.1);border-radius:0 5px 0 50px}.etho-breadcrumb .breadcrumb span.home-crumb-container a{position:fixed}.etho-breadcrumb .breadcrumb span.crumb-container a{transition:all .5s;text-decoration:none;outline:0;display:block;float:left;font-size:12px;line-height:36px;color:#fff;padding:0 10px 0 30px;background:#444;position:relative}.etho-breadcrumb .breadcrumb a:first-child,.etho-breadcrumb .breadcrumb span.crumb-container:first-child a{padding-left:16px;border-radius:5px 0 0 5px}.etho-breadcrumb .breadcrumb a:first-child:before{left:14px}.etho-breadcrumb .breadcrumb a:last-child{border-radius:0 5px 5px 0;padding-right:20px}.etho-breadcrumb .breadcrumb a:last-child:after{content:none}.etho-breadcrumb .breadcrumb a:before{border-radius:100%;width:20px;height:20px;line-height:20px;margin:8px 0;position:absolute;top:0;left:30px;background:#444;background:linear-gradient(#444,#222);font-weight:700}.etho-breadcrumb .flat a:before{background:#444;box-shadow:0 0 0 1px green}";if (style.styleSheet){ style.styleSheet.cssText = css; } else { style.appendChild(document.createTextNode(css)); } head.appendChild(style);}())
-},{}],162:[function(require,module,exports){
+},{}],161:[function(require,module,exports){
 
 var $ = require('jquery'),
 	_ = require('lodash'),
@@ -87682,7 +87605,7 @@ function GlobalAddButton(){
 util.inherits(GlobalAddButton, EventEmitter);
 module.exports = GlobalAddButton;
 
-},{"../../views/create-select-dialog":187,"../../views/view-existing-dialog":201,"/home/mchevett/code/ez-build/ethoinfo-framework/node_modules/vashify/.temp/2_index.vash.js":26,"app":159,"events":43,"jquery":65,"lodash":68,"q":156,"util":48}],163:[function(require,module,exports){
+},{"../../views/create-select-dialog":186,"../../views/view-existing-dialog":200,"/home/mchevett/code/ez-build/ethoinfo-framework/node_modules/vashify/.temp/2_index.vash.js":26,"app":158,"events":43,"jquery":65,"lodash":68,"q":156,"util":48}],162:[function(require,module,exports){
 require('./index.less');
 require('./leaflet.usermarker.js');
 
@@ -87781,9 +87704,9 @@ function MapView(){
 
 module.exports = MapView;
 
-},{"./index.less":164,"./leaflet.usermarker.js":165,"/home/mchevett/code/ez-build/ethoinfo-framework/node_modules/vashify/.temp/31_index.vash.js":28,"geolocation":180,"jquery":65,"leaflet":66}],164:[function(require,module,exports){
+},{"./index.less":163,"./leaflet.usermarker.js":164,"/home/mchevett/code/ez-build/ethoinfo-framework/node_modules/vashify/.temp/31_index.vash.js":28,"geolocation":179,"jquery":65,"leaflet":66}],163:[function(require,module,exports){
 (function() { var head = document.getElementsByTagName('head')[0]; style = document.createElement('style'); style.type = 'text/css';var css = "@-moz-keyframes leaflet-usermarker-pulsate{from{-moz-transform:scale(0.5);opacity:1}95%{-moz-transform:scale(1.3);opacity:0}to{-moz-transform:scale(0.7);opacity:0}}@-webkit-keyframes leaflet-usermarker-pulsate{from{-webkit-transform:scale(0.5);opacity:1}95%{-webkit-transform:scale(1.3);opacity:0}to{-webkit-transform:scale(0.7);opacity:0}}@keyframes leaflet-usermarker-pulsate{from{transform:scale(0.5);opacity:1}95%{transform:scale(1.3);opacity:0}to{transform:scale(0.7);opacity:0}}.leaflet-usermarker,.leaflet-usermarker-small{width:34px;height:34px;background:url(lib/img/bluedot.png);background-size:100%}.leaflet-usermarker-small{width:17px;height:17px}.leaflet-usermarker i.pulse,.leaflet-usermarker-small i.pulse{display:block;-moz-animation:leaflet-usermarker-pulsate 1.5s ease-in-out infinite;-webkit-animation:leaflet-usermarker-pulsate 1.5s ease-in-out infinite;animation:leaflet-usermarker-pulsate 1.5s ease-in-out infinite;border:1pt solid #fff;-moz-border-radius:51px;-webkit-border-radius:51px;border-radius:51px;-moz-box-shadow:inset 0 0 5px #06f,inset 0 0 5px #06f,inset 0 0 5px #06f,0 0 5px #06f,0 0 5px #06f,0 0 5px #06f;-webkit-box-shadow:inset 0 0 5px #06f,inset 0 0 5px #06f,inset 0 0 5px #06f,0 0 5px #06f,0 0 5px #06f,0 0 5px #06f;box-shadow:inset 0 0 5px #06f,inset 0 0 5px #06f,inset 0 0 5px #06f,0 0 5px #06f,0 0 5px #06f,0 0 5px #06f;height:61px!important;margin:-14px 0 0 -14px;width:61px!important}.leaflet-usermarker-small i.pulse{height:31px!important;width:31px!important;margin:-7px 0 0 -7px}.map-container,.map-container #temp-map{position:relative;width:100%;height:100%}";if (style.styleSheet){ style.styleSheet.cssText = css; } else { style.appendChild(document.createTextNode(css)); } head.appendChild(style);}())
-},{}],165:[function(require,module,exports){
+},{}],164:[function(require,module,exports){
 var L = require('leaflet');
 /**
  * Leaflet.UserMarker v1.0
@@ -87890,7 +87813,7 @@ var L = require('leaflet');
     };
 })(window);
 
-},{"leaflet":66}],166:[function(require,module,exports){
+},{"leaflet":66}],165:[function(require,module,exports){
 require('./index.less');
 
 var $ = require('jquery'),
@@ -88019,9 +87942,9 @@ function Modal(options){
 util.inherits(Modal, EventEmitter);
 module.exports = Modal;
 
-},{"./index.less":167,"/home/mchevett/code/ez-build/ethoinfo-framework/node_modules/vashify/.temp/10_modal.vash.js":5,"events":43,"iscroll":63,"jquery":65,"lodash":68,"util":48,"velocity-animate":157}],167:[function(require,module,exports){
+},{"./index.less":166,"/home/mchevett/code/ez-build/ethoinfo-framework/node_modules/vashify/.temp/10_modal.vash.js":5,"events":43,"iscroll":63,"jquery":65,"lodash":68,"util":48,"velocity-animate":157}],166:[function(require,module,exports){
 (function() { var head = document.getElementsByTagName('head')[0]; style = document.createElement('style'); style.type = 'text/css';var css = ".modal{top:0;bottom:0;left:0;right:0;width:100%}.modal .bar-header .ion-close{position:absolute;right:8px}";if (style.styleSheet){ style.styleSheet.cssText = css; } else { style.appendChild(document.createTextNode(css)); } head.appendChild(style);}())
-},{}],168:[function(require,module,exports){
+},{}],167:[function(require,module,exports){
 require('./index.less');
 
 var $ = require('jquery'),
@@ -88089,9 +88012,9 @@ function PopupButtons(opt){
 util.inherits(PopupButtons, EventEmitter);
 module.exports = PopupButtons;
 
-},{"./index.less":169,"/home/mchevett/code/ez-build/ethoinfo-framework/node_modules/vashify/.temp/30_index.vash.js":27,"events":43,"jquery":65,"util":48,"velocity-animate":157}],169:[function(require,module,exports){
+},{"./index.less":168,"/home/mchevett/code/ez-build/ethoinfo-framework/node_modules/vashify/.temp/30_index.vash.js":27,"events":43,"jquery":65,"util":48,"velocity-animate":157}],168:[function(require,module,exports){
 (function() { var head = document.getElementsByTagName('head')[0]; style = document.createElement('style'); style.type = 'text/css';var css = ".create-select-menu{display:none;position:fixed;z-index:100;background-color:#f5f5f5;padding:0 6px;border:1px solid #989898}";if (style.styleSheet){ style.styleSheet.cssText = css; } else { style.appendChild(document.createTextNode(css)); } head.appendChild(style);}())
-},{}],170:[function(require,module,exports){
+},{}],169:[function(require,module,exports){
 var _ = require('lodash'),
 	fakeDeviceId = require('jocal').bind(null, 'fake_device_id');
 
@@ -88153,7 +88076,7 @@ module.exports = function(settings){
 };
 
 
-},{"app":159,"jocal":64,"lodash":68}],171:[function(require,module,exports){
+},{"app":158,"jocal":64,"lodash":68}],170:[function(require,module,exports){
 var q = require('q'),
 	d = q.defer(),
 	$ = require('jquery'),
@@ -88182,7 +88105,7 @@ function onDeviceReady(){
 	d.resolve();
 }
 
-},{"jquery":65,"q":156}],172:[function(require,module,exports){
+},{"jquery":65,"q":156}],171:[function(require,module,exports){
 module.exports = function insertAtCaret(txtarea,text) {
     var scrollPos = txtarea.scrollTop;
     var strPos = 0;
@@ -88204,7 +88127,7 @@ module.exports = function insertAtCaret(txtarea,text) {
     txtarea.scrollTop = scrollPos;
 };
 
-},{}],173:[function(require,module,exports){
+},{}],172:[function(require,module,exports){
 require('./main.less');
 require('../node_modules/leaflet/dist/leaflet.css');
 
@@ -88217,22 +88140,22 @@ var $ = require('jquery'),
 	SideMenu = require('./views/side-menu/'),
 	ListView = require('./views/list-view/'),
 	mainTemplate = require("/home/mchevett/code/ez-build/ethoinfo-framework/node_modules/vashify/.temp/0_main.vash.js"),
-	ready = require('dom-ready'),
-	locationWatch = require('./activity-location-watch');
+	ready = require('dom-ready');
+	//locationWatch = require('./activity-location-watch');
 
-function keepAppAlive(){
-	if (typeof cordova == 'undefined') return;
+// function keepAppAlive(){
+// 	if (typeof cordova == 'undefined') return;
 
-	try {
-		cordova.plugins.backgroundMode.setDefaults({ 
-			title: 'Ethoinformatics',
-			text:'The app is in background mode.',
-			ticker:'Ethoinformatics is still running.',
-		});
-		cordova.plugins.backgroundMode.enable();
-	} catch (e){
-	}
-}
+// 	try {
+// 		cordova.plugins.backgroundMode.setDefaults({ 
+// 			title: 'Ethoinformatics',
+// 			text:'The app is in background mode.',
+// 			ticker:'Ethoinformatics is still running.',
+// 		});
+// 		cordova.plugins.backgroundMode.enable();
+// 	} catch (e){
+// 	}
+// }
 
 ready(function appLoad(){
 	var app = require('app');
@@ -88274,17 +88197,16 @@ ready(function appLoad(){
 		sideMenu.close();
 	});
 
-	locationWatch();
-
-	keepAppAlive();
+	//locationWatch();
+	//keepAppAlive();
 });
 
 
 
 
-},{"../node_modules/leaflet/dist/leaflet.css":67,"./activity-location-watch":158,"./controls/global-add-button/":162,"./main.less":174,"./views/code-manager/":183,"./views/geolocation-viewer/":192,"./views/list-view/":194,"./views/settings/":196,"./views/side-menu/":198,"./views/upload-dialog/":199,"/home/mchevett/code/ez-build/ethoinfo-framework/node_modules/vashify/.temp/0_main.vash.js":4,"app":159,"dom-ready":171,"jquery":65}],174:[function(require,module,exports){
+},{"../node_modules/leaflet/dist/leaflet.css":67,"./controls/global-add-button/":161,"./main.less":173,"./views/code-manager/":182,"./views/geolocation-viewer/":191,"./views/list-view/":193,"./views/settings/":195,"./views/side-menu/":197,"./views/upload-dialog/":198,"/home/mchevett/code/ez-build/ethoinfo-framework/node_modules/vashify/.temp/0_main.vash.js":4,"app":158,"dom-ready":170,"jquery":65}],173:[function(require,module,exports){
 (function() { var head = document.getElementsByTagName('head')[0]; style = document.createElement('style'); style.type = 'text/css';var css = "#main-container{border-left:1px solid #fff;font:14px \"Lucida Grande\",Helvetica,Arial,sans-serif;position:fixed;top:0;bottom:0;left:0;right:0;z-index:10;width:100%}#main-container .bar-header{position:absolute;display:block}#main-container #main-content{background-color:orange;position:relative;width:100%;height:100%;top:44px;overflow:hidden;padding:0;margin:0}#main-container #main-content .workflow-scroll-wrapper{position:relative;width:100%;height:100%}#main-container #main-content .workflow-scroll-wrapper #workflow-container{position:relative;width:100%;min-height:100%}#main-container #main-content #modal-container{position:absolute;top:0;bottom:0;left:0;right:0;z-index:101}#left-menu{z-index:1;overflow:hidden;position:absolute;top:0;bottom:0;width:240px}#left-menu .bar-header{height:44px;position:relative}";if (style.styleSheet){ style.styleSheet.cssText = css; } else { style.appendChild(document.createTextNode(css)); } head.appendChild(style);}())
-},{}],175:[function(require,module,exports){
+},{}],174:[function(require,module,exports){
 var _ = require('lodash'),
 	DOMAIN_SETTINGS_KEY = 'DOMAIN_SETTING_KEY',
 	lookup = Object.create(null),
@@ -88438,7 +88360,7 @@ theApp.createDomain('_etho-settings');
 
 module.exports = theApp;
 
-},{"../app.js":159,"../main.js":173,"../services/description-manager":176,"../services/entity-manager":177,"../services/uuid-generator":181,"lodash":68}],176:[function(require,module,exports){
+},{"../app.js":158,"../main.js":172,"../services/description-manager":175,"../services/entity-manager":176,"../services/uuid-generator":180,"lodash":68}],175:[function(require,module,exports){
 var _ = require('lodash'),
 	q = require('q');
 
@@ -88536,7 +88458,7 @@ function DescriptionManager(registry, domainName){
 
 module.exports = DescriptionManager;
 
-},{"app":159,"lodash":68,"q":156}],177:[function(require,module,exports){
+},{"app":158,"lodash":68,"q":156}],176:[function(require,module,exports){
 var PouchDb = require('pouchdb'),
 	_ = require('lodash'),
 	q = require('q');
@@ -88634,7 +88556,7 @@ function CrudManager(registry, domainName){
 
 module.exports = CrudManager;
 
-},{"lodash":68,"pouchdb":114,"pouchdb-upsert":70,"q":156}],178:[function(require,module,exports){
+},{"lodash":68,"pouchdb":114,"pouchdb-upsert":70,"q":156}],177:[function(require,module,exports){
 require('./index.less');
 
 var $ = require('jquery'),
@@ -88997,9 +88919,9 @@ function _buildDataEntryForm(domain, data, fieldFilter){
 module.exports.buildDataEntryForm = _buildDataEntryForm;
 
 
-},{"./index.less":179,"/home/mchevett/code/ez-build/ethoinfo-framework/node_modules/vashify/.temp/14_index.vash.js":9,"/home/mchevett/code/ez-build/ethoinfo-framework/node_modules/vashify/.temp/15_search-popup.vash.js":10,"/home/mchevett/code/ez-build/ethoinfo-framework/node_modules/vashify/.temp/16_create-popup.vash.js":11,"/home/mchevett/code/ez-build/ethoinfo-framework/node_modules/vashify/.temp/17_text.vash.js":12,"/home/mchevett/code/ez-build/ethoinfo-framework/node_modules/vashify/.temp/18_date.vash.js":13,"/home/mchevett/code/ez-build/ethoinfo-framework/node_modules/vashify/.temp/19_select.vash.js":14,"/home/mchevett/code/ez-build/ethoinfo-framework/node_modules/vashify/.temp/20_textarea.vash.js":16,"/home/mchevett/code/ez-build/ethoinfo-framework/node_modules/vashify/node_modules/vash/build/vash-runtime-all.min.js":36,"app":159,"iscroll":63,"jquery":65,"lodash":68}],179:[function(require,module,exports){
+},{"./index.less":178,"/home/mchevett/code/ez-build/ethoinfo-framework/node_modules/vashify/.temp/14_index.vash.js":9,"/home/mchevett/code/ez-build/ethoinfo-framework/node_modules/vashify/.temp/15_search-popup.vash.js":10,"/home/mchevett/code/ez-build/ethoinfo-framework/node_modules/vashify/.temp/16_create-popup.vash.js":11,"/home/mchevett/code/ez-build/ethoinfo-framework/node_modules/vashify/.temp/17_text.vash.js":12,"/home/mchevett/code/ez-build/ethoinfo-framework/node_modules/vashify/.temp/18_date.vash.js":13,"/home/mchevett/code/ez-build/ethoinfo-framework/node_modules/vashify/.temp/19_select.vash.js":14,"/home/mchevett/code/ez-build/ethoinfo-framework/node_modules/vashify/.temp/20_textarea.vash.js":16,"/home/mchevett/code/ez-build/ethoinfo-framework/node_modules/vashify/node_modules/vash/build/vash-runtime-all.min.js":36,"app":158,"iscroll":63,"jquery":65,"lodash":68}],178:[function(require,module,exports){
 (function() { var head = document.getElementsByTagName('head')[0]; style = document.createElement('style'); style.type = 'text/css';var css = ".form-builder .input-label{text-transform:capitalize}.form-builder .tabs{top:0}.form-builder .tab-container{top:44px}.form-builder .item-select.inline-create-item .btn-inline-create{position:absolute;top:10px;right:10px;z-index:10}.form-builder .item-select.inline-create-item select{right:70px}.inline-create-popup .form-container{margin-top:44px;margin-bottom:0}.inline-create-popup,.inline-search-popup{position:fixed;width:75%;padding:4px;border:1px solid #000;z-index:200;background-color:#fff}.inline-create-popup .search-criteria ul.list.criteria-header,.inline-search-popup .search-criteria ul.list.criteria-header{margin-top:44px;margin-bottom:0}.inline-create-popup ul.list.result-header,.inline-search-popup ul.list.result-header{margin-bottom:0}.inline-create-popup .result-scroll-wrapper,.inline-search-popup .result-scroll-wrapper{height:250px;overflow:hidden}.inline-create-popup .result-scroll-wrapper .result-container,.inline-search-popup .result-scroll-wrapper .result-container{border:1px solid #f5f5f5}";if (style.styleSheet){ style.styleSheet.cssText = css; } else { style.appendChild(document.createTextNode(css)); } head.appendChild(style);}())
-},{}],180:[function(require,module,exports){
+},{}],179:[function(require,module,exports){
 (function (process){
 var q = require('q');
 var $ = require('jquery');
@@ -89140,12 +89062,12 @@ exports.once = function(){
 
 
 }).call(this,require('_process'))
-},{"_process":46,"jquery":65,"q":156}],181:[function(require,module,exports){
+},{"_process":46,"jquery":65,"q":156}],180:[function(require,module,exports){
 module.exports = function(){
 	return Date.now().toString();
 };
 
-},{}],182:[function(require,module,exports){
+},{}],181:[function(require,module,exports){
 var app = require('app')(),
 	createTimeline = require('d3-timeline'),
 	_ = require('lodash');
@@ -89181,7 +89103,7 @@ module.exports = function(opts){
 	return createTimeline(opts);
 };
 
-},{"app":159,"d3-timeline":60,"lodash":68}],183:[function(require,module,exports){
+},{"app":158,"d3-timeline":60,"lodash":68}],182:[function(require,module,exports){
 require('./index.less');
 var tmpl = require("/home/mchevett/code/ez-build/ethoinfo-framework/node_modules/vashify/.temp/3_index.vash.js"),
 	CreateNewDialog = require('create-new-dialog'),
@@ -89388,9 +89310,9 @@ function CodeManager(){
 util.inherits(CodeManager, EventEmitter);
 module.exports = CodeManager;
 
-},{"./index.less":184,"/home/mchevett/code/ez-build/ethoinfo-framework/node_modules/vashify/.temp/3_index.vash.js":29,"/home/mchevett/code/ez-build/ethoinfo-framework/node_modules/vashify/.temp/4_list-item-template.vash.js":30,"app":159,"create-new-dialog":185,"edit-existing-dialog":189,"events":43,"iscroll":63,"jquery":65,"lodash":68,"modal":166,"util":48}],184:[function(require,module,exports){
+},{"./index.less":183,"/home/mchevett/code/ez-build/ethoinfo-framework/node_modules/vashify/.temp/3_index.vash.js":29,"/home/mchevett/code/ez-build/ethoinfo-framework/node_modules/vashify/.temp/4_list-item-template.vash.js":30,"app":158,"create-new-dialog":184,"edit-existing-dialog":188,"events":43,"iscroll":63,"jquery":65,"lodash":68,"modal":165,"util":48}],183:[function(require,module,exports){
 (function() { var head = document.getElementsByTagName('head')[0]; style = document.createElement('style'); style.type = 'text/css';var css = ".code-manager select{background-color:#f5f5f5}.code-manager .tools{margin-bottom:0;border-bottom:0}.code-manager .tools .toolbar{float:right}.code-manager .icon.delete{cursor:pointer}.code-manager .scroll-wrapper{overflow:hidden;position:relative;top:0;bottom:0;width:100%}";if (style.styleSheet){ style.styleSheet.cssText = css; } else { style.appendChild(document.createTextNode(css)); } head.appendChild(style);}())
-},{}],185:[function(require,module,exports){
+},{}],184:[function(require,module,exports){
 require('./index.less');
 
 var Modal = require('modal'),
@@ -89536,9 +89458,9 @@ function CreateNewDialog(opt){
 util.inherits(CreateNewDialog, EventEmitter);
 module.exports = CreateNewDialog;
 
-},{"./index.less":186,"/home/mchevett/code/ez-build/ethoinfo-framework/node_modules/vashify/.temp/11_index.vash.js":6,"app":159,"device-settings":170,"events":43,"form-builder":178,"geolocation":180,"jquery":65,"lodash":68,"modal":166,"q":156,"util":48}],186:[function(require,module,exports){
+},{"./index.less":185,"/home/mchevett/code/ez-build/ethoinfo-framework/node_modules/vashify/.temp/11_index.vash.js":6,"app":158,"device-settings":169,"events":43,"form-builder":177,"geolocation":179,"jquery":65,"lodash":68,"modal":165,"q":156,"util":48}],185:[function(require,module,exports){
 (function() { var head = document.getElementsByTagName('head')[0]; style = document.createElement('style'); style.type = 'text/css';var css = ".button-container{background-color:#f5f5f5}.button-container .button-bar{padding:20px}.button-container .button-bar .button-tool{opacity:.7}";if (style.styleSheet){ style.styleSheet.cssText = css; } else { style.appendChild(document.createTextNode(css)); } head.appendChild(style);}())
-},{}],187:[function(require,module,exports){
+},{}],186:[function(require,module,exports){
 require('./index.less');
 
 var $ = require('jquery'),
@@ -89633,9 +89555,9 @@ function CreateSelectDialog(opt){
 util.inherits(CreateSelectDialog, EventEmitter);
 module.exports = CreateSelectDialog;
 
-},{"./index.less":188,"/home/mchevett/code/ez-build/ethoinfo-framework/node_modules/vashify/.temp/12_index.vash.js":7,"app":159,"create-new-dialog":185,"events":43,"jquery":65,"lodash":68,"util":48}],188:[function(require,module,exports){
-module.exports=require(169)
-},{"/home/mchevett/code/ez-build/ethoinfo-project-app/node_modules/ethoinfo-framework/src/controls/popup-buttons/index.less":169}],189:[function(require,module,exports){
+},{"./index.less":187,"/home/mchevett/code/ez-build/ethoinfo-framework/node_modules/vashify/.temp/12_index.vash.js":7,"app":158,"create-new-dialog":184,"events":43,"jquery":65,"lodash":68,"util":48}],187:[function(require,module,exports){
+module.exports=require(168)
+},{"/home/mchevett/code/ez-build/ethoinfo-project-app/node_modules/ethoinfo-framework/src/controls/popup-buttons/index.less":168}],188:[function(require,module,exports){
 var Modal = require('modal'),
 	EditExistingForm = require('edit-existing-form'),
 	util = require('util'),
@@ -89691,7 +89613,7 @@ function EditExistingDialog(opt){
 util.inherits(EditExistingDialog, EventEmitter);
 module.exports = EditExistingDialog;
 
-},{"app":159,"edit-existing-form":190,"events":43,"jquery":65,"modal":166,"q":156,"util":48}],190:[function(require,module,exports){
+},{"app":158,"edit-existing-form":189,"events":43,"jquery":65,"modal":165,"q":156,"util":48}],189:[function(require,module,exports){
 require('./index.less');
 
 var _ = require('lodash'),
@@ -89754,9 +89676,9 @@ function EditExistingDialog(opt){
 util.inherits(EditExistingDialog, EventEmitter);
 module.exports = EditExistingDialog;
 
-},{"./index.less":191,"/home/mchevett/code/ez-build/ethoinfo-framework/node_modules/vashify/.temp/21_index.vash.js":17,"app":159,"events":43,"form-builder":178,"jquery":65,"lodash":68,"q":156,"util":48}],191:[function(require,module,exports){
-module.exports=require(186)
-},{"/home/mchevett/code/ez-build/ethoinfo-project-app/node_modules/ethoinfo-framework/src/views/create-new-dialog/index.less":186}],192:[function(require,module,exports){
+},{"./index.less":190,"/home/mchevett/code/ez-build/ethoinfo-framework/node_modules/vashify/.temp/21_index.vash.js":17,"app":158,"events":43,"form-builder":177,"jquery":65,"lodash":68,"q":156,"util":48}],190:[function(require,module,exports){
+module.exports=require(185)
+},{"/home/mchevett/code/ez-build/ethoinfo-project-app/node_modules/ethoinfo-framework/src/views/create-new-dialog/index.less":185}],191:[function(require,module,exports){
 require('./index.less');
 
 var $ = require('jquery'),
@@ -89831,9 +89753,9 @@ function GeolocationViewer(){
 
 module.exports = GeolocationViewer;
 
-},{"./index.less":193,"/home/mchevett/code/ez-build/ethoinfo-framework/node_modules/vashify/.temp/6_index.vash.js":32,"geolocation":180,"jquery":65,"modal":166,"velocity-animate":157}],193:[function(require,module,exports){
+},{"./index.less":192,"/home/mchevett/code/ez-build/ethoinfo-framework/node_modules/vashify/.temp/6_index.vash.js":32,"geolocation":179,"jquery":65,"modal":165,"velocity-animate":157}],192:[function(require,module,exports){
 (function() { var head = document.getElementsByTagName('head')[0]; style = document.createElement('style'); style.type = 'text/css';var css = "#geolocation-viewer{padding:8px}#geolocation-viewer .success{color:green}#geolocation-viewer .failure{color:#8b0000}";if (style.styleSheet){ style.styleSheet.cssText = css; } else { style.appendChild(document.createTextNode(css)); } head.appendChild(style);}())
-},{}],194:[function(require,module,exports){
+},{}],193:[function(require,module,exports){
 require('./index.less');
 
 var $ = require('jquery'),
@@ -89843,8 +89765,8 @@ var $ = require('jquery'),
 	Scroll = require('iscroll'),
 	app = require('app')(),
 	ViewExistingDialog = require('../view-existing-dialog'),
-	pageTemplate = require("/home/mchevett/code/ez-build/ethoinfo-framework/node_modules/vashify/.temp/8_index.vash.js"),
-	itemTemplate = require("/home/mchevett/code/ez-build/ethoinfo-framework/node_modules/vashify/.temp/9_item.vash.js");
+	pageTemplate = require("/home/mchevett/code/ez-build/ethoinfo-framework/node_modules/vashify/.temp/7_index.vash.js"),
+	itemTemplate = require("/home/mchevett/code/ez-build/ethoinfo-framework/node_modules/vashify/.temp/8_item.vash.js");
 
 
 function _getTopLevelDomains(){
@@ -89946,9 +89868,9 @@ function ListPage(){
 
 module.exports = ListPage;
 
-},{"../view-existing-dialog":201,"./index.less":195,"/home/mchevett/code/ez-build/ethoinfo-framework/node_modules/vashify/.temp/8_index.vash.js":34,"/home/mchevett/code/ez-build/ethoinfo-framework/node_modules/vashify/.temp/9_item.vash.js":35,"app":159,"hammerjs":62,"iscroll":63,"jquery":65,"lodash":68,"q":156}],195:[function(require,module,exports){
+},{"../view-existing-dialog":200,"./index.less":194,"/home/mchevett/code/ez-build/ethoinfo-framework/node_modules/vashify/.temp/7_index.vash.js":33,"/home/mchevett/code/ez-build/ethoinfo-framework/node_modules/vashify/.temp/8_item.vash.js":34,"app":158,"hammerjs":62,"iscroll":63,"jquery":65,"lodash":68,"q":156}],194:[function(require,module,exports){
 (function() { var head = document.getElementsByTagName('head')[0]; style = document.createElement('style'); style.type = 'text/css';var css = ".list-page .item.item-icon-right .icon.color-box{display:inline-block;width:6px;right:0}.list-page .scroll-wrapper{overflow:hidden;position:relative;top:0;bottom:0;width:100%}";if (style.styleSheet){ style.styleSheet.cssText = css; } else { style.appendChild(document.createTextNode(css)); } head.appendChild(style);}())
-},{}],196:[function(require,module,exports){
+},{}],195:[function(require,module,exports){
 require('./index.less');
 var tmpl = require("/home/mchevett/code/ez-build/ethoinfo-framework/node_modules/vashify/.temp/5_index.vash.js"),
 	deviceSettings = require('device-settings'),
@@ -90050,13 +89972,13 @@ function CodeManager(){
 util.inherits(CodeManager, EventEmitter);
 module.exports = CodeManager;
 
-},{"./index.less":197,"/home/mchevett/code/ez-build/ethoinfo-framework/node_modules/vashify/.temp/5_index.vash.js":31,"app":159,"device-settings":170,"events":43,"jquery":65,"lodash":68,"modal":166,"q":156,"util":48}],197:[function(require,module,exports){
+},{"./index.less":196,"/home/mchevett/code/ez-build/ethoinfo-framework/node_modules/vashify/.temp/5_index.vash.js":31,"app":158,"device-settings":169,"events":43,"jquery":65,"lodash":68,"modal":165,"q":156,"util":48}],196:[function(require,module,exports){
 (function() { var head = document.getElementsByTagName('head')[0]; style = document.createElement('style'); style.type = 'text/css';var css = ".settings-manager .setting label{text-transform:capitalize}.settings-manager .icon.delete{cursor:pointer}.settings-manager .scroll-wrapper{overflow:hidden;position:relative;top:0;bottom:0;width:100%}";if (style.styleSheet){ style.styleSheet.cssText = css; } else { style.appendChild(document.createTextNode(css)); } head.appendChild(style);}())
-},{}],198:[function(require,module,exports){
+},{}],197:[function(require,module,exports){
 var velocity = require('velocity-animate'),
 	$ = require('jquery'),
 	EventEmitter = require('events').EventEmitter,
-	template = require("/home/mchevett/code/ez-build/ethoinfo-framework/node_modules/vashify/.temp/7_index.vash.js");
+	template = require("/home/mchevett/code/ez-build/ethoinfo-framework/node_modules/vashify/.temp/9_index.vash.js");
 
 function SideMenu(opt){
 	var $content = $(opt.content);
@@ -90110,7 +90032,7 @@ function SideMenu(opt){
 
 module.exports = SideMenu;
 
-},{"/home/mchevett/code/ez-build/ethoinfo-framework/node_modules/vashify/.temp/7_index.vash.js":33,"events":43,"jquery":65,"velocity-animate":157}],199:[function(require,module,exports){
+},{"/home/mchevett/code/ez-build/ethoinfo-framework/node_modules/vashify/.temp/9_index.vash.js":35,"events":43,"jquery":65,"velocity-animate":157}],198:[function(require,module,exports){
 require('./index.less');
 
 var DB_NAME = 'new_pp_db';
@@ -90218,9 +90140,9 @@ function UploadDialog(){
 util.inherits(UploadDialog, EventEmitter);
 module.exports = UploadDialog;
 
-},{"./index.less":200,"/home/mchevett/code/ez-build/ethoinfo-framework/node_modules/vashify/.temp/1_index.vash.js":15,"app":159,"events":43,"jocal":64,"jquery":65,"lodash":68,"modal":166,"pouchdb":114,"util":48}],200:[function(require,module,exports){
+},{"./index.less":199,"/home/mchevett/code/ez-build/ethoinfo-framework/node_modules/vashify/.temp/1_index.vash.js":15,"app":158,"events":43,"jocal":64,"jquery":65,"lodash":68,"modal":165,"pouchdb":114,"util":48}],199:[function(require,module,exports){
 (function() { var head = document.getElementsByTagName('head')[0]; style = document.createElement('style'); style.type = 'text/css';var css = ".sync-dialog .message{display:none}.sync-dialog .button-bar button{margin:4px}";if (style.styleSheet){ style.styleSheet.cssText = css; } else { style.appendChild(document.createTextNode(css)); } head.appendChild(style);}())
-},{}],201:[function(require,module,exports){
+},{}],200:[function(require,module,exports){
 require('./index.less');
 
 var Modal = require('modal'),
@@ -90235,11 +90157,29 @@ Breadcrumb = require('breadcrumb'),
 EventEmitter = require('events').EventEmitter,
 template = require("/home/mchevett/code/ez-build/ethoinfo-framework/node_modules/vashify/.temp/13_index.vash.js");
 
+var geolocation = require('geolocation');
+
 var CreateSelectMenu = require('../create-select-dialog');
 var TabEdit = require('./tabs/edit/index.js'),
 TabMap = require('./tabs/map/index.js'),
 TabRemarks = require('./tabs/remarks/index.js'),
 TabTimeline = require('./tabs/timeline/index.js');
+
+function _getDeviceSettingsObject(){
+	var settingsDomain = app.getDomain('_etho-settings');
+	var entityManager = settingsDomain.getService('entity-manager');
+
+	return entityManager.getAll()
+		.then(function(entities){
+			var mySettings = _.find(entities, function(entity){
+				return entity.deviceId == device.uuid;
+			});
+
+			if (!mySettings) return { deviceId: device.uuid };
+
+			return mySettings;
+		});
+}
 
 function ViewExistingDialog(opts){
 	var self = this,
@@ -90259,6 +90199,23 @@ function ViewExistingDialog(opts){
 		tabMap = new TabMap(tabOptions),
 		tabRemarks = new TabRemarks(tabOptions),
 		tabTimeline = new TabTimeline(tabOptions);
+
+	var rootDomain = app.getDomain(rootEntity.domainName);
+	var geoAware = rootDomain.getService('geo-aware');
+	if (geoAware){
+		_getDeviceSettingsObject()
+			.then(function(settings){
+				geolocation.watch(function(err, data){
+					if (err) return console.log('geo-aware watch error');
+
+					geoAware.update(rootEntity, data, settings);
+				});
+			})
+			.catch(function(err){
+				console.log('error getting device settings');
+				console.error(err);
+			});
+	}
 
 	EventEmitter.call(self);
 
@@ -90484,6 +90441,7 @@ function ViewExistingDialog(opts){
 			});
 
 			m.on('created', function(child){
+				debugger
 				var childDomain = app.getDomain(child.domainName),
 					entityManager = childDomain.getService('entity-manager');
 
@@ -90600,9 +90558,9 @@ function ViewExistingDialog(opts){
 util.inherits(ViewExistingDialog, EventEmitter);
 module.exports = ViewExistingDialog;
 
-},{"../create-select-dialog":187,"./index.less":202,"./tabs/edit/index.js":203,"./tabs/map/index.js":205,"./tabs/remarks/index.js":206,"./tabs/timeline/index.js":207,"/home/mchevett/code/ez-build/ethoinfo-framework/node_modules/vashify/.temp/13_index.vash.js":8,"app":159,"breadcrumb":160,"events":43,"form-builder":178,"jquery":65,"lodash":68,"modal":166,"moment":69,"q":156,"util":48}],202:[function(require,module,exports){
+},{"../create-select-dialog":186,"./index.less":201,"./tabs/edit/index.js":202,"./tabs/map/index.js":204,"./tabs/remarks/index.js":205,"./tabs/timeline/index.js":206,"/home/mchevett/code/ez-build/ethoinfo-framework/node_modules/vashify/.temp/13_index.vash.js":8,"app":158,"breadcrumb":159,"events":43,"form-builder":177,"geolocation":179,"jquery":65,"lodash":68,"modal":165,"moment":69,"q":156,"util":48}],201:[function(require,module,exports){
 (function() { var head = document.getElementsByTagName('head')[0]; style = document.createElement('style'); style.type = 'text/css';var css = ".loading-message{color:#d3d3d3}.activity-form .etho-header{background-color:#f8f8f8;padding-top:8px}.activity-form .etho-header .etho-tabs{background-color:#f8f8f8;color:#444;padding-left:4px;border-bottom:1px solid #a4a4a4;height:37px}.activity-form .etho-header .etho-tabs li{display:inline-block;width:80px;padding:6px;max-width:105px;text-align:center;position:relative;top:3px}.activity-form .etho-header .etho-tabs li.selected{border-radius:6px 6px 0 0;border:1px solid #a4a4a4;border-bottom:0;font-weight:700}.activity-form .etho-header .buttons{position:absolute;right:10px;top:8px}.activity-form .etho-tabcontainer{position:relative;overflow:hidden}.activity-form .etho-tabcontainer .tab-map{overflow:hidden}.activity-form .etho-tabcontainer .tab-edit,.activity-form .etho-tabcontainer .tab-map,.activity-form .etho-tabcontainer .tab-remarks{display:none}.activity-form .etho-tabcontainer .tab-remarks{position:absolute;top:0;bottom:0;width:100%;height:100%}.activity-form .etho-tabcontainer .tab-remarks textarea{resize:none;width:100%;height:100%;overflow-y:scroll}.activity-form .button-container{background-color:#f5f5f5;position:relative;left:0;right:0;bottom:0}.activity-form .button-container .button-bar{padding:20px}.activity-form .button-container .button-bar .button-tool{opacity:.7}.activity-form .long-description-container{margin:8px}.toolbar{height:36px}.toolbar .child-add{margin-top:10px;margin-right:10px;padding-left:10px;padding-right:10px;float:right}.breadcrumb{display:inline-block;width:100%;box-shadow:0 0 15px 1px rgba(0,0,0,.35);overflow:hidden;border-radius:5px}.breadcrumb a{text-decoration:none;outline:0;display:block;float:left;font-size:12px;line-height:36px;color:#fff;padding:0 10px 0 30px;background:#666;background:linear-gradient(#666,#333);position:relative}.breadcrumb a:first-child{padding-left:16px;border-radius:5px 0 0 5px}.breadcrumb a:first-child:before{left:14px}.breadcrumb a:last-child{border-radius:0 5px 5px 0;padding-right:20px}.breadcrumb a.active{background:#333;background:linear-gradient(#333,#000)}.breadcrumb a.active:after{background:#333;background:linear-gradient(135deg,#333,#000)}.breadcrumb a:after{content:\'\';position:absolute;top:0;right:-18px;width:36px;height:36px;transform:scale(0.707) rotate(45deg);z-index:1;background:#666;background:linear-gradient(135deg,#666,#333);box-shadow:2px -2px 0 2px rgba(0,0,0,.4),3px -3px 0 2px rgba(255,255,255,.1);border-radius:0 5px 0 50px}.breadcrumb a:last-child:after{content:none}.breadcrumb a:before{border-radius:100%;width:20px;height:20px;line-height:20px;margin:8px 0;position:absolute;top:0;left:30px;background:#444;background:linear-gradient(#444,#222);font-weight:700}.flat a,.flat a:after{background:#fff;color:#000;transition:all .5s}.flat a:before{background:#fff;box-shadow:0 0 0 1px #ccc}.flat a.active,.flat a.active:after,.flat a:hover,.flat a:hover:after{background:#9EEB62}";if (style.styleSheet){ style.styleSheet.cssText = css; } else { style.appendChild(document.createTextNode(css)); } head.appendChild(style);}())
-},{}],203:[function(require,module,exports){
+},{}],202:[function(require,module,exports){
 require('./index.less');
 
 var $ = require('jquery'),
@@ -90834,9 +90792,9 @@ function EditTab(){
 util.inherits(EditTab, EventEmitter);
 module.exports = EditTab;
 
-},{"./index.less":204,"/home/mchevett/code/ez-build/ethoinfo-framework/node_modules/vashify/.temp/24_index.vash.js":20,"/home/mchevett/code/ez-build/ethoinfo-framework/node_modules/vashify/.temp/25_inline-child.vash.js":21,"/home/mchevett/code/ez-build/ethoinfo-framework/node_modules/vashify/.temp/26_scroll.vash.js":22,"edit-existing-form":190,"events":43,"hammerjs":62,"iscroll":63,"jquery":65,"lodash":68,"popup-buttons":168,"util":48,"velocity-animate":157}],204:[function(require,module,exports){
+},{"./index.less":203,"/home/mchevett/code/ez-build/ethoinfo-framework/node_modules/vashify/.temp/24_index.vash.js":20,"/home/mchevett/code/ez-build/ethoinfo-framework/node_modules/vashify/.temp/25_inline-child.vash.js":21,"/home/mchevett/code/ez-build/ethoinfo-framework/node_modules/vashify/.temp/26_scroll.vash.js":22,"edit-existing-form":189,"events":43,"hammerjs":62,"iscroll":63,"jquery":65,"lodash":68,"popup-buttons":167,"util":48,"velocity-animate":157}],203:[function(require,module,exports){
 (function() { var head = document.getElementsByTagName('head')[0]; style = document.createElement('style'); style.type = 'text/css';var css = ".section-header{margin-bottom:-21px;text-transform:capitalize}.accordian .header{margin-bottom:1px;text-transform:capitalize}.accordian .header .button-small.header-button{min-width:28px;min-height:20px}.accordian .item-container{margin-top:2px;padding:0;border:0}.accordian .item-container li{border-top:1px solid #ddd}.accordian .item-container .form-builder .list-inset{margin-top:0}.accordian .item-container .etho-inline-header{margin-bottom:1px;margin-top:0}.accordian .item-container .etho-inline-header i.ion{min-width:12px}.accordian .item-container .etho-inline-header li{padding-left:12px}.accordian .item-container:first-child .etho-inline-header{margin-top:20px}";if (style.styleSheet){ style.styleSheet.cssText = css; } else { style.appendChild(document.createTextNode(css)); } head.appendChild(style);}())
-},{}],205:[function(require,module,exports){
+},{}],204:[function(require,module,exports){
 var $ = require('jquery'),
 	_ = require('lodash'),
 	MapView = require('map');
@@ -90901,9 +90859,17 @@ function MapTab(){
 
 	self.descend = function(){
 	};
+
+	var path;
 	self.show = function(){
 		self.$element.show();
 
+		if (!path){
+			path = L.geoJson(_context.entity.geo.footprint, {
+				//style: GEOJSON_STYLE,
+			});
+			path.addTo(lmap);
+		}
 		//var children = _context.getChildren();
 		_renderChildren(_context.entity, 0);
 		map.show();
@@ -90914,7 +90880,7 @@ module.exports = MapTab;
 
 
 
-},{"/home/mchevett/code/ez-build/ethoinfo-framework/node_modules/vashify/.temp/27_index.vash.js":23,"jquery":65,"lodash":68,"map":163}],206:[function(require,module,exports){
+},{"/home/mchevett/code/ez-build/ethoinfo-framework/node_modules/vashify/.temp/27_index.vash.js":23,"jquery":65,"lodash":68,"map":162}],205:[function(require,module,exports){
 var insertAtCaret = require('insert-at-caret'),
 	tmpl = require("/home/mchevett/code/ez-build/ethoinfo-framework/node_modules/vashify/.temp/28_index.vash.js"),
 	$ = require('jquery'),
@@ -90955,7 +90921,7 @@ function Remarks(){
 
 module.exports = Remarks;
 
-},{"/home/mchevett/code/ez-build/ethoinfo-framework/node_modules/vashify/.temp/28_index.vash.js":24,"insert-at-caret":172,"jquery":65,"moment":69}],207:[function(require,module,exports){
+},{"/home/mchevett/code/ez-build/ethoinfo-framework/node_modules/vashify/.temp/28_index.vash.js":24,"insert-at-caret":171,"jquery":65,"moment":69}],206:[function(require,module,exports){
 var $ = require('jquery'),
 	util = require('util'),
 	createTimeline = require('timeline'),
@@ -91019,7 +90985,7 @@ function TimelineTab(){
 util.inherits(TimelineTab, EventEmitter);
 module.exports = TimelineTab;
 
-},{"/home/mchevett/code/ez-build/ethoinfo-framework/node_modules/vashify/.temp/29_index.vash.js":25,"events":43,"jquery":65,"timeline":182,"util":48}],208:[function(require,module,exports){
+},{"/home/mchevett/code/ez-build/ethoinfo-framework/node_modules/vashify/.temp/29_index.vash.js":25,"events":43,"jquery":65,"timeline":181,"util":48}],207:[function(require,module,exports){
 //! moment.js
 //! version : 2.10.6
 //! authors : Tim Wood, Iskren Chernev, Moment.js contributors
@@ -94215,7 +94181,7 @@ module.exports = TimelineTab;
     return _moment;
 
 }));
-},{}],209:[function(require,module,exports){
+},{}],208:[function(require,module,exports){
 function onDeviceReady(){
 	cordova.plugins.backgroundMode.setDefaults({ text:'Ethoinformatics is still running'});
 	cordova.plugins.backgroundMode.enable();
@@ -94224,7 +94190,7 @@ function onDeviceReady(){
 
 window.document.addEventListener("deviceready", onDeviceReady, false);
 
-},{}],210:[function(require,module,exports){
+},{}],209:[function(require,module,exports){
 (function (process){
 function onDeviceReady(){
 	window.hockeyApp.configure({
