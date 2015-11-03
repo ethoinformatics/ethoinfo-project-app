@@ -1,4 +1,4 @@
-require('./update-check');
+//require('./update-check');
 require('./background-mode');
 var app = require('ethoinfo-framework');
 var moment = require('moment');

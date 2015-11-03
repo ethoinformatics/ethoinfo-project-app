@@ -1,0 +1,79 @@
+{
+    "prepare_queue": {
+        "installed": [],
+        "uninstalled": []
+    },
+    "config_munge": {
+        "files": {
+            "config.xml": {
+                "parents": {
+                    "/*": [
+                        {
+                            "xml": "<feature name=\"Device\"><param name=\"ios-package\" value=\"CDVDevice\" /></feature>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"Geolocation\"><param name=\"ios-package\" value=\"CDVLocation\" /></feature>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"BackgroundMode\"><param name=\"ios-package\" value=\"APPBackgroundMode\" /></feature>",
+                            "count": 1
+                        }
+                    ]
+                }
+            },
+            "framework": {
+                "parents": {
+                    "CoreLocation.framework": [
+                        {
+                            "xml": false,
+                            "count": 1
+                        }
+                    ],
+                    "AssetsLibrary.framework": [],
+                    "CoreText.framework": [],
+                    "CoreGraphics.framework": [],
+                    "Foundation.framework": [],
+                    "MobileCoreServices.framework": [],
+                    "QuartzCore.framework": [],
+                    "QuickLook.framework": [],
+                    "Security.framework": [],
+                    "SystemConfiguration.framework": [],
+                    "UIKit.framework": []
+                }
+            },
+            "*-Info.plist": {
+                "parents": {
+                    "NSLocationWhenInUseUsageDescription": [
+                        {
+                            "xml": "<string />",
+                            "count": 1
+                        }
+                    ],
+                    "UIBackgroundModes": [
+                        {
+                            "xml": "<array><string>audio</string></array>",
+                            "count": 1
+                        }
+                    ]
+                }
+            }
+        }
+    },
+    "installed_plugins": {
+        "cordova-plugin-device": {
+            "PACKAGE_NAME": "com.deliveryrelay.rider"
+        },
+        "cordova-plugin-geolocation": {
+            "PACKAGE_NAME": "com.deliveryrelay.rider"
+        },
+        "cordova-plugin-whitelist": {
+            "PACKAGE_NAME": "com.deliveryrelay.rider"
+        },
+        "de.appplant.cordova.plugin.background-mode": {
+            "PACKAGE_NAME": "com.deliveryrelay.rider"
+        }
+    },
+    "dependent_plugins": {}
+}
