@@ -703,146 +703,6 @@ module.exports = vash.link(function anonymous(model, html, __vopts, vash) {
         html.options = __vopts;
         model = model || {};
         html.vl = 1, html.vc = 0;
-        __vbuffer.push('<div class="js-Breadcrumb">');
-        html.vl = 1, html.vc = 27;
-        __vbuffer.push('\n');
-        html.vl = 2, html.vc = 0;
-        __vbuffer.push('\t');
-        html.vl = 2, html.vc = 1;
-        __vbuffer.push('<div class="breadcrumb flat">');
-        html.vl = 2, html.vc = 30;
-        __vbuffer.push('\n');
-        html.vl = 3, html.vc = 0;
-        __vbuffer.push('\t');
-        html.vl = 3, html.vc = 1;
-        __vbuffer.push('\t');
-        html.vl = 3, html.vc = 3;
-        __vbuffer.push(model.crumbs.forEach(function (crumb) {
-            html.vl = 4, html.vc = 3;
-            __vbuffer.push('<a href="#">');
-            html.vl = 4, html.vc = 16;
-            __vbuffer.push(html.escape(crumb.label).toHtmlString());
-            html.vl = 4, html.vc = 22;
-            html.vl = 4, html.vc = 27;
-            __vbuffer.push('</a>');
-        }));
-        html.vl = 5, html.vc = 3;
-        html.vl = 5, html.vc = 4;
-        __vbuffer.push('\n');
-        html.vl = 6, html.vc = 0;
-        __vbuffer.push('\t');
-        html.vl = 6, html.vc = 1;
-        __vbuffer.push('\t');
-        html.vl = 6, html.vc = 2;
-        __vbuffer.push('<a href="#">');
-        html.vl = 6, html.vc = 14;
-        __vbuffer.push('</a>');
-        html.vl = 6, html.vc = 18;
-        __vbuffer.push('\n');
-        html.vl = 7, html.vc = 0;
-        __vbuffer.push('\t');
-        html.vl = 7, html.vc = 1;
-        __vbuffer.push('</div>');
-        html.vl = 7, html.vc = 7;
-        __vbuffer.push('\n');
-        html.vl = 8, html.vc = 0;
-        __vbuffer.push('</div>');
-        html.vl = 8, html.vc = 6;
-        __vbuffer.push('\n');
-        html.vl = 9, html.vc = 0;
-        __vbuffer.push('<div class="activity-form">');
-        html.vl = 9, html.vc = 27;
-        __vbuffer.push('\n');
-        html.vl = 10, html.vc = 0;
-        __vbuffer.push('\t');
-        html.vl = 10, html.vc = 1;
-        __vbuffer.push(' ');
-        html.vl = 10, html.vc = 2;
-        __vbuffer.push('<div class="js-form">');
-        html.vl = 10, html.vc = 23;
-        __vbuffer.push('\n');
-        html.vl = 11, html.vc = 0;
-        __vbuffer.push('\t');
-        html.vl = 11, html.vc = 1;
-        __vbuffer.push('</div>');
-        html.vl = 11, html.vc = 7;
-        __vbuffer.push('\n');
-        html.vl = 12, html.vc = 0;
-        __vbuffer.push('\t');
-        html.vl = 12, html.vc = 1;
-        __vbuffer.push('<div class="js-header header">');
-        html.vl = 12, html.vc = 31;
-        __vbuffer.push('\n');
-        html.vl = 13, html.vc = 0;
-        __vbuffer.push('\t');
-        html.vl = 13, html.vc = 1;
-        __vbuffer.push('</div>');
-        html.vl = 13, html.vc = 7;
-        __vbuffer.push('\n');
-        html.vl = 14, html.vc = 0;
-        __vbuffer.push('\t');
-        html.vl = 14, html.vc = 1;
-        __vbuffer.push('<div class="button-container">');
-        html.vl = 14, html.vc = 31;
-        __vbuffer.push('\n');
-        html.vl = 15, html.vc = 0;
-        __vbuffer.push('\t');
-        html.vl = 15, html.vc = 1;
-        __vbuffer.push('\t');
-        html.vl = 15, html.vc = 2;
-        __vbuffer.push('<div class="button-bar">');
-        html.vl = 15, html.vc = 26;
-        __vbuffer.push('\n');
-        html.vl = 16, html.vc = 0;
-        __vbuffer.push('\t');
-        html.vl = 16, html.vc = 1;
-        __vbuffer.push('\t');
-        html.vl = 16, html.vc = 2;
-        __vbuffer.push('\t');
-        html.vl = 16, html.vc = 3;
-        __vbuffer.push('<button type="button" class="js-save button button-balanced button-block">');
-        html.vl = 16, html.vc = 77;
-        __vbuffer.push('Create');
-        html.vl = 16, html.vc = 83;
-        __vbuffer.push('</button>');
-        html.vl = 16, html.vc = 92;
-        __vbuffer.push('\n');
-        html.vl = 17, html.vc = 0;
-        __vbuffer.push('\t');
-        html.vl = 17, html.vc = 1;
-        __vbuffer.push('\t');
-        html.vl = 17, html.vc = 2;
-        __vbuffer.push('</div>');
-        html.vl = 17, html.vc = 8;
-        __vbuffer.push('\n');
-        html.vl = 18, html.vc = 0;
-        __vbuffer.push('\t');
-        html.vl = 18, html.vc = 1;
-        __vbuffer.push('</div>');
-        html.vl = 18, html.vc = 7;
-        __vbuffer.push('\n');
-        html.vl = 19, html.vc = 0;
-        __vbuffer.push('</div>');
-        html.vl = 19, html.vc = 6;
-        __vbuffer.push('\n');
-        __vopts && __vopts.onRenderEnd && __vopts.onRenderEnd(null, html);
-        return __vopts && __vopts.asContext ? html : html.toString();
-    } catch (e) {
-        html.reportError(e, html.vl, html.vc, '<div class="js-Breadcrumb">!LB!\t<div class="breadcrumb flat">!LB!\t\t@model.crumbs.forEach(function(crumb){!LB!\t\t\t<a href="#">@crumb.label</a>!LB!\t\t})!LB!\t\t<a href="#"></a>!LB!\t</div>!LB!</div>!LB!<div class="activity-form">!LB!\t <div class="js-form">!LB!\t</div>!LB!\t<div class="js-header header">!LB!\t</div>!LB!\t<div class="button-container">!LB!\t\t<div class="button-bar">!LB!\t\t\t<button type="button" class="js-save button button-balanced button-block">Create</button>!LB!\t\t</div>!LB!\t</div>!LB!</div>!LB!');
-    }
-}, {
-    'simple': false,
-    'modelName': 'model',
-    'helpersName': 'html'
-});
-},{"/Users/rover/_dev/ethoinfo/ez-build/ethoinfo-framework/node_modules/vashify/node_modules/vash/build/vash-runtime-all.min.js":36}],6:[function(require,module,exports){
-var vash = require('/Users/rover/_dev/ethoinfo/ez-build/ethoinfo-framework/node_modules/vashify/node_modules/vash/build/vash-runtime-all.min.js');
-module.exports = vash.link(function anonymous(model, html, __vopts, vash) {
-    try {
-        var __vbuffer = html.buffer;
-        html.options = __vopts;
-        model = model || {};
-        html.vl = 1, html.vc = 0;
         __vbuffer.push('<div style="display:none;" class="modal">');
         html.vl = 1, html.vc = 41;
         __vbuffer.push('\n');
@@ -984,6 +844,146 @@ module.exports = vash.link(function anonymous(model, html, __vopts, vash) {
         return __vopts && __vopts.asContext ? html : html.toString();
     } catch (e) {
         html.reportError(e, html.vl, html.vc, '<div style="display:none;" class="modal">!LB!\t<div class="bar bar-header bar-dark">!LB!\t\t@if (model.showBackButton){!LB!\t\t<a class="js-back button icon-left ion-chevron-left button-clear button-light"></a>!LB!\t\t}!LB!\t\t<span class="js-header-placeholder"></span>!LB!\t\t@if (!model.hideClose){!LB!\t\t<button class="js-close button icon ion-close"></button>!LB!\t\t}!LB!\t</div>!LB!\t<div class="content has-header">!LB!\t\t<div class="modal-body">!LB!\t\t</div>!LB!!LB!\t\t<div class="list js-button-bar">!LB!\t\t\t<label class="item">!LB!\t\t\t  <button class="js-ok button button-block button-positive" type="button">Ok</button>!LB!\t\t\t</label>!LB!\t\t</div>!LB!\t</div>!LB!</div>!LB!');
+    }
+}, {
+    'simple': false,
+    'modelName': 'model',
+    'helpersName': 'html'
+});
+},{"/Users/rover/_dev/ethoinfo/ez-build/ethoinfo-framework/node_modules/vashify/node_modules/vash/build/vash-runtime-all.min.js":36}],6:[function(require,module,exports){
+var vash = require('/Users/rover/_dev/ethoinfo/ez-build/ethoinfo-framework/node_modules/vashify/node_modules/vash/build/vash-runtime-all.min.js');
+module.exports = vash.link(function anonymous(model, html, __vopts, vash) {
+    try {
+        var __vbuffer = html.buffer;
+        html.options = __vopts;
+        model = model || {};
+        html.vl = 1, html.vc = 0;
+        __vbuffer.push('<div class="js-Breadcrumb">');
+        html.vl = 1, html.vc = 27;
+        __vbuffer.push('\n');
+        html.vl = 2, html.vc = 0;
+        __vbuffer.push('\t');
+        html.vl = 2, html.vc = 1;
+        __vbuffer.push('<div class="breadcrumb flat">');
+        html.vl = 2, html.vc = 30;
+        __vbuffer.push('\n');
+        html.vl = 3, html.vc = 0;
+        __vbuffer.push('\t');
+        html.vl = 3, html.vc = 1;
+        __vbuffer.push('\t');
+        html.vl = 3, html.vc = 3;
+        __vbuffer.push(model.crumbs.forEach(function (crumb) {
+            html.vl = 4, html.vc = 3;
+            __vbuffer.push('<a href="#">');
+            html.vl = 4, html.vc = 16;
+            __vbuffer.push(html.escape(crumb.label).toHtmlString());
+            html.vl = 4, html.vc = 22;
+            html.vl = 4, html.vc = 27;
+            __vbuffer.push('</a>');
+        }));
+        html.vl = 5, html.vc = 3;
+        html.vl = 5, html.vc = 4;
+        __vbuffer.push('\n');
+        html.vl = 6, html.vc = 0;
+        __vbuffer.push('\t');
+        html.vl = 6, html.vc = 1;
+        __vbuffer.push('\t');
+        html.vl = 6, html.vc = 2;
+        __vbuffer.push('<a href="#">');
+        html.vl = 6, html.vc = 14;
+        __vbuffer.push('</a>');
+        html.vl = 6, html.vc = 18;
+        __vbuffer.push('\n');
+        html.vl = 7, html.vc = 0;
+        __vbuffer.push('\t');
+        html.vl = 7, html.vc = 1;
+        __vbuffer.push('</div>');
+        html.vl = 7, html.vc = 7;
+        __vbuffer.push('\n');
+        html.vl = 8, html.vc = 0;
+        __vbuffer.push('</div>');
+        html.vl = 8, html.vc = 6;
+        __vbuffer.push('\n');
+        html.vl = 9, html.vc = 0;
+        __vbuffer.push('<div class="activity-form">');
+        html.vl = 9, html.vc = 27;
+        __vbuffer.push('\n');
+        html.vl = 10, html.vc = 0;
+        __vbuffer.push('\t');
+        html.vl = 10, html.vc = 1;
+        __vbuffer.push(' ');
+        html.vl = 10, html.vc = 2;
+        __vbuffer.push('<div class="js-form">');
+        html.vl = 10, html.vc = 23;
+        __vbuffer.push('\n');
+        html.vl = 11, html.vc = 0;
+        __vbuffer.push('\t');
+        html.vl = 11, html.vc = 1;
+        __vbuffer.push('</div>');
+        html.vl = 11, html.vc = 7;
+        __vbuffer.push('\n');
+        html.vl = 12, html.vc = 0;
+        __vbuffer.push('\t');
+        html.vl = 12, html.vc = 1;
+        __vbuffer.push('<div class="js-header header">');
+        html.vl = 12, html.vc = 31;
+        __vbuffer.push('\n');
+        html.vl = 13, html.vc = 0;
+        __vbuffer.push('\t');
+        html.vl = 13, html.vc = 1;
+        __vbuffer.push('</div>');
+        html.vl = 13, html.vc = 7;
+        __vbuffer.push('\n');
+        html.vl = 14, html.vc = 0;
+        __vbuffer.push('\t');
+        html.vl = 14, html.vc = 1;
+        __vbuffer.push('<div class="button-container">');
+        html.vl = 14, html.vc = 31;
+        __vbuffer.push('\n');
+        html.vl = 15, html.vc = 0;
+        __vbuffer.push('\t');
+        html.vl = 15, html.vc = 1;
+        __vbuffer.push('\t');
+        html.vl = 15, html.vc = 2;
+        __vbuffer.push('<div class="button-bar">');
+        html.vl = 15, html.vc = 26;
+        __vbuffer.push('\n');
+        html.vl = 16, html.vc = 0;
+        __vbuffer.push('\t');
+        html.vl = 16, html.vc = 1;
+        __vbuffer.push('\t');
+        html.vl = 16, html.vc = 2;
+        __vbuffer.push('\t');
+        html.vl = 16, html.vc = 3;
+        __vbuffer.push('<button type="button" class="js-save button button-balanced button-block">');
+        html.vl = 16, html.vc = 77;
+        __vbuffer.push('Create');
+        html.vl = 16, html.vc = 83;
+        __vbuffer.push('</button>');
+        html.vl = 16, html.vc = 92;
+        __vbuffer.push('\n');
+        html.vl = 17, html.vc = 0;
+        __vbuffer.push('\t');
+        html.vl = 17, html.vc = 1;
+        __vbuffer.push('\t');
+        html.vl = 17, html.vc = 2;
+        __vbuffer.push('</div>');
+        html.vl = 17, html.vc = 8;
+        __vbuffer.push('\n');
+        html.vl = 18, html.vc = 0;
+        __vbuffer.push('\t');
+        html.vl = 18, html.vc = 1;
+        __vbuffer.push('</div>');
+        html.vl = 18, html.vc = 7;
+        __vbuffer.push('\n');
+        html.vl = 19, html.vc = 0;
+        __vbuffer.push('</div>');
+        html.vl = 19, html.vc = 6;
+        __vbuffer.push('\n');
+        __vopts && __vopts.onRenderEnd && __vopts.onRenderEnd(null, html);
+        return __vopts && __vopts.asContext ? html : html.toString();
+    } catch (e) {
+        html.reportError(e, html.vl, html.vc, '<div class="js-Breadcrumb">!LB!\t<div class="breadcrumb flat">!LB!\t\t@model.crumbs.forEach(function(crumb){!LB!\t\t\t<a href="#">@crumb.label</a>!LB!\t\t})!LB!\t\t<a href="#"></a>!LB!\t</div>!LB!</div>!LB!<div class="activity-form">!LB!\t <div class="js-form">!LB!\t</div>!LB!\t<div class="js-header header">!LB!\t</div>!LB!\t<div class="button-container">!LB!\t\t<div class="button-bar">!LB!\t\t\t<button type="button" class="js-save button button-balanced button-block">Create</button>!LB!\t\t</div>!LB!\t</div>!LB!</div>!LB!');
     }
 }, {
     'simple': false,
@@ -3584,6 +3584,575 @@ module.exports = vash.link(function anonymous(model, html, __vopts, vash) {
         html.options = __vopts;
         model = model || {};
         html.vl = 1, html.vc = 0;
+        __vbuffer.push('<div class="sync-dialog">');
+        html.vl = 1, html.vc = 25;
+        __vbuffer.push('\n');
+        html.vl = 2, html.vc = 0;
+        __vbuffer.push('\t');
+        html.vl = 2, html.vc = 1;
+        __vbuffer.push('<div class="card">');
+        html.vl = 2, html.vc = 19;
+        __vbuffer.push('\n');
+        html.vl = 3, html.vc = 0;
+        __vbuffer.push('\t');
+        html.vl = 3, html.vc = 1;
+        __vbuffer.push('\t');
+        html.vl = 3, html.vc = 2;
+        __vbuffer.push('<div class="js-status item item-text-wrap">');
+        html.vl = 3, html.vc = 45;
+        __vbuffer.push('\n');
+        html.vl = 4, html.vc = 0;
+        __vbuffer.push('\t');
+        html.vl = 4, html.vc = 1;
+        __vbuffer.push('\t');
+        html.vl = 4, html.vc = 2;
+        __vbuffer.push('\t');
+        html.vl = 4, html.vc = 3;
+        __vbuffer.push('<div class="js-working message">');
+        html.vl = 4, html.vc = 35;
+        __vbuffer.push('\n');
+        html.vl = 5, html.vc = 0;
+        __vbuffer.push('\t');
+        html.vl = 5, html.vc = 1;
+        __vbuffer.push('\t');
+        html.vl = 5, html.vc = 2;
+        __vbuffer.push('\t');
+        html.vl = 5, html.vc = 3;
+        __vbuffer.push('\t');
+        html.vl = 5, html.vc = 4;
+        __vbuffer.push('<i class="icon ion-loading-d">');
+        html.vl = 5, html.vc = 34;
+        __vbuffer.push('</i>');
+        html.vl = 5, html.vc = 38;
+        __vbuffer.push('\n');
+        html.vl = 6, html.vc = 0;
+        __vbuffer.push('\t');
+        html.vl = 6, html.vc = 1;
+        __vbuffer.push('\t');
+        html.vl = 6, html.vc = 2;
+        __vbuffer.push('\t');
+        html.vl = 6, html.vc = 3;
+        __vbuffer.push('\t');
+        html.vl = 6, html.vc = 4;
+        __vbuffer.push('<span>');
+        html.vl = 6, html.vc = 10;
+        __vbuffer.push('</span>');
+        html.vl = 6, html.vc = 17;
+        __vbuffer.push('\n');
+        html.vl = 7, html.vc = 0;
+        __vbuffer.push('\t');
+        html.vl = 7, html.vc = 1;
+        __vbuffer.push('\t');
+        html.vl = 7, html.vc = 2;
+        __vbuffer.push('\t');
+        html.vl = 7, html.vc = 3;
+        __vbuffer.push('</div>');
+        html.vl = 7, html.vc = 9;
+        __vbuffer.push('\n');
+        html.vl = 8, html.vc = 0;
+        __vbuffer.push('\t');
+        html.vl = 8, html.vc = 1;
+        __vbuffer.push('\t');
+        html.vl = 8, html.vc = 2;
+        __vbuffer.push('\t');
+        html.vl = 8, html.vc = 3;
+        __vbuffer.push('<div class="js-success message">');
+        html.vl = 8, html.vc = 35;
+        __vbuffer.push('\n');
+        html.vl = 9, html.vc = 0;
+        __vbuffer.push('\t');
+        html.vl = 9, html.vc = 1;
+        __vbuffer.push('\t');
+        html.vl = 9, html.vc = 2;
+        __vbuffer.push('\t');
+        html.vl = 9, html.vc = 3;
+        __vbuffer.push('\t');
+        html.vl = 9, html.vc = 4;
+        __vbuffer.push('<i class="icon balanced ion-checkmark-circled">');
+        html.vl = 9, html.vc = 51;
+        __vbuffer.push('</i>');
+        html.vl = 9, html.vc = 55;
+        __vbuffer.push('\n');
+        html.vl = 10, html.vc = 0;
+        __vbuffer.push('\t');
+        html.vl = 10, html.vc = 1;
+        __vbuffer.push('\t');
+        html.vl = 10, html.vc = 2;
+        __vbuffer.push('\t');
+        html.vl = 10, html.vc = 3;
+        __vbuffer.push('\t');
+        html.vl = 10, html.vc = 4;
+        __vbuffer.push('<span>');
+        html.vl = 10, html.vc = 10;
+        __vbuffer.push('</span>');
+        html.vl = 10, html.vc = 17;
+        __vbuffer.push('\n');
+        html.vl = 11, html.vc = 0;
+        __vbuffer.push('\t');
+        html.vl = 11, html.vc = 1;
+        __vbuffer.push('\t');
+        html.vl = 11, html.vc = 2;
+        __vbuffer.push('\t');
+        html.vl = 11, html.vc = 3;
+        __vbuffer.push('</div>');
+        html.vl = 11, html.vc = 9;
+        __vbuffer.push('\n');
+        html.vl = 12, html.vc = 0;
+        __vbuffer.push('\t');
+        html.vl = 12, html.vc = 1;
+        __vbuffer.push('\t');
+        html.vl = 12, html.vc = 2;
+        __vbuffer.push('\t');
+        html.vl = 12, html.vc = 3;
+        __vbuffer.push('<div class="js-failure message">');
+        html.vl = 12, html.vc = 35;
+        __vbuffer.push('\n');
+        html.vl = 13, html.vc = 0;
+        __vbuffer.push('\t');
+        html.vl = 13, html.vc = 1;
+        __vbuffer.push('\t');
+        html.vl = 13, html.vc = 2;
+        __vbuffer.push('\t');
+        html.vl = 13, html.vc = 3;
+        __vbuffer.push('\t');
+        html.vl = 13, html.vc = 4;
+        __vbuffer.push('<i class="icon assertive ion-alert-circled">');
+        html.vl = 13, html.vc = 48;
+        __vbuffer.push('</i>');
+        html.vl = 13, html.vc = 52;
+        __vbuffer.push('\n');
+        html.vl = 14, html.vc = 0;
+        __vbuffer.push('\t');
+        html.vl = 14, html.vc = 1;
+        __vbuffer.push('\t');
+        html.vl = 14, html.vc = 2;
+        __vbuffer.push('\t');
+        html.vl = 14, html.vc = 3;
+        __vbuffer.push('\t');
+        html.vl = 14, html.vc = 4;
+        __vbuffer.push('<span>');
+        html.vl = 14, html.vc = 10;
+        __vbuffer.push('</span>');
+        html.vl = 14, html.vc = 17;
+        __vbuffer.push('\n');
+        html.vl = 15, html.vc = 0;
+        __vbuffer.push('\t');
+        html.vl = 15, html.vc = 1;
+        __vbuffer.push('\t');
+        html.vl = 15, html.vc = 2;
+        __vbuffer.push('\t');
+        html.vl = 15, html.vc = 3;
+        __vbuffer.push('</div>');
+        html.vl = 15, html.vc = 9;
+        __vbuffer.push('\n');
+        html.vl = 16, html.vc = 0;
+        __vbuffer.push('\t');
+        html.vl = 16, html.vc = 1;
+        __vbuffer.push('\t');
+        html.vl = 16, html.vc = 2;
+        __vbuffer.push('</div>');
+        html.vl = 16, html.vc = 8;
+        __vbuffer.push('\n');
+        html.vl = 17, html.vc = 0;
+        __vbuffer.push('\t');
+        html.vl = 17, html.vc = 1;
+        __vbuffer.push('</div>');
+        html.vl = 17, html.vc = 7;
+        __vbuffer.push('\n');
+        html.vl = 18, html.vc = 0;
+        __vbuffer.push('\n');
+        html.vl = 19, html.vc = 0;
+        __vbuffer.push('\t');
+        html.vl = 19, html.vc = 1;
+        __vbuffer.push('<ul class="list">');
+        html.vl = 19, html.vc = 18;
+        __vbuffer.push('\n');
+        html.vl = 20, html.vc = 0;
+        __vbuffer.push('\t');
+        html.vl = 20, html.vc = 1;
+        __vbuffer.push('\t');
+        html.vl = 20, html.vc = 2;
+        __vbuffer.push('<li class="item item-input item-stacked-label">');
+        html.vl = 20, html.vc = 49;
+        __vbuffer.push('\n');
+        html.vl = 21, html.vc = 0;
+        __vbuffer.push('\t');
+        html.vl = 21, html.vc = 1;
+        __vbuffer.push('\t');
+        html.vl = 21, html.vc = 2;
+        __vbuffer.push('\t');
+        html.vl = 21, html.vc = 3;
+        __vbuffer.push('<span class="input-label">');
+        html.vl = 21, html.vc = 29;
+        __vbuffer.push('Couch');
+        html.vl = 21, html.vc = 34;
+        __vbuffer.push(' ');
+        html.vl = 21, html.vc = 35;
+        __vbuffer.push('URL');
+        html.vl = 21, html.vc = 38;
+        __vbuffer.push('</span>');
+        html.vl = 21, html.vc = 45;
+        __vbuffer.push('\n');
+        html.vl = 22, html.vc = 0;
+        __vbuffer.push('\t');
+        html.vl = 22, html.vc = 1;
+        __vbuffer.push('\t');
+        html.vl = 22, html.vc = 2;
+        __vbuffer.push('\t');
+        html.vl = 22, html.vc = 3;
+        __vbuffer.push('<input class="js-url" type="text" value="');
+        html.vl = 22, html.vc = 45;
+        __vbuffer.push(html.escape(model.url).toHtmlString());
+        html.vl = 22, html.vc = 51;
+        html.vl = 22, html.vc = 54;
+        __vbuffer.push('"');
+        html.vl = 22, html.vc = 55;
+        __vbuffer.push('>');
+        html.vl = 22, html.vc = 56;
+        __vbuffer.push('</input>');
+        html.vl = 22, html.vc = 64;
+        __vbuffer.push('\n');
+        html.vl = 23, html.vc = 0;
+        __vbuffer.push('\t');
+        html.vl = 23, html.vc = 1;
+        __vbuffer.push('\t');
+        html.vl = 23, html.vc = 2;
+        __vbuffer.push('</li>');
+        html.vl = 23, html.vc = 7;
+        __vbuffer.push('\n');
+        html.vl = 24, html.vc = 0;
+        __vbuffer.push('\t');
+        html.vl = 24, html.vc = 1;
+        __vbuffer.push('\t');
+        html.vl = 24, html.vc = 2;
+        __vbuffer.push('<li class="item item-input item-stacked-label">');
+        html.vl = 24, html.vc = 49;
+        __vbuffer.push('\n');
+        html.vl = 25, html.vc = 0;
+        __vbuffer.push('\t');
+        html.vl = 25, html.vc = 1;
+        __vbuffer.push('\t');
+        html.vl = 25, html.vc = 2;
+        __vbuffer.push('\t');
+        html.vl = 25, html.vc = 3;
+        __vbuffer.push('<span class="input-label">');
+        html.vl = 25, html.vc = 29;
+        __vbuffer.push('Username');
+        html.vl = 25, html.vc = 37;
+        __vbuffer.push('</span>');
+        html.vl = 25, html.vc = 44;
+        __vbuffer.push('\n');
+        html.vl = 26, html.vc = 0;
+        __vbuffer.push('\t');
+        html.vl = 26, html.vc = 1;
+        __vbuffer.push('\t');
+        html.vl = 26, html.vc = 2;
+        __vbuffer.push('\t');
+        html.vl = 26, html.vc = 3;
+        __vbuffer.push('<input class="js-username" type="text" value="');
+        html.vl = 26, html.vc = 50;
+        __vbuffer.push(html.escape(model.username).toHtmlString());
+        html.vl = 26, html.vc = 56;
+        html.vl = 26, html.vc = 64;
+        __vbuffer.push('"');
+        html.vl = 26, html.vc = 65;
+        __vbuffer.push('>');
+        html.vl = 26, html.vc = 66;
+        __vbuffer.push('</input>');
+        html.vl = 26, html.vc = 74;
+        __vbuffer.push('\n');
+        html.vl = 27, html.vc = 0;
+        __vbuffer.push('\t');
+        html.vl = 27, html.vc = 1;
+        __vbuffer.push('\t');
+        html.vl = 27, html.vc = 2;
+        __vbuffer.push('</li>');
+        html.vl = 27, html.vc = 7;
+        __vbuffer.push('\n');
+        html.vl = 28, html.vc = 0;
+        __vbuffer.push('\t');
+        html.vl = 28, html.vc = 1;
+        __vbuffer.push('\t');
+        html.vl = 28, html.vc = 2;
+        __vbuffer.push('<li class="item item-input item-stacked-label">');
+        html.vl = 28, html.vc = 49;
+        __vbuffer.push('\n');
+        html.vl = 29, html.vc = 0;
+        __vbuffer.push('\t');
+        html.vl = 29, html.vc = 1;
+        __vbuffer.push('\t');
+        html.vl = 29, html.vc = 2;
+        __vbuffer.push('\t');
+        html.vl = 29, html.vc = 3;
+        __vbuffer.push('<span class="input-label">');
+        html.vl = 29, html.vc = 29;
+        __vbuffer.push('Password');
+        html.vl = 29, html.vc = 37;
+        __vbuffer.push('</span>');
+        html.vl = 29, html.vc = 44;
+        __vbuffer.push('\n');
+        html.vl = 30, html.vc = 0;
+        __vbuffer.push('\t');
+        html.vl = 30, html.vc = 1;
+        __vbuffer.push('\t');
+        html.vl = 30, html.vc = 2;
+        __vbuffer.push('\t');
+        html.vl = 30, html.vc = 3;
+        __vbuffer.push('<input class="js-password" type="password" value="');
+        html.vl = 30, html.vc = 54;
+        __vbuffer.push(html.escape(model.password).toHtmlString());
+        html.vl = 30, html.vc = 60;
+        html.vl = 30, html.vc = 68;
+        __vbuffer.push('"');
+        html.vl = 30, html.vc = 69;
+        __vbuffer.push('>');
+        html.vl = 30, html.vc = 70;
+        __vbuffer.push('</input>');
+        html.vl = 30, html.vc = 78;
+        __vbuffer.push('\n');
+        html.vl = 31, html.vc = 0;
+        __vbuffer.push('\t');
+        html.vl = 31, html.vc = 1;
+        __vbuffer.push('\t');
+        html.vl = 31, html.vc = 2;
+        __vbuffer.push('</li>');
+        html.vl = 31, html.vc = 7;
+        __vbuffer.push('\n');
+        html.vl = 32, html.vc = 0;
+        __vbuffer.push('\t');
+        html.vl = 32, html.vc = 1;
+        __vbuffer.push('\t');
+        html.vl = 32, html.vc = 2;
+        __vbuffer.push('<li class="item">');
+        html.vl = 32, html.vc = 19;
+        __vbuffer.push('\n');
+        html.vl = 33, html.vc = 0;
+        __vbuffer.push('\t');
+        html.vl = 33, html.vc = 1;
+        __vbuffer.push('\t');
+        html.vl = 33, html.vc = 2;
+        __vbuffer.push('\t');
+        html.vl = 33, html.vc = 3;
+        __vbuffer.push('<div class="button-bar">');
+        html.vl = 33, html.vc = 27;
+        __vbuffer.push('\n');
+        html.vl = 34, html.vc = 0;
+        __vbuffer.push('\t');
+        html.vl = 34, html.vc = 1;
+        __vbuffer.push('\t');
+        html.vl = 34, html.vc = 2;
+        __vbuffer.push('\t');
+        html.vl = 34, html.vc = 3;
+        __vbuffer.push('\t');
+        html.vl = 34, html.vc = 4;
+        __vbuffer.push('<button class="js-download icon-left ion-android-download button button-block button-positive">');
+        html.vl = 34, html.vc = 99;
+        __vbuffer.push('Download');
+        html.vl = 34, html.vc = 107;
+        __vbuffer.push('</button>');
+        html.vl = 34, html.vc = 116;
+        __vbuffer.push('\n');
+        html.vl = 35, html.vc = 0;
+        __vbuffer.push('\t');
+        html.vl = 35, html.vc = 1;
+        __vbuffer.push('\t');
+        html.vl = 35, html.vc = 2;
+        __vbuffer.push('\t');
+        html.vl = 35, html.vc = 3;
+        __vbuffer.push('\t');
+        html.vl = 35, html.vc = 4;
+        __vbuffer.push('<button class="js-upload icon-left ion-android-upload button button-block button-positive">');
+        html.vl = 35, html.vc = 95;
+        __vbuffer.push('Upload');
+        html.vl = 35, html.vc = 101;
+        __vbuffer.push('</button>');
+        html.vl = 35, html.vc = 110;
+        __vbuffer.push('\n');
+        html.vl = 36, html.vc = 0;
+        __vbuffer.push('\t');
+        html.vl = 36, html.vc = 1;
+        __vbuffer.push('\t');
+        html.vl = 36, html.vc = 2;
+        __vbuffer.push('\t');
+        html.vl = 36, html.vc = 3;
+        __vbuffer.push('</div>');
+        html.vl = 36, html.vc = 9;
+        __vbuffer.push('\n');
+        html.vl = 37, html.vc = 0;
+        __vbuffer.push('\t');
+        html.vl = 37, html.vc = 1;
+        __vbuffer.push('\t');
+        html.vl = 37, html.vc = 2;
+        __vbuffer.push('</li>');
+        html.vl = 37, html.vc = 7;
+        __vbuffer.push('\n');
+        html.vl = 38, html.vc = 0;
+        __vbuffer.push('\t');
+        html.vl = 38, html.vc = 1;
+        __vbuffer.push('</ul>');
+        html.vl = 38, html.vc = 6;
+        __vbuffer.push('\n');
+        html.vl = 39, html.vc = 0;
+        __vbuffer.push('</div>');
+        html.vl = 39, html.vc = 6;
+        __vbuffer.push('\n');
+        __vopts && __vopts.onRenderEnd && __vopts.onRenderEnd(null, html);
+        return __vopts && __vopts.asContext ? html : html.toString();
+    } catch (e) {
+        html.reportError(e, html.vl, html.vc, '<div class="sync-dialog">!LB!\t<div class="card">!LB!\t\t<div class="js-status item item-text-wrap">!LB!\t\t\t<div class="js-working message">!LB!\t\t\t\t<i class="icon ion-loading-d"></i>!LB!\t\t\t\t<span></span>!LB!\t\t\t</div>!LB!\t\t\t<div class="js-success message">!LB!\t\t\t\t<i class="icon balanced ion-checkmark-circled"></i>!LB!\t\t\t\t<span></span>!LB!\t\t\t</div>!LB!\t\t\t<div class="js-failure message">!LB!\t\t\t\t<i class="icon assertive ion-alert-circled"></i>!LB!\t\t\t\t<span></span>!LB!\t\t\t</div>!LB!\t\t</div>!LB!\t</div>!LB!!LB!\t<ul class="list">!LB!\t\t<li class="item item-input item-stacked-label">!LB!\t\t\t<span class="input-label">Couch URL</span>!LB!\t\t\t<input class="js-url" type="text" value="@model.url"></input>!LB!\t\t</li>!LB!\t\t<li class="item item-input item-stacked-label">!LB!\t\t\t<span class="input-label">Username</span>!LB!\t\t\t<input class="js-username" type="text" value="@model.username"></input>!LB!\t\t</li>!LB!\t\t<li class="item item-input item-stacked-label">!LB!\t\t\t<span class="input-label">Password</span>!LB!\t\t\t<input class="js-password" type="password" value="@model.password"></input>!LB!\t\t</li>!LB!\t\t<li class="item">!LB!\t\t\t<div class="button-bar">!LB!\t\t\t\t<button class="js-download icon-left ion-android-download button button-block button-positive">Download</button>!LB!\t\t\t\t<button class="js-upload icon-left ion-android-upload button button-block button-positive">Upload</button>!LB!\t\t\t</div>!LB!\t\t</li>!LB!\t</ul>!LB!</div>!LB!');
+    }
+}, {
+    'simple': false,
+    'modelName': 'model',
+    'helpersName': 'html'
+});
+},{"/Users/rover/_dev/ethoinfo/ez-build/ethoinfo-framework/node_modules/vashify/node_modules/vash/build/vash-runtime-all.min.js":36}],27:[function(require,module,exports){
+var vash = require('/Users/rover/_dev/ethoinfo/ez-build/ethoinfo-framework/node_modules/vashify/node_modules/vash/build/vash-runtime-all.min.js');
+module.exports = vash.link(function anonymous(model, html, __vopts, vash) {
+    try {
+        var __vbuffer = html.buffer;
+        html.options = __vopts;
+        model = model || {};
+        html.vl = 1, html.vc = 0;
+        __vbuffer.push('<ul class="create-select-menu">');
+        html.vl = 1, html.vc = 31;
+        __vbuffer.push('\n');
+        html.vl = 2, html.vc = 0;
+        __vbuffer.push('\t');
+        html.vl = 2, html.vc = 2;
+        __vbuffer.push(model.items.forEach(function (item) {
+            html.vl = 3, html.vc = 2;
+            __vbuffer.push('<li>');
+            html.vl = 3, html.vc = 6;
+            __vbuffer.push('\n');
+            html.vl = 4, html.vc = 0;
+            __vbuffer.push('\t');
+            html.vl = 4, html.vc = 1;
+            __vbuffer.push('\t');
+            html.vl = 4, html.vc = 2;
+            __vbuffer.push('\t');
+            html.vl = 4, html.vc = 3;
+            __vbuffer.push('<button type="button" class="js-button button ');
+            html.vl = 4, html.vc = 50;
+            __vbuffer.push(html.escape(item.class).toHtmlString());
+            html.vl = 4, html.vc = 55;
+            html.vl = 4, html.vc = 60;
+            __vbuffer.push(' ');
+            html.vl = 4, html.vc = 61;
+            __vbuffer.push('button');
+            html.vl = 4, html.vc = 67;
+            __vbuffer.push('-');
+            html.vl = 4, html.vc = 68;
+            __vbuffer.push('block');
+            html.vl = 4, html.vc = 73;
+            __vbuffer.push('"');
+            html.vl = 4, html.vc = 74;
+            __vbuffer.push(' ');
+            html.vl = 4, html.vc = 75;
+            __vbuffer.push('value');
+            html.vl = 4, html.vc = 80;
+            __vbuffer.push('=');
+            html.vl = 4, html.vc = 81;
+            __vbuffer.push('"');
+            html.vl = 4, html.vc = 83;
+            __vbuffer.push(html.escape(item.value).toHtmlString());
+            html.vl = 4, html.vc = 88;
+            html.vl = 4, html.vc = 93;
+            __vbuffer.push('"');
+            html.vl = 4, html.vc = 94;
+            __vbuffer.push('>');
+            html.vl = 4, html.vc = 95;
+            __vbuffer.push('\n');
+            html.vl = 5, html.vc = 0;
+            __vbuffer.push('\t');
+            html.vl = 5, html.vc = 1;
+            __vbuffer.push('\t');
+            html.vl = 5, html.vc = 2;
+            __vbuffer.push('\t');
+            html.vl = 5, html.vc = 3;
+            __vbuffer.push('\t');
+            html.vl = 5, html.vc = 5;
+            __vbuffer.push(html.escape(item.label).toHtmlString());
+            html.vl = 5, html.vc = 10;
+            html.vl = 5, html.vc = 15;
+            __vbuffer.push('\n');
+            html.vl = 6, html.vc = 0;
+            __vbuffer.push('\t');
+            html.vl = 6, html.vc = 1;
+            __vbuffer.push('\t');
+            html.vl = 6, html.vc = 2;
+            __vbuffer.push('\t');
+            html.vl = 6, html.vc = 3;
+            __vbuffer.push('</button>');
+            html.vl = 6, html.vc = 12;
+            __vbuffer.push('\n');
+            html.vl = 7, html.vc = 0;
+            __vbuffer.push('\t');
+            html.vl = 7, html.vc = 1;
+            __vbuffer.push('\t');
+            html.vl = 7, html.vc = 2;
+            __vbuffer.push('</li>');
+        }));
+        html.vl = 8, html.vc = 2;
+        html.vl = 8, html.vc = 3;
+        __vbuffer.push('\n');
+        html.vl = 9, html.vc = 0;
+        __vbuffer.push('</ul>');
+        html.vl = 9, html.vc = 5;
+        __vbuffer.push('\n');
+        __vopts && __vopts.onRenderEnd && __vopts.onRenderEnd(null, html);
+        return __vopts && __vopts.asContext ? html : html.toString();
+    } catch (e) {
+        html.reportError(e, html.vl, html.vc, '<ul class="create-select-menu">!LB!\t@model.items.forEach(function(item){!LB!\t\t<li>!LB!\t\t\t<button type="button" class="js-button button @item.class button-block" value="@item.value">!LB!\t\t\t\t@item.label!LB!\t\t\t</button>!LB!\t\t</li>!LB!\t})!LB!</ul>!LB!');
+    }
+}, {
+    'simple': false,
+    'modelName': 'model',
+    'helpersName': 'html'
+});
+},{"/Users/rover/_dev/ethoinfo/ez-build/ethoinfo-framework/node_modules/vashify/node_modules/vash/build/vash-runtime-all.min.js":36}],28:[function(require,module,exports){
+var vash = require('/Users/rover/_dev/ethoinfo/ez-build/ethoinfo-framework/node_modules/vashify/node_modules/vash/build/vash-runtime-all.min.js');
+module.exports = vash.link(function anonymous(model, html, __vopts, vash) {
+    try {
+        var __vbuffer = html.buffer;
+        html.options = __vopts;
+        model = model || {};
+        html.vl = 1, html.vc = 0;
+        __vbuffer.push('\n');
+        html.vl = 2, html.vc = 0;
+        __vbuffer.push('<div class="map-container">');
+        html.vl = 2, html.vc = 27;
+        __vbuffer.push('\n');
+        html.vl = 3, html.vc = 0;
+        __vbuffer.push('\t');
+        html.vl = 3, html.vc = 1;
+        __vbuffer.push('<div id="temp-map" class="js-etho-map">');
+        html.vl = 3, html.vc = 40;
+        __vbuffer.push('</div>');
+        html.vl = 3, html.vc = 46;
+        __vbuffer.push('\n');
+        html.vl = 4, html.vc = 0;
+        __vbuffer.push('</div>');
+        html.vl = 4, html.vc = 6;
+        __vbuffer.push('\n');
+        __vopts && __vopts.onRenderEnd && __vopts.onRenderEnd(null, html);
+        return __vopts && __vopts.asContext ? html : html.toString();
+    } catch (e) {
+        html.reportError(e, html.vl, html.vc, '!LB!<div class="map-container">!LB!\t<div id="temp-map" class="js-etho-map"></div>!LB!</div>!LB!');
+    }
+}, {
+    'simple': false,
+    'modelName': 'model',
+    'helpersName': 'html'
+});
+},{"/Users/rover/_dev/ethoinfo/ez-build/ethoinfo-framework/node_modules/vashify/node_modules/vash/build/vash-runtime-all.min.js":36}],29:[function(require,module,exports){
+var vash = require('/Users/rover/_dev/ethoinfo/ez-build/ethoinfo-framework/node_modules/vashify/node_modules/vash/build/vash-runtime-all.min.js');
+module.exports = vash.link(function anonymous(model, html, __vopts, vash) {
+    try {
+        var __vbuffer = html.buffer;
+        html.options = __vopts;
+        model = model || {};
+        html.vl = 1, html.vc = 0;
         __vbuffer.push('<div class="code-manager">');
         html.vl = 1, html.vc = 26;
         __vbuffer.push('\n');
@@ -3913,146 +4482,7 @@ module.exports = vash.link(function anonymous(model, html, __vopts, vash) {
     'modelName': 'model',
     'helpersName': 'html'
 });
-},{"/Users/rover/_dev/ethoinfo/ez-build/ethoinfo-framework/node_modules/vashify/node_modules/vash/build/vash-runtime-all.min.js":36}],27:[function(require,module,exports){
-var vash = require('/Users/rover/_dev/ethoinfo/ez-build/ethoinfo-framework/node_modules/vashify/node_modules/vash/build/vash-runtime-all.min.js');
-module.exports = vash.link(function anonymous(model, html, __vopts, vash) {
-    try {
-        var __vbuffer = html.buffer;
-        html.options = __vopts;
-        model = model || {};
-        html.vl = 1, html.vc = 0;
-        __vbuffer.push('<ul class="create-select-menu">');
-        html.vl = 1, html.vc = 31;
-        __vbuffer.push('\n');
-        html.vl = 2, html.vc = 0;
-        __vbuffer.push('\t');
-        html.vl = 2, html.vc = 2;
-        __vbuffer.push(model.items.forEach(function (item) {
-            html.vl = 3, html.vc = 2;
-            __vbuffer.push('<li>');
-            html.vl = 3, html.vc = 6;
-            __vbuffer.push('\n');
-            html.vl = 4, html.vc = 0;
-            __vbuffer.push('\t');
-            html.vl = 4, html.vc = 1;
-            __vbuffer.push('\t');
-            html.vl = 4, html.vc = 2;
-            __vbuffer.push('\t');
-            html.vl = 4, html.vc = 3;
-            __vbuffer.push('<button type="button" class="js-button button ');
-            html.vl = 4, html.vc = 50;
-            __vbuffer.push(html.escape(item.class).toHtmlString());
-            html.vl = 4, html.vc = 55;
-            html.vl = 4, html.vc = 60;
-            __vbuffer.push(' ');
-            html.vl = 4, html.vc = 61;
-            __vbuffer.push('button');
-            html.vl = 4, html.vc = 67;
-            __vbuffer.push('-');
-            html.vl = 4, html.vc = 68;
-            __vbuffer.push('block');
-            html.vl = 4, html.vc = 73;
-            __vbuffer.push('"');
-            html.vl = 4, html.vc = 74;
-            __vbuffer.push(' ');
-            html.vl = 4, html.vc = 75;
-            __vbuffer.push('value');
-            html.vl = 4, html.vc = 80;
-            __vbuffer.push('=');
-            html.vl = 4, html.vc = 81;
-            __vbuffer.push('"');
-            html.vl = 4, html.vc = 83;
-            __vbuffer.push(html.escape(item.value).toHtmlString());
-            html.vl = 4, html.vc = 88;
-            html.vl = 4, html.vc = 93;
-            __vbuffer.push('"');
-            html.vl = 4, html.vc = 94;
-            __vbuffer.push('>');
-            html.vl = 4, html.vc = 95;
-            __vbuffer.push('\n');
-            html.vl = 5, html.vc = 0;
-            __vbuffer.push('\t');
-            html.vl = 5, html.vc = 1;
-            __vbuffer.push('\t');
-            html.vl = 5, html.vc = 2;
-            __vbuffer.push('\t');
-            html.vl = 5, html.vc = 3;
-            __vbuffer.push('\t');
-            html.vl = 5, html.vc = 5;
-            __vbuffer.push(html.escape(item.label).toHtmlString());
-            html.vl = 5, html.vc = 10;
-            html.vl = 5, html.vc = 15;
-            __vbuffer.push('\n');
-            html.vl = 6, html.vc = 0;
-            __vbuffer.push('\t');
-            html.vl = 6, html.vc = 1;
-            __vbuffer.push('\t');
-            html.vl = 6, html.vc = 2;
-            __vbuffer.push('\t');
-            html.vl = 6, html.vc = 3;
-            __vbuffer.push('</button>');
-            html.vl = 6, html.vc = 12;
-            __vbuffer.push('\n');
-            html.vl = 7, html.vc = 0;
-            __vbuffer.push('\t');
-            html.vl = 7, html.vc = 1;
-            __vbuffer.push('\t');
-            html.vl = 7, html.vc = 2;
-            __vbuffer.push('</li>');
-        }));
-        html.vl = 8, html.vc = 2;
-        html.vl = 8, html.vc = 3;
-        __vbuffer.push('\n');
-        html.vl = 9, html.vc = 0;
-        __vbuffer.push('</ul>');
-        html.vl = 9, html.vc = 5;
-        __vbuffer.push('\n');
-        __vopts && __vopts.onRenderEnd && __vopts.onRenderEnd(null, html);
-        return __vopts && __vopts.asContext ? html : html.toString();
-    } catch (e) {
-        html.reportError(e, html.vl, html.vc, '<ul class="create-select-menu">!LB!\t@model.items.forEach(function(item){!LB!\t\t<li>!LB!\t\t\t<button type="button" class="js-button button @item.class button-block" value="@item.value">!LB!\t\t\t\t@item.label!LB!\t\t\t</button>!LB!\t\t</li>!LB!\t})!LB!</ul>!LB!');
-    }
-}, {
-    'simple': false,
-    'modelName': 'model',
-    'helpersName': 'html'
-});
-},{"/Users/rover/_dev/ethoinfo/ez-build/ethoinfo-framework/node_modules/vashify/node_modules/vash/build/vash-runtime-all.min.js":36}],28:[function(require,module,exports){
-var vash = require('/Users/rover/_dev/ethoinfo/ez-build/ethoinfo-framework/node_modules/vashify/node_modules/vash/build/vash-runtime-all.min.js');
-module.exports = vash.link(function anonymous(model, html, __vopts, vash) {
-    try {
-        var __vbuffer = html.buffer;
-        html.options = __vopts;
-        model = model || {};
-        html.vl = 1, html.vc = 0;
-        __vbuffer.push('\n');
-        html.vl = 2, html.vc = 0;
-        __vbuffer.push('<div class="map-container">');
-        html.vl = 2, html.vc = 27;
-        __vbuffer.push('\n');
-        html.vl = 3, html.vc = 0;
-        __vbuffer.push('\t');
-        html.vl = 3, html.vc = 1;
-        __vbuffer.push('<div id="temp-map" class="js-etho-map">');
-        html.vl = 3, html.vc = 40;
-        __vbuffer.push('</div>');
-        html.vl = 3, html.vc = 46;
-        __vbuffer.push('\n');
-        html.vl = 4, html.vc = 0;
-        __vbuffer.push('</div>');
-        html.vl = 4, html.vc = 6;
-        __vbuffer.push('\n');
-        __vopts && __vopts.onRenderEnd && __vopts.onRenderEnd(null, html);
-        return __vopts && __vopts.asContext ? html : html.toString();
-    } catch (e) {
-        html.reportError(e, html.vl, html.vc, '!LB!<div class="map-container">!LB!\t<div id="temp-map" class="js-etho-map"></div>!LB!</div>!LB!');
-    }
-}, {
-    'simple': false,
-    'modelName': 'model',
-    'helpersName': 'html'
-});
-},{"/Users/rover/_dev/ethoinfo/ez-build/ethoinfo-framework/node_modules/vashify/node_modules/vash/build/vash-runtime-all.min.js":36}],29:[function(require,module,exports){
+},{"/Users/rover/_dev/ethoinfo/ez-build/ethoinfo-framework/node_modules/vashify/node_modules/vash/build/vash-runtime-all.min.js":36}],30:[function(require,module,exports){
 var vash = require('/Users/rover/_dev/ethoinfo/ez-build/ethoinfo-framework/node_modules/vashify/node_modules/vash/build/vash-runtime-all.min.js');
 module.exports = vash.link(function anonymous(model, html, __vopts, vash) {
     try {
@@ -4150,177 +4580,7 @@ module.exports = vash.link(function anonymous(model, html, __vopts, vash) {
     'modelName': 'model',
     'helpersName': 'html'
 });
-},{"/Users/rover/_dev/ethoinfo/ez-build/ethoinfo-framework/node_modules/vashify/node_modules/vash/build/vash-runtime-all.min.js":36}],30:[function(require,module,exports){
-var vash = require('/Users/rover/_dev/ethoinfo/ez-build/ethoinfo-framework/node_modules/vashify/node_modules/vash/build/vash-runtime-all.min.js');
-module.exports = vash.link(function anonymous(model, html, __vopts, vash) {
-    try {
-        var __vbuffer = html.buffer;
-        html.options = __vopts;
-        model = model || {};
-        html.vl = 1, html.vc = 0;
-        __vbuffer.push('<div id="geolocation-viewer">');
-        html.vl = 1, html.vc = 29;
-        __vbuffer.push('\n');
-        html.vl = 2, html.vc = 0;
-        __vbuffer.push('\t');
-        html.vl = 2, html.vc = 1;
-        __vbuffer.push('<h3 class="status">');
-        html.vl = 2, html.vc = 20;
-        __vbuffer.push('</h3>');
-        html.vl = 2, html.vc = 25;
-        __vbuffer.push('\n');
-        html.vl = 3, html.vc = 0;
-        __vbuffer.push('\t');
-        html.vl = 3, html.vc = 1;
-        __vbuffer.push('<pre>');
-        html.vl = 3, html.vc = 6;
-        __vbuffer.push('</pre>');
-        html.vl = 3, html.vc = 12;
-        __vbuffer.push('\n');
-        html.vl = 4, html.vc = 0;
-        __vbuffer.push('</div>');
-        html.vl = 4, html.vc = 6;
-        __vbuffer.push('\n');
-        __vopts && __vopts.onRenderEnd && __vopts.onRenderEnd(null, html);
-        return __vopts && __vopts.asContext ? html : html.toString();
-    } catch (e) {
-        html.reportError(e, html.vl, html.vc, '<div id="geolocation-viewer">!LB!\t<h3 class="status"></h3>!LB!\t<pre></pre>!LB!</div>!LB!');
-    }
-}, {
-    'simple': false,
-    'modelName': 'model',
-    'helpersName': 'html'
-});
 },{"/Users/rover/_dev/ethoinfo/ez-build/ethoinfo-framework/node_modules/vashify/node_modules/vash/build/vash-runtime-all.min.js":36}],31:[function(require,module,exports){
-var vash = require('/Users/rover/_dev/ethoinfo/ez-build/ethoinfo-framework/node_modules/vashify/node_modules/vash/build/vash-runtime-all.min.js');
-module.exports = vash.link(function anonymous(model, html, __vopts, vash) {
-    try {
-        var __vbuffer = html.buffer;
-        html.options = __vopts;
-        model = model || {};
-        html.vl = 1, html.vc = 0;
-        __vbuffer.push('<div class="pane list-page">');
-        html.vl = 1, html.vc = 28;
-        __vbuffer.push('\n');
-        html.vl = 2, html.vc = 0;
-        __vbuffer.push('\t');
-        html.vl = 2, html.vc = 1;
-        __vbuffer.push('<div class="scroll-wrapper">');
-        html.vl = 2, html.vc = 29;
-        __vbuffer.push('\n');
-        html.vl = 3, html.vc = 0;
-        __vbuffer.push('\t');
-        html.vl = 3, html.vc = 1;
-        __vbuffer.push('\t');
-        html.vl = 3, html.vc = 2;
-        __vbuffer.push('<div class="scroller">');
-        html.vl = 3, html.vc = 24;
-        __vbuffer.push('\n');
-        html.vl = 4, html.vc = 0;
-        __vbuffer.push('\t');
-        html.vl = 4, html.vc = 1;
-        __vbuffer.push('\t');
-        html.vl = 4, html.vc = 2;
-        __vbuffer.push('\t');
-        html.vl = 4, html.vc = 3;
-        __vbuffer.push('<ul class="list">');
-        html.vl = 4, html.vc = 20;
-        __vbuffer.push('\n');
-        html.vl = 5, html.vc = 0;
-        __vbuffer.push('\t');
-        html.vl = 5, html.vc = 1;
-        __vbuffer.push('\t');
-        html.vl = 5, html.vc = 2;
-        __vbuffer.push('\t');
-        html.vl = 5, html.vc = 3;
-        __vbuffer.push('</ul>');
-        html.vl = 5, html.vc = 8;
-        __vbuffer.push('\n');
-        html.vl = 6, html.vc = 0;
-        __vbuffer.push('\t');
-        html.vl = 6, html.vc = 1;
-        __vbuffer.push('\t');
-        html.vl = 6, html.vc = 2;
-        __vbuffer.push('</div>');
-        html.vl = 6, html.vc = 8;
-        __vbuffer.push('\n');
-        html.vl = 7, html.vc = 0;
-        __vbuffer.push('\t');
-        html.vl = 7, html.vc = 1;
-        __vbuffer.push('</div>');
-        html.vl = 7, html.vc = 7;
-        __vbuffer.push('\n');
-        html.vl = 8, html.vc = 0;
-        __vbuffer.push('</div>');
-        html.vl = 8, html.vc = 6;
-        __vbuffer.push('\n');
-        __vopts && __vopts.onRenderEnd && __vopts.onRenderEnd(null, html);
-        return __vopts && __vopts.asContext ? html : html.toString();
-    } catch (e) {
-        html.reportError(e, html.vl, html.vc, '<div class="pane list-page">!LB!\t<div class="scroll-wrapper">!LB!\t\t<div class="scroller">!LB!\t\t\t<ul class="list">!LB!\t\t\t</ul>!LB!\t\t</div>!LB!\t</div>!LB!</div>!LB!');
-    }
-}, {
-    'simple': false,
-    'modelName': 'model',
-    'helpersName': 'html'
-});
-},{"/Users/rover/_dev/ethoinfo/ez-build/ethoinfo-framework/node_modules/vashify/node_modules/vash/build/vash-runtime-all.min.js":36}],32:[function(require,module,exports){
-var vash = require('/Users/rover/_dev/ethoinfo/ez-build/ethoinfo-framework/node_modules/vashify/node_modules/vash/build/vash-runtime-all.min.js');
-module.exports = vash.link(function anonymous(model, html, __vopts, vash) {
-    try {
-        var __vbuffer = html.buffer;
-        html.options = __vopts;
-        model = model || {};
-        html.vl = 1, html.vc = 0;
-        __vbuffer.push('<li class="item js-item" data-id="');
-        html.vl = 1, html.vc = 35;
-        __vbuffer.push(html.escape(model.id).toHtmlString());
-        html.vl = 1, html.vc = 41;
-        html.vl = 1, html.vc = 43;
-        __vbuffer.push('"');
-        html.vl = 1, html.vc = 44;
-        __vbuffer.push(' ');
-        html.vl = 1, html.vc = 45;
-        __vbuffer.push('data');
-        html.vl = 1, html.vc = 49;
-        __vbuffer.push('-');
-        html.vl = 1, html.vc = 50;
-        __vbuffer.push('domain');
-        html.vl = 1, html.vc = 56;
-        __vbuffer.push('=');
-        html.vl = 1, html.vc = 57;
-        __vbuffer.push('"');
-        html.vl = 1, html.vc = 59;
-        __vbuffer.push(html.escape(model.domainName).toHtmlString());
-        html.vl = 1, html.vc = 65;
-        html.vl = 1, html.vc = 75;
-        __vbuffer.push('"');
-        html.vl = 1, html.vc = 76;
-        __vbuffer.push('>');
-        html.vl = 1, html.vc = 77;
-        __vbuffer.push('\n');
-        html.vl = 2, html.vc = 0;
-        __vbuffer.push('\t');
-        html.vl = 2, html.vc = 2;
-        __vbuffer.push(html.escape(model.label).toHtmlString());
-        html.vl = 2, html.vc = 8;
-        html.vl = 2, html.vc = 13;
-        __vbuffer.push('\n');
-        html.vl = 3, html.vc = 0;
-        __vbuffer.push('</li>');
-        html.vl = 3, html.vc = 5;
-        __vbuffer.push('\n');
-        __vopts && __vopts.onRenderEnd && __vopts.onRenderEnd(null, html);
-        return __vopts && __vopts.asContext ? html : html.toString();
-    } catch (e) {
-        html.reportError(e, html.vl, html.vc, '<li class="item js-item" data-id="@model.id" data-domain="@model.domainName">!LB!\t@model.label!LB!</li>!LB!');
-    }
-}, {
-    'simple': false,
-    'modelName': 'model',
-    'helpersName': 'html'
-});
-},{"/Users/rover/_dev/ethoinfo/ez-build/ethoinfo-framework/node_modules/vashify/node_modules/vash/build/vash-runtime-all.min.js":36}],33:[function(require,module,exports){
 var vash = require('/Users/rover/_dev/ethoinfo/ez-build/ethoinfo-framework/node_modules/vashify/node_modules/vash/build/vash-runtime-all.min.js');
 module.exports = vash.link(function anonymous(model, html, __vopts, vash) {
     try {
@@ -4513,7 +4773,48 @@ module.exports = vash.link(function anonymous(model, html, __vopts, vash) {
     'modelName': 'model',
     'helpersName': 'html'
 });
-},{"/Users/rover/_dev/ethoinfo/ez-build/ethoinfo-framework/node_modules/vashify/node_modules/vash/build/vash-runtime-all.min.js":36}],34:[function(require,module,exports){
+},{"/Users/rover/_dev/ethoinfo/ez-build/ethoinfo-framework/node_modules/vashify/node_modules/vash/build/vash-runtime-all.min.js":36}],32:[function(require,module,exports){
+var vash = require('/Users/rover/_dev/ethoinfo/ez-build/ethoinfo-framework/node_modules/vashify/node_modules/vash/build/vash-runtime-all.min.js');
+module.exports = vash.link(function anonymous(model, html, __vopts, vash) {
+    try {
+        var __vbuffer = html.buffer;
+        html.options = __vopts;
+        model = model || {};
+        html.vl = 1, html.vc = 0;
+        __vbuffer.push('<div id="geolocation-viewer">');
+        html.vl = 1, html.vc = 29;
+        __vbuffer.push('\n');
+        html.vl = 2, html.vc = 0;
+        __vbuffer.push('\t');
+        html.vl = 2, html.vc = 1;
+        __vbuffer.push('<h3 class="status">');
+        html.vl = 2, html.vc = 20;
+        __vbuffer.push('</h3>');
+        html.vl = 2, html.vc = 25;
+        __vbuffer.push('\n');
+        html.vl = 3, html.vc = 0;
+        __vbuffer.push('\t');
+        html.vl = 3, html.vc = 1;
+        __vbuffer.push('<pre>');
+        html.vl = 3, html.vc = 6;
+        __vbuffer.push('</pre>');
+        html.vl = 3, html.vc = 12;
+        __vbuffer.push('\n');
+        html.vl = 4, html.vc = 0;
+        __vbuffer.push('</div>');
+        html.vl = 4, html.vc = 6;
+        __vbuffer.push('\n');
+        __vopts && __vopts.onRenderEnd && __vopts.onRenderEnd(null, html);
+        return __vopts && __vopts.asContext ? html : html.toString();
+    } catch (e) {
+        html.reportError(e, html.vl, html.vc, '<div id="geolocation-viewer">!LB!\t<h3 class="status"></h3>!LB!\t<pre></pre>!LB!</div>!LB!');
+    }
+}, {
+    'simple': false,
+    'modelName': 'model',
+    'helpersName': 'html'
+});
+},{"/Users/rover/_dev/ethoinfo/ez-build/ethoinfo-framework/node_modules/vashify/node_modules/vash/build/vash-runtime-all.min.js":36}],33:[function(require,module,exports){
 var vash = require('/Users/rover/_dev/ethoinfo/ez-build/ethoinfo-framework/node_modules/vashify/node_modules/vash/build/vash-runtime-all.min.js');
 module.exports = vash.link(function anonymous(model, html, __vopts, vash) {
     try {
@@ -4950,7 +5251,7 @@ module.exports = vash.link(function anonymous(model, html, __vopts, vash) {
     'modelName': 'model',
     'helpersName': 'html'
 });
-},{"/Users/rover/_dev/ethoinfo/ez-build/ethoinfo-framework/node_modules/vashify/node_modules/vash/build/vash-runtime-all.min.js":36}],35:[function(require,module,exports){
+},{"/Users/rover/_dev/ethoinfo/ez-build/ethoinfo-framework/node_modules/vashify/node_modules/vash/build/vash-runtime-all.min.js":36}],34:[function(require,module,exports){
 var vash = require('/Users/rover/_dev/ethoinfo/ez-build/ethoinfo-framework/node_modules/vashify/node_modules/vash/build/vash-runtime-all.min.js');
 module.exports = vash.link(function anonymous(model, html, __vopts, vash) {
     try {
@@ -4958,22 +5259,22 @@ module.exports = vash.link(function anonymous(model, html, __vopts, vash) {
         html.options = __vopts;
         model = model || {};
         html.vl = 1, html.vc = 0;
-        __vbuffer.push('<div class="sync-dialog">');
-        html.vl = 1, html.vc = 25;
+        __vbuffer.push('<div class="pane list-page">');
+        html.vl = 1, html.vc = 28;
         __vbuffer.push('\n');
         html.vl = 2, html.vc = 0;
         __vbuffer.push('\t');
         html.vl = 2, html.vc = 1;
-        __vbuffer.push('<div class="card">');
-        html.vl = 2, html.vc = 19;
+        __vbuffer.push('<div class="scroll-wrapper">');
+        html.vl = 2, html.vc = 29;
         __vbuffer.push('\n');
         html.vl = 3, html.vc = 0;
         __vbuffer.push('\t');
         html.vl = 3, html.vc = 1;
         __vbuffer.push('\t');
         html.vl = 3, html.vc = 2;
-        __vbuffer.push('<div class="js-status item item-text-wrap">');
-        html.vl = 3, html.vc = 45;
+        __vbuffer.push('<div class="scroller">');
+        html.vl = 3, html.vc = 24;
         __vbuffer.push('\n');
         html.vl = 4, html.vc = 0;
         __vbuffer.push('\t');
@@ -4982,8 +5283,8 @@ module.exports = vash.link(function anonymous(model, html, __vopts, vash) {
         html.vl = 4, html.vc = 2;
         __vbuffer.push('\t');
         html.vl = 4, html.vc = 3;
-        __vbuffer.push('<div class="js-working message">');
-        html.vl = 4, html.vc = 35;
+        __vbuffer.push('<ul class="list">');
+        html.vl = 4, html.vc = 20;
         __vbuffer.push('\n');
         html.vl = 5, html.vc = 0;
         __vbuffer.push('\t');
@@ -4992,388 +5293,87 @@ module.exports = vash.link(function anonymous(model, html, __vopts, vash) {
         html.vl = 5, html.vc = 2;
         __vbuffer.push('\t');
         html.vl = 5, html.vc = 3;
-        __vbuffer.push('\t');
-        html.vl = 5, html.vc = 4;
-        __vbuffer.push('<i class="icon ion-loading-d">');
-        html.vl = 5, html.vc = 34;
-        __vbuffer.push('</i>');
-        html.vl = 5, html.vc = 38;
+        __vbuffer.push('</ul>');
+        html.vl = 5, html.vc = 8;
         __vbuffer.push('\n');
         html.vl = 6, html.vc = 0;
         __vbuffer.push('\t');
         html.vl = 6, html.vc = 1;
         __vbuffer.push('\t');
         html.vl = 6, html.vc = 2;
-        __vbuffer.push('\t');
-        html.vl = 6, html.vc = 3;
-        __vbuffer.push('\t');
-        html.vl = 6, html.vc = 4;
-        __vbuffer.push('<span>');
-        html.vl = 6, html.vc = 10;
-        __vbuffer.push('</span>');
-        html.vl = 6, html.vc = 17;
+        __vbuffer.push('</div>');
+        html.vl = 6, html.vc = 8;
         __vbuffer.push('\n');
         html.vl = 7, html.vc = 0;
         __vbuffer.push('\t');
         html.vl = 7, html.vc = 1;
-        __vbuffer.push('\t');
-        html.vl = 7, html.vc = 2;
-        __vbuffer.push('\t');
-        html.vl = 7, html.vc = 3;
         __vbuffer.push('</div>');
-        html.vl = 7, html.vc = 9;
+        html.vl = 7, html.vc = 7;
         __vbuffer.push('\n');
         html.vl = 8, html.vc = 0;
-        __vbuffer.push('\t');
-        html.vl = 8, html.vc = 1;
-        __vbuffer.push('\t');
-        html.vl = 8, html.vc = 2;
-        __vbuffer.push('\t');
-        html.vl = 8, html.vc = 3;
-        __vbuffer.push('<div class="js-success message">');
-        html.vl = 8, html.vc = 35;
-        __vbuffer.push('\n');
-        html.vl = 9, html.vc = 0;
-        __vbuffer.push('\t');
-        html.vl = 9, html.vc = 1;
-        __vbuffer.push('\t');
-        html.vl = 9, html.vc = 2;
-        __vbuffer.push('\t');
-        html.vl = 9, html.vc = 3;
-        __vbuffer.push('\t');
-        html.vl = 9, html.vc = 4;
-        __vbuffer.push('<i class="icon balanced ion-checkmark-circled">');
-        html.vl = 9, html.vc = 51;
-        __vbuffer.push('</i>');
-        html.vl = 9, html.vc = 55;
-        __vbuffer.push('\n');
-        html.vl = 10, html.vc = 0;
-        __vbuffer.push('\t');
-        html.vl = 10, html.vc = 1;
-        __vbuffer.push('\t');
-        html.vl = 10, html.vc = 2;
-        __vbuffer.push('\t');
-        html.vl = 10, html.vc = 3;
-        __vbuffer.push('\t');
-        html.vl = 10, html.vc = 4;
-        __vbuffer.push('<span>');
-        html.vl = 10, html.vc = 10;
-        __vbuffer.push('</span>');
-        html.vl = 10, html.vc = 17;
-        __vbuffer.push('\n');
-        html.vl = 11, html.vc = 0;
-        __vbuffer.push('\t');
-        html.vl = 11, html.vc = 1;
-        __vbuffer.push('\t');
-        html.vl = 11, html.vc = 2;
-        __vbuffer.push('\t');
-        html.vl = 11, html.vc = 3;
         __vbuffer.push('</div>');
-        html.vl = 11, html.vc = 9;
-        __vbuffer.push('\n');
-        html.vl = 12, html.vc = 0;
-        __vbuffer.push('\t');
-        html.vl = 12, html.vc = 1;
-        __vbuffer.push('\t');
-        html.vl = 12, html.vc = 2;
-        __vbuffer.push('\t');
-        html.vl = 12, html.vc = 3;
-        __vbuffer.push('<div class="js-failure message">');
-        html.vl = 12, html.vc = 35;
-        __vbuffer.push('\n');
-        html.vl = 13, html.vc = 0;
-        __vbuffer.push('\t');
-        html.vl = 13, html.vc = 1;
-        __vbuffer.push('\t');
-        html.vl = 13, html.vc = 2;
-        __vbuffer.push('\t');
-        html.vl = 13, html.vc = 3;
-        __vbuffer.push('\t');
-        html.vl = 13, html.vc = 4;
-        __vbuffer.push('<i class="icon assertive ion-alert-circled">');
-        html.vl = 13, html.vc = 48;
-        __vbuffer.push('</i>');
-        html.vl = 13, html.vc = 52;
-        __vbuffer.push('\n');
-        html.vl = 14, html.vc = 0;
-        __vbuffer.push('\t');
-        html.vl = 14, html.vc = 1;
-        __vbuffer.push('\t');
-        html.vl = 14, html.vc = 2;
-        __vbuffer.push('\t');
-        html.vl = 14, html.vc = 3;
-        __vbuffer.push('\t');
-        html.vl = 14, html.vc = 4;
-        __vbuffer.push('<span>');
-        html.vl = 14, html.vc = 10;
-        __vbuffer.push('</span>');
-        html.vl = 14, html.vc = 17;
-        __vbuffer.push('\n');
-        html.vl = 15, html.vc = 0;
-        __vbuffer.push('\t');
-        html.vl = 15, html.vc = 1;
-        __vbuffer.push('\t');
-        html.vl = 15, html.vc = 2;
-        __vbuffer.push('\t');
-        html.vl = 15, html.vc = 3;
-        __vbuffer.push('</div>');
-        html.vl = 15, html.vc = 9;
-        __vbuffer.push('\n');
-        html.vl = 16, html.vc = 0;
-        __vbuffer.push('\t');
-        html.vl = 16, html.vc = 1;
-        __vbuffer.push('\t');
-        html.vl = 16, html.vc = 2;
-        __vbuffer.push('</div>');
-        html.vl = 16, html.vc = 8;
-        __vbuffer.push('\n');
-        html.vl = 17, html.vc = 0;
-        __vbuffer.push('\t');
-        html.vl = 17, html.vc = 1;
-        __vbuffer.push('</div>');
-        html.vl = 17, html.vc = 7;
-        __vbuffer.push('\n');
-        html.vl = 18, html.vc = 0;
-        __vbuffer.push('\n');
-        html.vl = 19, html.vc = 0;
-        __vbuffer.push('\t');
-        html.vl = 19, html.vc = 1;
-        __vbuffer.push('<ul class="list">');
-        html.vl = 19, html.vc = 18;
-        __vbuffer.push('\n');
-        html.vl = 20, html.vc = 0;
-        __vbuffer.push('\t');
-        html.vl = 20, html.vc = 1;
-        __vbuffer.push('\t');
-        html.vl = 20, html.vc = 2;
-        __vbuffer.push('<li class="item item-input item-stacked-label">');
-        html.vl = 20, html.vc = 49;
-        __vbuffer.push('\n');
-        html.vl = 21, html.vc = 0;
-        __vbuffer.push('\t');
-        html.vl = 21, html.vc = 1;
-        __vbuffer.push('\t');
-        html.vl = 21, html.vc = 2;
-        __vbuffer.push('\t');
-        html.vl = 21, html.vc = 3;
-        __vbuffer.push('<span class="input-label">');
-        html.vl = 21, html.vc = 29;
-        __vbuffer.push('Couch');
-        html.vl = 21, html.vc = 34;
-        __vbuffer.push(' ');
-        html.vl = 21, html.vc = 35;
-        __vbuffer.push('URL');
-        html.vl = 21, html.vc = 38;
-        __vbuffer.push('</span>');
-        html.vl = 21, html.vc = 45;
-        __vbuffer.push('\n');
-        html.vl = 22, html.vc = 0;
-        __vbuffer.push('\t');
-        html.vl = 22, html.vc = 1;
-        __vbuffer.push('\t');
-        html.vl = 22, html.vc = 2;
-        __vbuffer.push('\t');
-        html.vl = 22, html.vc = 3;
-        __vbuffer.push('<input class="js-url" type="text" value="');
-        html.vl = 22, html.vc = 45;
-        __vbuffer.push(html.escape(model.url).toHtmlString());
-        html.vl = 22, html.vc = 51;
-        html.vl = 22, html.vc = 54;
-        __vbuffer.push('"');
-        html.vl = 22, html.vc = 55;
-        __vbuffer.push('>');
-        html.vl = 22, html.vc = 56;
-        __vbuffer.push('</input>');
-        html.vl = 22, html.vc = 64;
-        __vbuffer.push('\n');
-        html.vl = 23, html.vc = 0;
-        __vbuffer.push('\t');
-        html.vl = 23, html.vc = 1;
-        __vbuffer.push('\t');
-        html.vl = 23, html.vc = 2;
-        __vbuffer.push('</li>');
-        html.vl = 23, html.vc = 7;
-        __vbuffer.push('\n');
-        html.vl = 24, html.vc = 0;
-        __vbuffer.push('\t');
-        html.vl = 24, html.vc = 1;
-        __vbuffer.push('\t');
-        html.vl = 24, html.vc = 2;
-        __vbuffer.push('<li class="item item-input item-stacked-label">');
-        html.vl = 24, html.vc = 49;
-        __vbuffer.push('\n');
-        html.vl = 25, html.vc = 0;
-        __vbuffer.push('\t');
-        html.vl = 25, html.vc = 1;
-        __vbuffer.push('\t');
-        html.vl = 25, html.vc = 2;
-        __vbuffer.push('\t');
-        html.vl = 25, html.vc = 3;
-        __vbuffer.push('<span class="input-label">');
-        html.vl = 25, html.vc = 29;
-        __vbuffer.push('Username');
-        html.vl = 25, html.vc = 37;
-        __vbuffer.push('</span>');
-        html.vl = 25, html.vc = 44;
-        __vbuffer.push('\n');
-        html.vl = 26, html.vc = 0;
-        __vbuffer.push('\t');
-        html.vl = 26, html.vc = 1;
-        __vbuffer.push('\t');
-        html.vl = 26, html.vc = 2;
-        __vbuffer.push('\t');
-        html.vl = 26, html.vc = 3;
-        __vbuffer.push('<input class="js-username" type="text" value="');
-        html.vl = 26, html.vc = 50;
-        __vbuffer.push(html.escape(model.username).toHtmlString());
-        html.vl = 26, html.vc = 56;
-        html.vl = 26, html.vc = 64;
-        __vbuffer.push('"');
-        html.vl = 26, html.vc = 65;
-        __vbuffer.push('>');
-        html.vl = 26, html.vc = 66;
-        __vbuffer.push('</input>');
-        html.vl = 26, html.vc = 74;
-        __vbuffer.push('\n');
-        html.vl = 27, html.vc = 0;
-        __vbuffer.push('\t');
-        html.vl = 27, html.vc = 1;
-        __vbuffer.push('\t');
-        html.vl = 27, html.vc = 2;
-        __vbuffer.push('</li>');
-        html.vl = 27, html.vc = 7;
-        __vbuffer.push('\n');
-        html.vl = 28, html.vc = 0;
-        __vbuffer.push('\t');
-        html.vl = 28, html.vc = 1;
-        __vbuffer.push('\t');
-        html.vl = 28, html.vc = 2;
-        __vbuffer.push('<li class="item item-input item-stacked-label">');
-        html.vl = 28, html.vc = 49;
-        __vbuffer.push('\n');
-        html.vl = 29, html.vc = 0;
-        __vbuffer.push('\t');
-        html.vl = 29, html.vc = 1;
-        __vbuffer.push('\t');
-        html.vl = 29, html.vc = 2;
-        __vbuffer.push('\t');
-        html.vl = 29, html.vc = 3;
-        __vbuffer.push('<span class="input-label">');
-        html.vl = 29, html.vc = 29;
-        __vbuffer.push('Password');
-        html.vl = 29, html.vc = 37;
-        __vbuffer.push('</span>');
-        html.vl = 29, html.vc = 44;
-        __vbuffer.push('\n');
-        html.vl = 30, html.vc = 0;
-        __vbuffer.push('\t');
-        html.vl = 30, html.vc = 1;
-        __vbuffer.push('\t');
-        html.vl = 30, html.vc = 2;
-        __vbuffer.push('\t');
-        html.vl = 30, html.vc = 3;
-        __vbuffer.push('<input class="js-password" type="password" value="');
-        html.vl = 30, html.vc = 54;
-        __vbuffer.push(html.escape(model.password).toHtmlString());
-        html.vl = 30, html.vc = 60;
-        html.vl = 30, html.vc = 68;
-        __vbuffer.push('"');
-        html.vl = 30, html.vc = 69;
-        __vbuffer.push('>');
-        html.vl = 30, html.vc = 70;
-        __vbuffer.push('</input>');
-        html.vl = 30, html.vc = 78;
-        __vbuffer.push('\n');
-        html.vl = 31, html.vc = 0;
-        __vbuffer.push('\t');
-        html.vl = 31, html.vc = 1;
-        __vbuffer.push('\t');
-        html.vl = 31, html.vc = 2;
-        __vbuffer.push('</li>');
-        html.vl = 31, html.vc = 7;
-        __vbuffer.push('\n');
-        html.vl = 32, html.vc = 0;
-        __vbuffer.push('\t');
-        html.vl = 32, html.vc = 1;
-        __vbuffer.push('\t');
-        html.vl = 32, html.vc = 2;
-        __vbuffer.push('<li class="item">');
-        html.vl = 32, html.vc = 19;
-        __vbuffer.push('\n');
-        html.vl = 33, html.vc = 0;
-        __vbuffer.push('\t');
-        html.vl = 33, html.vc = 1;
-        __vbuffer.push('\t');
-        html.vl = 33, html.vc = 2;
-        __vbuffer.push('\t');
-        html.vl = 33, html.vc = 3;
-        __vbuffer.push('<div class="button-bar">');
-        html.vl = 33, html.vc = 27;
-        __vbuffer.push('\n');
-        html.vl = 34, html.vc = 0;
-        __vbuffer.push('\t');
-        html.vl = 34, html.vc = 1;
-        __vbuffer.push('\t');
-        html.vl = 34, html.vc = 2;
-        __vbuffer.push('\t');
-        html.vl = 34, html.vc = 3;
-        __vbuffer.push('\t');
-        html.vl = 34, html.vc = 4;
-        __vbuffer.push('<button class="js-download icon-left ion-android-download button button-block button-positive">');
-        html.vl = 34, html.vc = 99;
-        __vbuffer.push('Download');
-        html.vl = 34, html.vc = 107;
-        __vbuffer.push('</button>');
-        html.vl = 34, html.vc = 116;
-        __vbuffer.push('\n');
-        html.vl = 35, html.vc = 0;
-        __vbuffer.push('\t');
-        html.vl = 35, html.vc = 1;
-        __vbuffer.push('\t');
-        html.vl = 35, html.vc = 2;
-        __vbuffer.push('\t');
-        html.vl = 35, html.vc = 3;
-        __vbuffer.push('\t');
-        html.vl = 35, html.vc = 4;
-        __vbuffer.push('<button class="js-upload icon-left ion-android-upload button button-block button-positive">');
-        html.vl = 35, html.vc = 95;
-        __vbuffer.push('Upload');
-        html.vl = 35, html.vc = 101;
-        __vbuffer.push('</button>');
-        html.vl = 35, html.vc = 110;
-        __vbuffer.push('\n');
-        html.vl = 36, html.vc = 0;
-        __vbuffer.push('\t');
-        html.vl = 36, html.vc = 1;
-        __vbuffer.push('\t');
-        html.vl = 36, html.vc = 2;
-        __vbuffer.push('\t');
-        html.vl = 36, html.vc = 3;
-        __vbuffer.push('</div>');
-        html.vl = 36, html.vc = 9;
-        __vbuffer.push('\n');
-        html.vl = 37, html.vc = 0;
-        __vbuffer.push('\t');
-        html.vl = 37, html.vc = 1;
-        __vbuffer.push('\t');
-        html.vl = 37, html.vc = 2;
-        __vbuffer.push('</li>');
-        html.vl = 37, html.vc = 7;
-        __vbuffer.push('\n');
-        html.vl = 38, html.vc = 0;
-        __vbuffer.push('\t');
-        html.vl = 38, html.vc = 1;
-        __vbuffer.push('</ul>');
-        html.vl = 38, html.vc = 6;
-        __vbuffer.push('\n');
-        html.vl = 39, html.vc = 0;
-        __vbuffer.push('</div>');
-        html.vl = 39, html.vc = 6;
+        html.vl = 8, html.vc = 6;
         __vbuffer.push('\n');
         __vopts && __vopts.onRenderEnd && __vopts.onRenderEnd(null, html);
         return __vopts && __vopts.asContext ? html : html.toString();
     } catch (e) {
-        html.reportError(e, html.vl, html.vc, '<div class="sync-dialog">!LB!\t<div class="card">!LB!\t\t<div class="js-status item item-text-wrap">!LB!\t\t\t<div class="js-working message">!LB!\t\t\t\t<i class="icon ion-loading-d"></i>!LB!\t\t\t\t<span></span>!LB!\t\t\t</div>!LB!\t\t\t<div class="js-success message">!LB!\t\t\t\t<i class="icon balanced ion-checkmark-circled"></i>!LB!\t\t\t\t<span></span>!LB!\t\t\t</div>!LB!\t\t\t<div class="js-failure message">!LB!\t\t\t\t<i class="icon assertive ion-alert-circled"></i>!LB!\t\t\t\t<span></span>!LB!\t\t\t</div>!LB!\t\t</div>!LB!\t</div>!LB!!LB!\t<ul class="list">!LB!\t\t<li class="item item-input item-stacked-label">!LB!\t\t\t<span class="input-label">Couch URL</span>!LB!\t\t\t<input class="js-url" type="text" value="@model.url"></input>!LB!\t\t</li>!LB!\t\t<li class="item item-input item-stacked-label">!LB!\t\t\t<span class="input-label">Username</span>!LB!\t\t\t<input class="js-username" type="text" value="@model.username"></input>!LB!\t\t</li>!LB!\t\t<li class="item item-input item-stacked-label">!LB!\t\t\t<span class="input-label">Password</span>!LB!\t\t\t<input class="js-password" type="password" value="@model.password"></input>!LB!\t\t</li>!LB!\t\t<li class="item">!LB!\t\t\t<div class="button-bar">!LB!\t\t\t\t<button class="js-download icon-left ion-android-download button button-block button-positive">Download</button>!LB!\t\t\t\t<button class="js-upload icon-left ion-android-upload button button-block button-positive">Upload</button>!LB!\t\t\t</div>!LB!\t\t</li>!LB!\t</ul>!LB!</div>!LB!');
+        html.reportError(e, html.vl, html.vc, '<div class="pane list-page">!LB!\t<div class="scroll-wrapper">!LB!\t\t<div class="scroller">!LB!\t\t\t<ul class="list">!LB!\t\t\t</ul>!LB!\t\t</div>!LB!\t</div>!LB!</div>!LB!');
+    }
+}, {
+    'simple': false,
+    'modelName': 'model',
+    'helpersName': 'html'
+});
+},{"/Users/rover/_dev/ethoinfo/ez-build/ethoinfo-framework/node_modules/vashify/node_modules/vash/build/vash-runtime-all.min.js":36}],35:[function(require,module,exports){
+var vash = require('/Users/rover/_dev/ethoinfo/ez-build/ethoinfo-framework/node_modules/vashify/node_modules/vash/build/vash-runtime-all.min.js');
+module.exports = vash.link(function anonymous(model, html, __vopts, vash) {
+    try {
+        var __vbuffer = html.buffer;
+        html.options = __vopts;
+        model = model || {};
+        html.vl = 1, html.vc = 0;
+        __vbuffer.push('<li class="item js-item" data-id="');
+        html.vl = 1, html.vc = 35;
+        __vbuffer.push(html.escape(model.id).toHtmlString());
+        html.vl = 1, html.vc = 41;
+        html.vl = 1, html.vc = 43;
+        __vbuffer.push('"');
+        html.vl = 1, html.vc = 44;
+        __vbuffer.push(' ');
+        html.vl = 1, html.vc = 45;
+        __vbuffer.push('data');
+        html.vl = 1, html.vc = 49;
+        __vbuffer.push('-');
+        html.vl = 1, html.vc = 50;
+        __vbuffer.push('domain');
+        html.vl = 1, html.vc = 56;
+        __vbuffer.push('=');
+        html.vl = 1, html.vc = 57;
+        __vbuffer.push('"');
+        html.vl = 1, html.vc = 59;
+        __vbuffer.push(html.escape(model.domainName).toHtmlString());
+        html.vl = 1, html.vc = 65;
+        html.vl = 1, html.vc = 75;
+        __vbuffer.push('"');
+        html.vl = 1, html.vc = 76;
+        __vbuffer.push('>');
+        html.vl = 1, html.vc = 77;
+        __vbuffer.push('\n');
+        html.vl = 2, html.vc = 0;
+        __vbuffer.push('\t');
+        html.vl = 2, html.vc = 2;
+        __vbuffer.push(html.escape(model.label).toHtmlString());
+        html.vl = 2, html.vc = 8;
+        html.vl = 2, html.vc = 13;
+        __vbuffer.push('\n');
+        html.vl = 3, html.vc = 0;
+        __vbuffer.push('</li>');
+        html.vl = 3, html.vc = 5;
+        __vbuffer.push('\n');
+        __vopts && __vopts.onRenderEnd && __vopts.onRenderEnd(null, html);
+        return __vopts && __vopts.asContext ? html : html.toString();
+    } catch (e) {
+        html.reportError(e, html.vl, html.vc, '<li class="item js-item" data-id="@model.id" data-domain="@model.domainName">!LB!\t@model.label!LB!</li>!LB!');
     }
 }, {
     'simple': false,
@@ -86536,7 +86536,7 @@ function MapView(){
 	var map = L.map($map[0],{
 		//center: [-13.4484, 28.072],
 		//maxBounds: bounds,
-		center: [40.774484, -73.917],
+		center: [-0.63306469, -76.15418904],
 		zoom: 15,
 	});
 	self.getLeaflet = function(){return L;};
@@ -86546,8 +86546,8 @@ function MapView(){
 	L.tileLayer('http://{s}.tile.openstreetmap.se/hydda/full/{z}/{x}/{y}.png', {
 	//L.tileLayer('lib/img/MapQuest/{z}/{x}/{y}.jpg', {
 	//L.tileLayer(tiles, {
-		maxZoom: 17,
-		minZoom: 8,
+		maxZoom: 20,
+		minZoom: 1,
 		id: 'examples.map-i875mjb7'
 	}).addTo(map);
 
@@ -86689,7 +86689,7 @@ var $ = require('jquery'),
 	EventEmitter = require('events').EventEmitter,
 	_ = require('lodash'),
 	util = require('util'),
-	modalTemplate = require("/Users/rover/_dev/ethoinfo/ez-build/ethoinfo-framework/node_modules/vashify/.temp/11_modal.vash.js");
+	modalTemplate = require("/Users/rover/_dev/ethoinfo/ez-build/ethoinfo-framework/node_modules/vashify/.temp/10_modal.vash.js");
 
 
 var ANIMATION_DURATION=400;
@@ -86809,7 +86809,7 @@ function Modal(options){
 util.inherits(Modal, EventEmitter);
 module.exports = Modal;
 
-},{"./index.less":248,"/Users/rover/_dev/ethoinfo/ez-build/ethoinfo-framework/node_modules/vashify/.temp/11_modal.vash.js":6,"events":43,"iscroll":78,"jquery":80,"lodash":83,"util":63,"velocity-animate":239}],248:[function(require,module,exports){
+},{"./index.less":248,"/Users/rover/_dev/ethoinfo/ez-build/ethoinfo-framework/node_modules/vashify/.temp/10_modal.vash.js":5,"events":43,"iscroll":78,"jquery":80,"lodash":83,"util":63,"velocity-animate":239}],248:[function(require,module,exports){
 (function() { var head = document.getElementsByTagName('head')[0]; style = document.createElement('style'); style.type = 'text/css';var css = ".modal{top:0;bottom:0;left:0;right:0;width:100%}.modal .bar-header .ion-close{position:absolute;right:8px}";if (style.styleSheet){ style.styleSheet.cssText = css; } else { style.appendChild(document.createTextNode(css)); } head.appendChild(style);}())
 },{}],249:[function(require,module,exports){
 require('./index.less');
@@ -87972,7 +87972,7 @@ module.exports = function(opts){
 
 },{"app":240,"d3-timeline":75,"lodash":83}],264:[function(require,module,exports){
 require('./index.less');
-var tmpl = require("/Users/rover/_dev/ethoinfo/ez-build/ethoinfo-framework/node_modules/vashify/.temp/2_index.vash.js"),
+var tmpl = require("/Users/rover/_dev/ethoinfo/ez-build/ethoinfo-framework/node_modules/vashify/.temp/3_index.vash.js"),
 	CreateNewDialog = require('create-new-dialog'),
 	EditExistingDialog = require('edit-existing-dialog'),
 	Scroll = require('iscroll'),
@@ -87981,7 +87981,7 @@ var tmpl = require("/Users/rover/_dev/ethoinfo/ez-build/ethoinfo-framework/node_
 	EventEmitter = require('events').EventEmitter,
 	util = require('util'),
 	Modal = require('modal'),
-	listItemTemplate = require("/Users/rover/_dev/ethoinfo/ez-build/ethoinfo-framework/node_modules/vashify/.temp/3_list-item-template.vash.js"),
+	listItemTemplate = require("/Users/rover/_dev/ethoinfo/ez-build/ethoinfo-framework/node_modules/vashify/.temp/4_list-item-template.vash.js"),
 	app = require('app')();
 
 function CodeManager(){
@@ -88177,7 +88177,7 @@ function CodeManager(){
 util.inherits(CodeManager, EventEmitter);
 module.exports = CodeManager;
 
-},{"./index.less":265,"/Users/rover/_dev/ethoinfo/ez-build/ethoinfo-framework/node_modules/vashify/.temp/2_index.vash.js":26,"/Users/rover/_dev/ethoinfo/ez-build/ethoinfo-framework/node_modules/vashify/.temp/3_list-item-template.vash.js":29,"app":240,"create-new-dialog":266,"edit-existing-dialog":270,"events":43,"iscroll":78,"jquery":80,"lodash":83,"modal":247,"util":63}],265:[function(require,module,exports){
+},{"./index.less":265,"/Users/rover/_dev/ethoinfo/ez-build/ethoinfo-framework/node_modules/vashify/.temp/3_index.vash.js":29,"/Users/rover/_dev/ethoinfo/ez-build/ethoinfo-framework/node_modules/vashify/.temp/4_list-item-template.vash.js":30,"app":240,"create-new-dialog":266,"edit-existing-dialog":270,"events":43,"iscroll":78,"jquery":80,"lodash":83,"modal":247,"util":63}],265:[function(require,module,exports){
 (function() { var head = document.getElementsByTagName('head')[0]; style = document.createElement('style'); style.type = 'text/css';var css = ".code-manager select{background-color:#f5f5f5}.code-manager .tools{margin-bottom:0;border-bottom:0}.code-manager .tools .toolbar{float:right}.code-manager .icon.delete{cursor:pointer}.code-manager .scroll-wrapper{overflow:hidden;position:relative;top:0;bottom:0;width:100%}";if (style.styleSheet){ style.styleSheet.cssText = css; } else { style.appendChild(document.createTextNode(css)); } head.appendChild(style);}())
 },{}],266:[function(require,module,exports){
 require('./index.less');
@@ -88193,7 +88193,7 @@ var Modal = require('modal'),
 	util = require('util'),
 	app = require('app')(),
 	EventEmitter = require('events').EventEmitter,
-	template = require("/Users/rover/_dev/ethoinfo/ez-build/ethoinfo-framework/node_modules/vashify/.temp/10_index.vash.js");
+	template = require("/Users/rover/_dev/ethoinfo/ez-build/ethoinfo-framework/node_modules/vashify/.temp/11_index.vash.js");
 
 function getTemplate(){ return template; }
 
@@ -88325,7 +88325,7 @@ function CreateNewDialog(opt){
 util.inherits(CreateNewDialog, EventEmitter);
 module.exports = CreateNewDialog;
 
-},{"./index.less":267,"/Users/rover/_dev/ethoinfo/ez-build/ethoinfo-framework/node_modules/vashify/.temp/10_index.vash.js":5,"app":240,"device-settings":251,"events":43,"form-builder":259,"geolocation":261,"jquery":80,"lodash":83,"modal":247,"q":238,"util":63}],267:[function(require,module,exports){
+},{"./index.less":267,"/Users/rover/_dev/ethoinfo/ez-build/ethoinfo-framework/node_modules/vashify/.temp/11_index.vash.js":6,"app":240,"device-settings":251,"events":43,"form-builder":259,"geolocation":261,"jquery":80,"lodash":83,"modal":247,"q":238,"util":63}],267:[function(require,module,exports){
 (function() { var head = document.getElementsByTagName('head')[0]; style = document.createElement('style'); style.type = 'text/css';var css = ".button-container{background-color:#f5f5f5}.button-container .button-bar{padding:20px}.button-container .button-bar .button-tool{opacity:.7}";if (style.styleSheet){ style.styleSheet.cssText = css; } else { style.appendChild(document.createTextNode(css)); } head.appendChild(style);}())
 },{}],268:[function(require,module,exports){
 require('./index.less');
@@ -88549,7 +88549,7 @@ arguments[4][267][0].apply(exports,arguments)
 require('./index.less');
 
 var $ = require('jquery'),
-	tmpl = require("/Users/rover/_dev/ethoinfo/ez-build/ethoinfo-framework/node_modules/vashify/.temp/4_index.vash.js"),
+	tmpl = require("/Users/rover/_dev/ethoinfo/ez-build/ethoinfo-framework/node_modules/vashify/.temp/6_index.vash.js"),
 	velocity = require('velocity-animate'),
 	geolocation = require('geolocation'),
 	Modal = require('modal');
@@ -88620,7 +88620,7 @@ function GeolocationViewer(){
 
 module.exports = GeolocationViewer;
 
-},{"./index.less":274,"/Users/rover/_dev/ethoinfo/ez-build/ethoinfo-framework/node_modules/vashify/.temp/4_index.vash.js":30,"geolocation":261,"jquery":80,"modal":247,"velocity-animate":239}],274:[function(require,module,exports){
+},{"./index.less":274,"/Users/rover/_dev/ethoinfo/ez-build/ethoinfo-framework/node_modules/vashify/.temp/6_index.vash.js":32,"geolocation":261,"jquery":80,"modal":247,"velocity-animate":239}],274:[function(require,module,exports){
 (function() { var head = document.getElementsByTagName('head')[0]; style = document.createElement('style'); style.type = 'text/css';var css = "#geolocation-viewer{padding:8px}#geolocation-viewer .success{color:green}#geolocation-viewer .failure{color:#8b0000}";if (style.styleSheet){ style.styleSheet.cssText = css; } else { style.appendChild(document.createTextNode(css)); } head.appendChild(style);}())
 },{}],275:[function(require,module,exports){
 require('./index.less');
@@ -88629,11 +88629,11 @@ var $ = require('jquery'),
 	_ = require('lodash'),
 	Hammer = require('hammerjs'),
 	q = require('q'),
-	Scroll = require('iscroll'),
+	//Scroll = require('iscroll'),
 	app = require('app')(),
 	ViewExistingDialog = require('../view-existing-dialog'),
-	pageTemplate = require("/Users/rover/_dev/ethoinfo/ez-build/ethoinfo-framework/node_modules/vashify/.temp/5_index.vash.js"),
-	itemTemplate = require("/Users/rover/_dev/ethoinfo/ez-build/ethoinfo-framework/node_modules/vashify/.temp/6_item.vash.js");
+	pageTemplate = require("/Users/rover/_dev/ethoinfo/ez-build/ethoinfo-framework/node_modules/vashify/.temp/8_index.vash.js"),
+	itemTemplate = require("/Users/rover/_dev/ethoinfo/ez-build/ethoinfo-framework/node_modules/vashify/.temp/9_item.vash.js");
 
 
 function _getTopLevelDomains(){
@@ -88689,10 +88689,13 @@ function ListPage(){
 	var self = this;
 
 	self.$element = $(pageTemplate({ }));
-	var scroll = new Scroll(self.$element.find('.scroll-wrapper')[0], {
+	/*var scroll = new Scroll(self.$element.find('.scroll-wrapper')[0], {
 			mouseWheel: true,
 			scrollbars: true,
-		});
+			tap: true,
+			click: true
+		});*/
+	//scroll.disable();
 
 	self.refresh = function(){
 		_getEntities()
@@ -88705,11 +88708,9 @@ function ListPage(){
 					$ul.append($item);
 					var hammer = new Hammer($item[0]);
 					hammer.on('tap', _itemClick.bind(null, entity.domainName, entity._id));
-
-
 				});
 
-				scroll.refresh();
+				//scroll.refresh();
 			});
 	};
 
@@ -88735,11 +88736,11 @@ function ListPage(){
 
 module.exports = ListPage;
 
-},{"../view-existing-dialog":282,"./index.less":276,"/Users/rover/_dev/ethoinfo/ez-build/ethoinfo-framework/node_modules/vashify/.temp/5_index.vash.js":31,"/Users/rover/_dev/ethoinfo/ez-build/ethoinfo-framework/node_modules/vashify/.temp/6_item.vash.js":32,"app":240,"hammerjs":77,"iscroll":78,"jquery":80,"lodash":83,"q":238}],276:[function(require,module,exports){
-(function() { var head = document.getElementsByTagName('head')[0]; style = document.createElement('style'); style.type = 'text/css';var css = ".list-page .item.item-icon-right .icon.color-box{display:inline-block;width:6px;right:0}.list-page .scroll-wrapper{overflow:hidden;position:relative;top:0;bottom:0;width:100%}";if (style.styleSheet){ style.styleSheet.cssText = css; } else { style.appendChild(document.createTextNode(css)); } head.appendChild(style);}())
+},{"../view-existing-dialog":282,"./index.less":276,"/Users/rover/_dev/ethoinfo/ez-build/ethoinfo-framework/node_modules/vashify/.temp/8_index.vash.js":34,"/Users/rover/_dev/ethoinfo/ez-build/ethoinfo-framework/node_modules/vashify/.temp/9_item.vash.js":35,"app":240,"hammerjs":77,"jquery":80,"lodash":83,"q":238}],276:[function(require,module,exports){
+(function() { var head = document.getElementsByTagName('head')[0]; style = document.createElement('style'); style.type = 'text/css';var css = ".list-page{overflow:scroll}.list-page .item.item-icon-right .icon.color-box{display:inline-block;width:6px;right:0}";if (style.styleSheet){ style.styleSheet.cssText = css; } else { style.appendChild(document.createTextNode(css)); } head.appendChild(style);}())
 },{}],277:[function(require,module,exports){
 require('./index.less');
-var tmpl = require("/Users/rover/_dev/ethoinfo/ez-build/ethoinfo-framework/node_modules/vashify/.temp/7_index.vash.js"),
+var tmpl = require("/Users/rover/_dev/ethoinfo/ez-build/ethoinfo-framework/node_modules/vashify/.temp/5_index.vash.js"),
 	deviceSettings = require('device-settings'),
 	q = require('q'),
 	_ = require('lodash'),
@@ -88839,13 +88840,13 @@ function CodeManager(){
 util.inherits(CodeManager, EventEmitter);
 module.exports = CodeManager;
 
-},{"./index.less":278,"/Users/rover/_dev/ethoinfo/ez-build/ethoinfo-framework/node_modules/vashify/.temp/7_index.vash.js":33,"app":240,"device-settings":251,"events":43,"jquery":80,"lodash":83,"modal":247,"q":238,"util":63}],278:[function(require,module,exports){
+},{"./index.less":278,"/Users/rover/_dev/ethoinfo/ez-build/ethoinfo-framework/node_modules/vashify/.temp/5_index.vash.js":31,"app":240,"device-settings":251,"events":43,"jquery":80,"lodash":83,"modal":247,"q":238,"util":63}],278:[function(require,module,exports){
 (function() { var head = document.getElementsByTagName('head')[0]; style = document.createElement('style'); style.type = 'text/css';var css = ".settings-manager .setting label{text-transform:capitalize}.settings-manager .icon.delete{cursor:pointer}.settings-manager .scroll-wrapper{overflow:hidden;position:relative;top:0;bottom:0;width:100%}";if (style.styleSheet){ style.styleSheet.cssText = css; } else { style.appendChild(document.createTextNode(css)); } head.appendChild(style);}())
 },{}],279:[function(require,module,exports){
 var velocity = require('velocity-animate'),
 	$ = require('jquery'),
 	EventEmitter = require('events').EventEmitter,
-	template = require("/Users/rover/_dev/ethoinfo/ez-build/ethoinfo-framework/node_modules/vashify/.temp/8_index.vash.js");
+	template = require("/Users/rover/_dev/ethoinfo/ez-build/ethoinfo-framework/node_modules/vashify/.temp/7_index.vash.js");
 
 function SideMenu(opt){
 	var $content = $(opt.content);
@@ -88899,14 +88900,14 @@ function SideMenu(opt){
 
 module.exports = SideMenu;
 
-},{"/Users/rover/_dev/ethoinfo/ez-build/ethoinfo-framework/node_modules/vashify/.temp/8_index.vash.js":34,"events":43,"jquery":80,"velocity-animate":239}],280:[function(require,module,exports){
+},{"/Users/rover/_dev/ethoinfo/ez-build/ethoinfo-framework/node_modules/vashify/.temp/7_index.vash.js":33,"events":43,"jquery":80,"velocity-animate":239}],280:[function(require,module,exports){
 require('./index.less');
 
 var DB_NAME = 'new_pp_db';
 var PouchDb = require('pouchdb'),
 	EventEmitter = require('events').EventEmitter,
 	util = require('util'),
-	template = require("/Users/rover/_dev/ethoinfo/ez-build/ethoinfo-framework/node_modules/vashify/.temp/9_index.vash.js"),
+	template = require("/Users/rover/_dev/ethoinfo/ez-build/ethoinfo-framework/node_modules/vashify/.temp/2_index.vash.js"),
 	_ = require('lodash'),
 	$ = require('jquery'),
 	storage = require('jocal'),
@@ -89007,7 +89008,7 @@ function UploadDialog(){
 util.inherits(UploadDialog, EventEmitter);
 module.exports = UploadDialog;
 
-},{"./index.less":281,"/Users/rover/_dev/ethoinfo/ez-build/ethoinfo-framework/node_modules/vashify/.temp/9_index.vash.js":35,"app":240,"events":43,"jocal":79,"jquery":80,"lodash":83,"modal":247,"pouchdb":139,"util":63}],281:[function(require,module,exports){
+},{"./index.less":281,"/Users/rover/_dev/ethoinfo/ez-build/ethoinfo-framework/node_modules/vashify/.temp/2_index.vash.js":26,"app":240,"events":43,"jocal":79,"jquery":80,"lodash":83,"modal":247,"pouchdb":139,"util":63}],281:[function(require,module,exports){
 (function() { var head = document.getElementsByTagName('head')[0]; style = document.createElement('style'); style.type = 'text/css';var css = ".sync-dialog .message{display:none}.sync-dialog .button-bar button{margin:4px}";if (style.styleSheet){ style.styleSheet.cssText = css; } else { style.appendChild(document.createTextNode(css)); } head.appendChild(style);}())
 },{}],282:[function(require,module,exports){
 require('./index.less');
@@ -89147,6 +89148,11 @@ function ViewExistingDialog(opts){
 		[tabEdit, tabRemarks, tabTimeline, tabMap]
 			.forEach(function(tab){
 				tab.setContext(ctx);
+				// refresh tabs
+				/*if (_.isFunction(tab.show)){
+					tab.show();
+				}*/
+				
 			});
 
 		_updateAddButton();
@@ -89686,38 +89692,88 @@ function MapTab(){
 		_context = ctx;
 	};
 
-	var geojsonMarkerOptions = {
+	self.layer = null;
+
+	var geojsonOptions = {
 		radius: 8,
-		fillColor: "#ff7800",
-		color: "#000",
-		weight: 1,
-		opacity: 1,
-		fillOpacity: 0.8
+		//fillColor: "#ff7800",
+		color: "#ff7800",
+		weight: 2,
+		opacity: 1
+		//fillOpacity: 0.8
+	};
+	function _renderFootprint(entity){
+		lmap.invalidateSize();
+		//console.log(JSON.stringify(entity));
+		if (!entity.footprint){ 
+			console.log("No Footprint for this entity");
+			//lmap.removeLayer(self.layer);
+			return false;
+		}
+		if (typeof entity.footprint == "string"){
+			var footprint = JSON.parse(entity.footprint);
+		} else {
+			var footprint = entity.footprint;
+		}
+		var geoJsonLayer = L.geoJson(footprint, {
+			style: geojsonOptions
+			/*pointToLayer: function (feature, latlng) {
+				var options = _.extend({draggable: true}, geojsonMarkerOptions);
+				debugger
+				var marker = L.circleMarker(latlng, options);
+				marker.bindPopup('this is a test');
+				return marker;
+			},*/
+		});
+		lmap.addLayer(geoJsonLayer);
+		self.layer = geoJsonLayer;
+	}
+
+	var geojsonChildOptions = {
+		color: "#333333",
+		weight: 2,
+		opacity: 0.7
 	};
 
 	function _renderChildren(entity, depth){
 		var children = _context.getChildren(entity);
-
+		console.log("children: ");
+		console.log(JSON.stringify(children));
+		//console.log(JSON.stringify(children[0].footprint));
 		var arr = [];
 		_.chain(children)
 			.toArray()
 			.value()
 			.forEach(function(child){
-				_.values(child.geo)
-					.forEach(function(geojson){
-						var geoJsonLayer = L.geoJson(geojson, {
-							//style: GEOJSON_STYLE,
-							pointToLayer: function (feature, latlng) {
-								var options = _.extend({draggable: true}, geojsonMarkerOptions);
-								debugger
-								var marker = L.circleMarker(latlng, options);
-								marker.bindPopup('this is a test');
-								return marker;
-							},
-						});
+				console.log("__CHILD__");
+				console.log(JSON.stringify(child));
+				if (typeof child == "string"){
+					//console.log("STRING!");
+					child = JSON.parse(child);
+					//console.log(child);
+				}
+			//_.values(child.footprint)
+				//.forEach(function(geojson){
+				if (child.footprint){
+					geojson = child.footprint;
 
-						arr.push(geoJsonLayer);
+					//console.log("geojson:");
+					//console.log(geojson);
+					
+					var geoJsonLayer = L.geoJson(geojson, {
+						style: geojsonChildOptions,
+						/*pointToLayer: function (feature, latlng) {
+							var options = _.extend({draggable: true}, geojsonMarkerOptions);
+							debugger
+							var marker = L.circleMarker(latlng, options);
+							marker.bindPopup('this is a test');
+							return marker;
+						},*/
 					});
+
+					arr.push(geoJsonLayer);
+				}
+				//});
 			});
 
 		var group = L.layerGroup(arr);
@@ -89727,17 +89783,19 @@ function MapTab(){
 	self.descend = function(){
 	};
 
-	var path;
+	//var path;
 	self.show = function(){
 		self.$element.show();
 
-		if (!path){
-			path = L.geoJson(_context.entity.geo.footprint, {
+		/*if (!path){
+			path = L.geoJson(_context.entity.footprint, {
 				//style: GEOJSON_STYLE,
 			});
 			path.addTo(lmap);
-		}
+		}*/
 		//var children = _context.getChildren();
+		
+		_renderFootprint(_context.entity);
 		_renderChildren(_context.entity, 0);
 		map.show();
 	};
