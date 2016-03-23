@@ -6,6 +6,8 @@ var moment = require('moment');
 app.setting('couch-base-url', 'http://demo.ethoinformatics.org:5984/app_focals');
 app.setting('couch-username', 'supermonkey');
 
+app.setting('map-center', [41.3839, -73.9405]);
+
 //var activityService = {
 function registerStartAndEndServices(domain){
 	domain.register('get-begin-time', function(d){ return d.beginTime || d.timestamp; });
@@ -24,22 +26,33 @@ function dateEqual(d1, d2){
 }
 
 var diaryLocationService = function(diary, locationData, settings){
-
-	if (!dateEqual(new Date(), moment(diary.beginTime).toDate())) return false;
+	// console.log(moment(diary.beginTime).toDate());
+	// console.log(dateEqual(new Date(), moment(diary.eventDate).toDate()));
+	if (!dateEqual(new Date(), moment(diary.eventDate).toDate())) return false;
 	//if (settings.user !== diary.observerId) return false;
 
-	if (!diary.geo.footprint){
+	console.log(diary);
+	if(!diary.geo) {
+		console.log("geo not found, creating");
+		diary.geo = {};
+	}
+	if (!diary.geo.footprint || 
+		!diary.geo.timestamps || 
+		diary.geo.footprint.coordinates.length != diary.geo.timestamps.length){
+		console.log("footprint not found, creating");
 		diary.geo.footprint = {
 			type: 'LineString',
 			coordinates: [ ]
 		};
+		diary.geo.timestamps = [];
 	}
 
 	diary.geo.footprint.coordinates.push([
-			locationData.coords.longitude,
-			locationData.coords.latitude,
-			locationData.coords.altitude,
-		]);
+		locationData.coords.longitude,
+		locationData.coords.latitude,
+		locationData.coords.altitude,
+	]);
+	diary.geo.timestamps.push(new Date().getTime());
 
 	return true;
 };
