@@ -1,3 +1,9 @@
+/////////////////////////////////
+//
+// ethoinfo-project-app/src/update-check.js
+//
+/////////////////////////////////
+
 function onDeviceReady(){
 	if(process.env.HOCKEY_APP_ID) {
 		window.hockeyApp.configure({
