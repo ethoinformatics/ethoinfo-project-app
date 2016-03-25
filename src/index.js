@@ -1,3 +1,13 @@
+/////////////////////////////////
+//
+// ethoinfo-project-app/src/index.js
+//
+// Sets up app-specific configuration
+// * Creates data model by defining domains
+// * Sets app-specific settings to be used in framework 
+//
+/////////////////////////////////
+
 require('./update-check');
 require('./background-mode');
 var app = require('ethoinfo-framework');
@@ -17,14 +27,12 @@ app.setting('tile-layer-url', 'img/MapQuest/{z}/{x}/{y}.png'); // local store of
 // 8
 
 
-//var activityService = {
 function registerStartAndEndServices(domain){
 	domain.register('get-begin-time', function(d){ return d.beginTime || d.timestamp; });
 	domain.register('get-end-time', function(d){ return d.endTime; });
 	domain.register('set-begin-time', function(d){ d.beginTime = new Date(); });
 	domain.register('set-end-time', function(d){ d.endTime = new Date(); });
 }
-//};
 
 function dateEqual(d1, d2){
 	if (!d1 || !d2) return false;
@@ -34,14 +42,12 @@ function dateEqual(d1, d2){
 		d1.getDate() === d2.getDate();
 }
 
+// This should probably be moved to framework and just go on the top-level domain
 var diaryLocationService = function(diary, locationData, settings){
-	
-	// console.log(moment(diary.beginTime).toDate());
-	// console.log(dateEqual(new Date(), moment(diary.eventDate).toDate()));
+	console.log('dLS');
 	if (!dateEqual(new Date(), moment(diary.eventDate).toDate())) return false;
 	//if (settings.user !== diary.observerId) return false;
 
-	console.log(diary);
 	if(!diary.geo) {
 		console.log("geo not found, creating");
 		diary.geo = {};
@@ -63,6 +69,10 @@ var diaryLocationService = function(diary, locationData, settings){
 		locationData.coords.altitude,
 	]);
 	diary.geo.timestamps.push(new Date().getTime());
+	
+	console.log(diary.geo);
+	
+	console.log("Saved location (" + diary.geo.footprint.coordinates.length + " points)");
 
 
 
@@ -301,5 +311,19 @@ contact.register('collections', poopSample);
 focalSample.register('observations', socialFocalBehavior, {inline: true});
 focalSample.register('observations', focalBehavior, {inline: true});
 focalSample.register('collections', poopSample);
+
+// setup fake device for desktop
+if(window.device === undefined) {
+	console.log("Defining device for in-browser testing");
+	device = {
+		available: true,
+		cordova: null,
+		manufacturer: null,
+		model: null,
+		platform: 'browser',
+		uuid: '0000000000000000',
+		version: "0.0.0"
+	};
+}
 
 app.run();

@@ -1,7 +1,15 @@
+/////////////////////////////////
+//
+// ethoinfo-project-app/src/update-check.js
+//
+/////////////////////////////////
+
 function onDeviceReady(){
-	window.hockeyApp.configure({
-		appId: process.env.HOCKEY_APP_ID
-	});
+	if(process.env.HOCKEY_APP_ID) {
+		window.hockeyApp.configure({
+			appId: process.env.HOCKEY_APP_ID
+		});		
+	}
 }
 
 window.document.addEventListener("deviceready", onDeviceReady, false);
