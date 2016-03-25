@@ -290,7 +290,8 @@ focalSample.register('collections', poopSample);
 app.run();
 
 // setup fake device for desktop
-if(!device) {
+if(window.device === undefined) {
+	console.log("Defining device for in-browser testing");
 	device = {
 		available: true,
 		cordova: null,
