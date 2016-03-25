@@ -62,6 +62,7 @@ var diaryLocationService = function(diary, locationData, settings){
 		};
 		diary.geo.timestamps = [];
 	}
+		
 
 	diary.geo.footprint.coordinates.push([
 		locationData.coords.longitude,
