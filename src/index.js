@@ -6,7 +6,16 @@ var moment = require('moment');
 app.setting('couch-base-url', 'http://demo.ethoinformatics.org:5984/app_focals');
 app.setting('couch-username', 'supermonkey');
 
-app.setting('map-center', [41.3839, -73.9405]);
+//app.setting('map-center', [-14.2031200, 23.7611400]); // Loloma, Zambia
+app.setting('map-center', [41.3839, -73.9405]); // garrison NY
+
+
+
+//app.setting('tile-layer-url', 'http://{s}.tile.openstreetmap.se/hydda/full/{z}/{x}/{y}.png');//'lib/img/MapQuest/{z}/{x}/{y}.jpg');
+app.setting('tile-layer-url', 'img/MapQuest/{z}/{x}/{y}.png'); // local store of tiles
+// 16
+// 8
+
 
 //var activityService = {
 function registerStartAndEndServices(domain){
@@ -26,6 +35,7 @@ function dateEqual(d1, d2){
 }
 
 var diaryLocationService = function(diary, locationData, settings){
+	
 	// console.log(moment(diary.beginTime).toDate());
 	// console.log(dateEqual(new Date(), moment(diary.eventDate).toDate()));
 	if (!dateEqual(new Date(), moment(diary.eventDate).toDate())) return false;
@@ -53,6 +63,8 @@ var diaryLocationService = function(diary, locationData, settings){
 		locationData.coords.altitude,
 	]);
 	diary.geo.timestamps.push(new Date().getTime());
+
+
 
 	return true;
 };

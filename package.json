@@ -11,7 +11,7 @@
   "dependencies": {
     "browserify": "^9.0.3",
     "envify": "^3.4.0",
-    "ethoinfo-framework": "git+ssh://git@github.com/ethoinformatics/ethoinfo-framework#master",
+    "ethoinfo-framework": "^0.0.1",
     "moment": "^2.10.3",
     "pouchdb-upsert": "^2.0.0"
   }
