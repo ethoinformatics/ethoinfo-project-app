@@ -26,12 +26,9 @@ function dateEqual(d1, d2){
 }
 
 var diaryLocationService = function(diary, locationData, settings){
-	// console.log(moment(diary.beginTime).toDate());
-	// console.log(dateEqual(new Date(), moment(diary.eventDate).toDate()));
 	if (!dateEqual(new Date(), moment(diary.eventDate).toDate())) return false;
 	//if (settings.user !== diary.observerId) return false;
 
-	console.log(diary);
 	if(!diary.geo) {
 		console.log("geo not found, creating");
 		diary.geo = {};
@@ -291,3 +288,16 @@ focalSample.register('observations', focalBehavior, {inline: true});
 focalSample.register('collections', poopSample);
 
 app.run();
+
+// setup fake device for desktop
+if(!device) {
+	device = {
+		available: true,
+		cordova: null,
+		manufacturer: null,
+		model: null,
+		platform: 'browser',
+		uuid: '0000000000000000',
+		version: "0.0.0"
+	};
+}
