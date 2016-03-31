@@ -21,8 +21,8 @@ app.setting('map-center', [41.3839, -73.9405]); // garrison NY
 
 
 
-//app.setting('tile-layer-url', 'http://{s}.tile.openstreetmap.se/hydda/full/{z}/{x}/{y}.png');//'lib/img/MapQuest/{z}/{x}/{y}.jpg');
-app.setting('tile-layer-url', 'img/MapQuest/{z}/{x}/{y}.png'); // local store of tiles
+app.setting('tile-layer-url', 'http://{s}.tile.openstreetmap.se/hydda/full/{z}/{x}/{y}.png');//'lib/img/MapQuest/{z}/{x}/{y}.jpg');
+// app.setting('tile-layer-url', 'img/MapQuest/{z}/{x}/{y}.png'); // local store of tiles
 // 16
 // 8
 
