@@ -17,7 +17,8 @@ app.setting('couch-base-url', 'http://demo.ethoinformatics.org:5984/app_focals')
 app.setting('couch-username', 'supermonkey');
 
 //app.setting('map-center', [-14.2031200, 23.7611400]); // Loloma, Zambia
-app.setting('map-center', [41.3839, -73.9405]); // garrison NY
+// app.setting('map-center', [41.3839, -73.9405]); // garrison NY
+app.setting('map-center', [-0.638333, -76.15]); // tiputini
 
 
 
