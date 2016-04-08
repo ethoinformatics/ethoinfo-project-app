@@ -17,12 +17,13 @@ app.setting('couch-base-url', 'http://demo.ethoinformatics.org:5984/app_focals')
 app.setting('couch-username', 'supermonkey');
 
 //app.setting('map-center', [-14.2031200, 23.7611400]); // Loloma, Zambia
-app.setting('map-center', [41.3839, -73.9405]); // garrison NY
+// app.setting('map-center', [41.3839, -73.9405]); // garrison NY
+app.setting('map-center', [-0.638333, -76.15]); // tiputini
 
 
 
-//app.setting('tile-layer-url', 'http://{s}.tile.openstreetmap.se/hydda/full/{z}/{x}/{y}.png');//'lib/img/MapQuest/{z}/{x}/{y}.jpg');
-app.setting('tile-layer-url', 'img/MapQuest/{z}/{x}/{y}.png'); // local store of tiles
+app.setting('tile-layer-url', 'http://{s}.tile.openstreetmap.se/hydda/full/{z}/{x}/{y}.png');//'lib/img/MapQuest/{z}/{x}/{y}.jpg');
+// app.setting('tile-layer-url', 'img/MapQuest/{z}/{x}/{y}.png'); // local store of tiles
 // 16
 // 8
 
