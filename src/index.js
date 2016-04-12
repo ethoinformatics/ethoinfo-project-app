@@ -88,6 +88,14 @@ var createIdGenerator = function(field){
 	};
 };
 
+var truncateString = function(str, length) {
+	if(str.length > 8) {
+		return str.substring(0, length) + '…';
+	} else {
+		return str;
+	}
+}
+
 // ****************************************************************************
 // * DIARY                                                                    *
 // ****************************************************************************
@@ -137,7 +145,11 @@ contact.register('long-description', function(){
 });
 
 contact.register('short-description', function(d){
-	return (d._id || d.id).split('-')[1];
+	if(typeof d.title == 'string' && d.title.length > 0) {
+		return truncateString(d.title, 8);			
+	} else {
+		return 'Contact';	
+	}
 });
 
 // ****************************************************************************
@@ -175,7 +187,13 @@ focalSample.register('long-description', function(d){
 		//'<h3>' + h2 + '</h3>';
 });
 
-focalSample.register('short-description', function(){ return 'Focal' });
+focalSample.register('short-description', function(d){ 
+	if(typeof d.title == 'string' && d.title.length > 0) {
+		return truncateString(d.title, 8);			
+	} else {
+		return 'Focal';	
+	}
+});
 
 // var feedingBout = app.createDomain({name: 'feeding-bout', label: 'Feeding Bout'});
 // feedingBout.register('form-fields', require('./forms/placeholder.json'));
