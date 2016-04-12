@@ -270,6 +270,27 @@ poopSample.register('short-description', function(){
 	return 'Poop sample';
 });
 
+// // ****************************************************************************
+// // * TREE MARKINGS SAMPLE                                                              *
+// // ****************************************************************************
+// var poopSample = app.createDomain({name: 'poop-sample', label:'Poop sample'});
+// poopSample.register('form-fields', {
+// 	"location": { "type": "text" }
+// });
+// registerStartAndEndServices(poopSample);
+// poopSample.register('long-description', function(){
+// 	var h1 = 'Poop sample from ' + this.getDescription('animal');
+// 	var h2 = '';
+// 	var div = '';
+//
+// 	return '<h1>'+h1+'</h1>' +
+// 		'<h3>' + h2 + '</h3>' +
+// 		'<div style="font-style:italic;">' + div + '</div>';
+// });
+// poopSample.register('short-description', function(){
+// 	return 'Poop sample';
+// });
+
 
 // ****************************************************************************
 // * CODES                                                                    *
