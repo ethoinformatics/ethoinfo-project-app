@@ -264,7 +264,7 @@ focalBehavior.register('long-description', function(d){
 // ****************************************************************************
 // * POOP SAMPLE                                                              *
 // ****************************************************************************
-var poopSample = app.createDomain({name: 'poop-sample', label:'Fecal Sample'});
+var poopSample = app.createDomain({name: 'fecal-sample', label:'Fecal Sample'});
 poopSample.register('form-fields', {
 	"location": { "type": "text" }
 });
@@ -323,9 +323,9 @@ function createSimpleCodeDomain(name, label){
 
 createSimpleCodeDomain('animal-group', 'Animal Group');
 createSimpleCodeDomain('taxon', 'Taxon');
-createSimpleCodeDomain('age-class', 'Age class');
+createSimpleCodeDomain('age-class', 'Age Class');
 createSimpleCodeDomain('sex', 'Sex');
-createSimpleCodeDomain('focal-behavior-type', 'Behavior type');
+createSimpleCodeDomain('focal-behavior-type', 'Behavior Type');
 // createSimpleCodeDomain('social-focal-behavior-type', 'Social behavior type');
 
 var user = createSimpleCodeDomain('user', 'User');
