@@ -10,8 +10,9 @@
 
 require('./update-check');
 require('./background-mode');
-var app = require('ethoinfo-framework');
-var moment = require('moment');
+var app = require('ethoinfo-framework'),
+	moment = require('moment'),
+	_ = require('lodash');
 
 app.setting('couch-base-url', 'http://demo.ethoinformatics.org:5984/tonytest2');
 app.setting('couch-username', 'supermonkey');
@@ -139,8 +140,13 @@ contact.register('form-fields', {
 });
 
 registerStartAndEndServices(contact);
-contact.register('long-description', function(){
-	var h1 = 'Contact with ' + ' ' +this.getDescription('subjectId');
+contact.register('long-description', function(d){
+	console.log("contact desc", arguments);
+	var h1 = ""
+	if(!_.isString(d.title) || d.title.length == 0) {
+		h1 = 'Contact with ' + ' ';
+	}
+	h1 += this.getDescription('subjectId');
 
 	return '<h1>'+h1+'</h1>';
 });
@@ -181,7 +187,12 @@ focalSample.register('form-fields', {
 registerStartAndEndServices(focalSample);
 focalSample.register('concurrent', false);
 focalSample.register('long-description', function(d){
-	var h1 = 'Focal (' + this.getDescription('subjectId') + ')';
+	var h1 = "";
+	if(!_.isString(d.title) || d.title.length == 0) {
+		h1 += "Focal of ";
+	}
+	h1 += this.getDescription();
+	// var h1 = 'Focal (' + this.getDescription('subjectId') + ')';
 	//var h2 = this.getDescription('age') + ' ' + this.getDescription('sex');
 
 	return '<h1>'+h1+'</h1>';
