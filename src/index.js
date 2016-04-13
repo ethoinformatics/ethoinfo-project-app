@@ -13,7 +13,7 @@ require('./background-mode');
 var app = require('ethoinfo-framework');
 var moment = require('moment');
 
-app.setting('couch-base-url', 'http://demo.ethoinformatics.org:5984/app_focals7');
+app.setting('couch-base-url', 'http://demo.ethoinformatics.org:5984/tonytest2');
 app.setting('couch-username', 'supermonkey');
 
 //app.setting('map-center', [-14.2031200, 23.7611400]); // Loloma, Zambia
