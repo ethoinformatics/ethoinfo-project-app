@@ -264,13 +264,17 @@ focalBehavior.register('long-description', function(d){
 // ****************************************************************************
 // * POOP SAMPLE                                                              *
 // ****************************************************************************
-var poopSample = app.createDomain({name: 'fecal-sample', label:'Fecal Sample'});
+var poopSample = app.createDomain({name: 'poop-sample', label:'Fecal Sample'});
 poopSample.register('form-fields', {
 	"location": { "type": "text" }
 });
 registerStartAndEndServices(poopSample);
-poopSample.register('long-description', function(){
-	var h1 = 'Fecal sample from ' + this.getDescription('animal');
+poopSample.register('long-description', function(d){
+	var title = d.location;
+	if(!_.isString(title) || title.length == 0) {
+		title = d.id || d._id;
+	}
+	var h1 = 'Fecal sample from ' + title;
 	var h2 = '';
 	var div = '';
 
