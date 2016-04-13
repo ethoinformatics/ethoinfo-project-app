@@ -243,23 +243,23 @@ focalBehavior.register('long-description', function(d){
 // ****************************************************************************
 // * SOCIAL FOCAL BEHAVIOR                                                           *
 // ****************************************************************************
-var socialFocalBehavior = app.createDomain({name: 'social-focal-behavior', label:'Social behavior'});
-socialFocalBehavior.register('form-fields', {
-	"type": { "type": "lookup", "domain": "social-focal-behavior-type" },
-	"age": { "type": "lookup", "domain": "age-class" },
-	"sex": { "type": "lookup", "domain": "sex" },
-	"animal": { "type": "lookup", "domain": "animal" }
-});
-registerStartAndEndServices(socialFocalBehavior);
-socialFocalBehavior.register('long-description', function(d){
-	var h1 = this.getDescription('type') + ' towards ' + this.getDescription('animal');
-	var h2 = this.getDescription('age') + ' ' + this.getDescription('sex');
-	var div = d.notes;
-
-	return '<h1>'+h1+'</h1>' + 
-		'<h3>' + h2 + '</h3>' + 
-		'<div style="font-style:italic;">' + div + '</div>';
-});
+// var socialFocalBehavior = app.createDomain({name: 'social-focal-behavior', label:'Social behavior'});
+// socialFocalBehavior.register('form-fields', {
+// 	"type": { "type": "lookup", "domain": "social-focal-behavior-type" },
+// 	"age": { "type": "lookup", "domain": "age-class" },
+// 	"sex": { "type": "lookup", "domain": "sex" },
+// 	"animal": { "type": "lookup", "domain": "animal" }
+// });
+// registerStartAndEndServices(socialFocalBehavior);
+// socialFocalBehavior.register('long-description', function(d){
+// 	var h1 = this.getDescription('type') + ' towards ' + this.getDescription('animal');
+// 	var h2 = this.getDescription('age') + ' ' + this.getDescription('sex');
+// 	var div = d.notes;
+//
+// 	return '<h1>'+h1+'</h1>' +
+// 		'<h3>' + h2 + '</h3>' +
+// 		'<div style="font-style:italic;">' + div + '</div>';
+// });
 
 // ****************************************************************************
 // * POOP SAMPLE                                                              *
@@ -322,7 +322,7 @@ createSimpleCodeDomain('taxon', 'Taxon');
 createSimpleCodeDomain('age-class', 'Age class');
 createSimpleCodeDomain('sex', 'Sex');
 createSimpleCodeDomain('focal-behavior-type', 'Behavior type');
-createSimpleCodeDomain('social-focal-behavior-type', 'Social behavior type');
+// createSimpleCodeDomain('social-focal-behavior-type', 'Social behavior type');
 
 var user = createSimpleCodeDomain('user', 'User');
 user.register('setting-lookup', true);
@@ -361,7 +361,7 @@ diary.register('contacts', contact);
 contact.register('focals', focalSample);
 contact.register('collections', poopSample);
 
-focalSample.register('observations', socialFocalBehavior, {inline: true});
+// focalSample.register('observations', socialFocalBehavior, {inline: true});
 focalSample.register('observations', focalBehavior, {inline: true});
 focalSample.register('collections', poopSample);
 
