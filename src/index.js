@@ -115,7 +115,8 @@ diary.register('get-end-time', function(d){ return moment(d.eventDate).endOf('da
 diary.register('set-begin-time', function(){ });
 diary.register('set-end-time', function(){ });
 diary.register('short-description', function(d){
-	return moment(d.eventDate, 'YYYY-MM-DD').format('MM/DD/YY');
+	// return moment(d.eventDate, 'YYYY-MM-DD').format('MM/DD/YY');
+		return moment(d.eventDate, 'YYYY-MM-DD').format('YYYY-MM-DD');
 });
 diary.register('long-description', function(d){
 	var h1 = 'Diary for ' + d.eventDate;
