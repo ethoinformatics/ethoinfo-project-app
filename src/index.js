@@ -10,10 +10,10 @@
 
 require('./update-check');
 require('./background-mode');
-var app = require('ethoinfo-framework');
-var moment = require('moment');
+var app = require('ethoinfo-framework'),
+moment = require('moment');
 
-app.setting('couch-base-url', 'http://demo.ethoinformatics.org:5984/app_focals7');
+app.setting('couch-base-url', 'http://demo.ethoinformatics.org:5984/tonytest2');
 app.setting('couch-username', 'supermonkey');
 
 //app.setting('map-center', [-14.2031200, 23.7611400]); // Loloma, Zambia
@@ -88,6 +88,14 @@ var createIdGenerator = function(field){
 	};
 };
 
+var truncateString = function(str, length) {
+	if(str.length > 8) {
+		return str.substring(0, length) + '…';
+	} else {
+		return str;
+	}
+}
+
 // ****************************************************************************
 // * DIARY                                                                    *
 // ****************************************************************************
@@ -107,7 +115,8 @@ diary.register('get-end-time', function(d){ return moment(d.eventDate).endOf('da
 diary.register('set-begin-time', function(){ });
 diary.register('set-end-time', function(){ });
 diary.register('short-description', function(d){
-	return moment(d.eventDate, 'YYYY-MM-DD').format('MM/DD/YY');
+	// return moment(d.eventDate, 'YYYY-MM-DD').format('MM/DD/YY');
+		return moment(d.eventDate, 'YYYY-MM-DD').format('YYYY-MM-DD');
 });
 diary.register('long-description', function(d){
 	var h1 = 'Diary for ' + d.eventDate;
@@ -130,14 +139,23 @@ contact.register('form-fields', {
 });
 
 registerStartAndEndServices(contact);
-contact.register('long-description', function(){
-	var h1 = 'Contact with ' + ' ' +this.getDescription('subjectId');
+contact.register('long-description', function(d){
+	console.log("contact desc", arguments);
+	var h1 = ""
+	if(!d.title || d.title.length == 0) {
+		h1 = 'Contact with ' + ' ';
+	}
+	h1 += this.getDescription('subjectId');
 
 	return '<h1>'+h1+'</h1>';
 });
 
 contact.register('short-description', function(d){
-	return (d._id || d.id).split('-')[1];
+	if(typeof d.title == 'string' && d.title.length > 0) {
+		return truncateString(d.title, 8);			
+	} else {
+		return 'Contact';	
+	}
 });
 
 // ****************************************************************************
@@ -168,14 +186,25 @@ focalSample.register('form-fields', {
 registerStartAndEndServices(focalSample);
 focalSample.register('concurrent', false);
 focalSample.register('long-description', function(d){
-	var h1 = 'Focal (' + this.getDescription('subjectId') + ')';
+	var h1 = "";
+	if(!d.title || d.title.length == 0) {
+		h1 += "Focal of ";
+	}
+	h1 += this.getDescription();
+	// var h1 = 'Focal (' + this.getDescription('subjectId') + ')';
 	//var h2 = this.getDescription('age') + ' ' + this.getDescription('sex');
 
 	return '<h1>'+h1+'</h1>';
 		//'<h3>' + h2 + '</h3>';
 });
 
-focalSample.register('short-description', function(){ return 'Focal' });
+focalSample.register('short-description', function(d){ 
+	if(typeof d.title == 'string' && d.title.length > 0) {
+		return truncateString(d.title, 8);			
+	} else {
+		return 'Focal';	
+	}
+});
 
 // var feedingBout = app.createDomain({name: 'feeding-bout', label: 'Feeding Bout'});
 // feedingBout.register('form-fields', require('./forms/placeholder.json'));
@@ -213,34 +242,38 @@ focalBehavior.register('long-description', function(d){
 // ****************************************************************************
 // * SOCIAL FOCAL BEHAVIOR                                                           *
 // ****************************************************************************
-var socialFocalBehavior = app.createDomain({name: 'social-focal-behavior', label:'Social behavior'});
-socialFocalBehavior.register('form-fields', {
-	"type": { "type": "lookup", "domain": "social-focal-behavior-type" },
-	"age": { "type": "lookup", "domain": "age-class" },
-	"sex": { "type": "lookup", "domain": "sex" },
-	"animal": { "type": "lookup", "domain": "animal" }
-});
-registerStartAndEndServices(socialFocalBehavior);
-socialFocalBehavior.register('long-description', function(d){
-	var h1 = this.getDescription('type') + ' towards ' + this.getDescription('animal');
-	var h2 = this.getDescription('age') + ' ' + this.getDescription('sex');
-	var div = d.notes;
-
-	return '<h1>'+h1+'</h1>' + 
-		'<h3>' + h2 + '</h3>' + 
-		'<div style="font-style:italic;">' + div + '</div>';
-});
+// var socialFocalBehavior = app.createDomain({name: 'social-focal-behavior', label:'Social behavior'});
+// socialFocalBehavior.register('form-fields', {
+// 	"type": { "type": "lookup", "domain": "social-focal-behavior-type" },
+// 	"age": { "type": "lookup", "domain": "age-class" },
+// 	"sex": { "type": "lookup", "domain": "sex" },
+// 	"animal": { "type": "lookup", "domain": "animal" }
+// });
+// registerStartAndEndServices(socialFocalBehavior);
+// socialFocalBehavior.register('long-description', function(d){
+// 	var h1 = this.getDescription('type') + ' towards ' + this.getDescription('animal');
+// 	var h2 = this.getDescription('age') + ' ' + this.getDescription('sex');
+// 	var div = d.notes;
+//
+// 	return '<h1>'+h1+'</h1>' +
+// 		'<h3>' + h2 + '</h3>' +
+// 		'<div style="font-style:italic;">' + div + '</div>';
+// });
 
 // ****************************************************************************
 // * POOP SAMPLE                                                              *
 // ****************************************************************************
-var poopSample = app.createDomain({name: 'poop-sample', label:'Poop sample'});
+var poopSample = app.createDomain({name: 'fecal-sample', label:'Fecal Sample'});
 poopSample.register('form-fields', {
 	"location": { "type": "text" }
 });
 registerStartAndEndServices(poopSample);
-poopSample.register('long-description', function(){
-	var h1 = 'Poop sample from ' + this.getDescription('animal');
+poopSample.register('long-description', function(d){
+	var title = d.location;
+	if(!title || title.length == 0) {
+		title = d.id || d._id;
+	}
+	var h1 = 'Fecal sample from ' + title;
 	var h2 = '';
 	var div = '';
 
@@ -249,7 +282,7 @@ poopSample.register('long-description', function(){
 		'<div style="font-style:italic;">' + div + '</div>';
 });
 poopSample.register('short-description', function(){
-	return 'Poop sample';
+	return 'Fecal sample';
 });
 
 // ****************************************************************************
@@ -289,10 +322,10 @@ function createSimpleCodeDomain(name, label){
 
 createSimpleCodeDomain('animal-group', 'Animal Group');
 createSimpleCodeDomain('taxon', 'Taxon');
-createSimpleCodeDomain('age-class', 'Age class');
+createSimpleCodeDomain('age-class', 'Age Class');
 createSimpleCodeDomain('sex', 'Sex');
-createSimpleCodeDomain('focal-behavior-type', 'Behavior type');
-createSimpleCodeDomain('social-focal-behavior-type', 'Social behavior type');
+createSimpleCodeDomain('focal-behavior-type', 'Behavior Type');
+// createSimpleCodeDomain('social-focal-behavior-type', 'Social behavior type');
 
 var user = createSimpleCodeDomain('user', 'User');
 user.register('setting-lookup', true);
@@ -332,7 +365,7 @@ contact.register('focals', focalSample);
 contact.register('collections', poopSample);
 contact.register('collections', treeMarking);
 
-focalSample.register('observations', socialFocalBehavior, {inline: true});
+// focalSample.register('observations', socialFocalBehavior, {inline: true});
 focalSample.register('observations', focalBehavior, {inline: true});
 focalSample.register('collections', poopSample);
 focalSample.register('collections', treeMarking);
