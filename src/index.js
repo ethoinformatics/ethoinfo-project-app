@@ -252,26 +252,26 @@ poopSample.register('short-description', function(){
 	return 'Poop sample';
 });
 
-// // ****************************************************************************
-// // * TREE MARKINGS SAMPLE                                                              *
-// // ****************************************************************************
-// var poopSample = app.createDomain({name: 'poop-sample', label:'Poop sample'});
-// poopSample.register('form-fields', {
-// 	"location": { "type": "text" }
-// });
-// registerStartAndEndServices(poopSample);
-// poopSample.register('long-description', function(){
-// 	var h1 = 'Poop sample from ' + this.getDescription('animal');
-// 	var h2 = '';
-// 	var div = '';
-//
-// 	return '<h1>'+h1+'</h1>' +
-// 		'<h3>' + h2 + '</h3>' +
-// 		'<div style="font-style:italic;">' + div + '</div>';
-// });
-// poopSample.register('short-description', function(){
-// 	return 'Poop sample';
-// });
+// ****************************************************************************
+// * TREE MARKINGS SAMPLE                                                              *
+// ****************************************************************************
+var treeMarking = app.createDomain({name: 'tree-marking', label:'Tree marking'});
+treeMarking.register('form-fields', {
+	"location": { "type": "text" }
+});
+registerStartAndEndServices(treeMarking);
+treeMarking.register('long-description', function(){
+	var h1 = 'Tree marking from ' + this.getDescription('animal');
+	var h2 = '';
+	var div = '';
+
+	return '<h1>'+h1+'</h1>' +
+		'<h3>' + h2 + '</h3>' +
+		'<div style="font-style:italic;">' + div + '</div>';
+});
+treeMarking.register('short-description', function(){
+	return 'Tree marking';
+});
 
 
 // ****************************************************************************
@@ -330,10 +330,12 @@ diary.register('contacts', contact);
 
 contact.register('focals', focalSample);
 contact.register('collections', poopSample);
+contact.register('collections', treeMarking);
 
 focalSample.register('observations', socialFocalBehavior, {inline: true});
 focalSample.register('observations', focalBehavior, {inline: true});
 focalSample.register('collections', poopSample);
+focalSample.register('collections', treeMarking);
 
 // setup fake device for desktop
 if(window.device === undefined) {
