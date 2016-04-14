@@ -11,8 +11,7 @@
 require('./update-check');
 require('./background-mode');
 var app = require('ethoinfo-framework'),
-	moment = require('moment'),
-	_ = require('lodash');
+moment = require('moment');
 
 app.setting('couch-base-url', 'http://demo.ethoinformatics.org:5984/tonytest2');
 app.setting('couch-username', 'supermonkey');
@@ -143,7 +142,7 @@ registerStartAndEndServices(contact);
 contact.register('long-description', function(d){
 	console.log("contact desc", arguments);
 	var h1 = ""
-	if(!_.isString(d.title) || d.title.length == 0) {
+	if(!d.title || d.title.length == 0) {
 		h1 = 'Contact with ' + ' ';
 	}
 	h1 += this.getDescription('subjectId');
@@ -188,7 +187,7 @@ registerStartAndEndServices(focalSample);
 focalSample.register('concurrent', false);
 focalSample.register('long-description', function(d){
 	var h1 = "";
-	if(!_.isString(d.title) || d.title.length == 0) {
+	if(!d.title || d.title.length == 0) {
 		h1 += "Focal of ";
 	}
 	h1 += this.getDescription();
@@ -271,7 +270,7 @@ poopSample.register('form-fields', {
 registerStartAndEndServices(poopSample);
 poopSample.register('long-description', function(d){
 	var title = d.location;
-	if(!_.isString(title) || title.length == 0) {
+	if(!title || title.length == 0) {
 		title = d.id || d._id;
 	}
 	var h1 = 'Fecal sample from ' + title;
