@@ -158,6 +158,43 @@ contact.register('short-description', function(d){
 	}
 });
 
+
+
+// ****************************************************************************
+// * MARK PATCH                                                                  *
+// ****************************************************************************
+var mark_patch = app.createDomain({name: 'mark_patch', label: 'mark_patch'});
+mark_patch.register('color', '#EECF20');
+mark_patch.register('form-fields', {
+	taxon: { type: "lookup", domain: "taxon" },
+	subjectId: { type: "lookup", domain: "animal-group" },
+	title: { type: "text", required: true },
+	samplingProtocol: { type: "text" }, 
+	basisOfRecord: { type: "text" } 
+});
+
+registerStartAndEndServices(mark_patch);
+mark_patch.register('long-description', function(d){
+	console.log("mark_patch desc", arguments);
+	var h1 = ""
+	if(!d.title || d.title.length == 0) {
+		h1 = 'mark_patch with ' + ' ';
+	}
+	h1 += this.getDescription('subjectId');
+
+	return '<h1>'+h1+'</h1>';
+});
+
+mark_patch.register('short-description', function(d){
+	if(typeof d.title == 'string' && d.title.length > 0) {
+		return truncateString(d.title, 8);			
+	} else {
+		return 'mark_patch';	
+	}
+});
+
+
+
 // ****************************************************************************
 // * OBSERVER ACTIVITY                                                        *
 // ****************************************************************************
@@ -360,6 +397,13 @@ animal.register('short-description', function(d){ return d.name; });
 // focalSample.register(feedingBout, 'feedingBouts');
 
 diary.register('contacts', contact);
+
+diary.register('mark_patches', mark_patch);
+//
+// diary.register('collections', poopSample);
+// diary.register('collections', treeMarking);
+
+contact.register('mark_patches', mark_patch);
 
 contact.register('focals', focalSample);
 contact.register('collections', poopSample);
