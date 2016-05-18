@@ -13,4 +13,5 @@ function onDeviceReady(){
 	cordova.plugins.backgroundMode.enable();
 }
 
-window.document.addEventListener("deviceready", onDeviceReady, false);
+window.document.addEventListener("deviceready", onDeviceReady, false);	
+

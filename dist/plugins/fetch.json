@@ -47,5 +47,21 @@
         },
         "is_top_level": false,
         "variables": {}
+    },
+    "com.transistorsoft.cordova.background-geolocation": {
+        "source": {
+            "type": "registry",
+            "id": "cordova-background-geolocation-lt"
+        },
+        "is_top_level": true,
+        "variables": {}
+    },
+    "cordova-plugin-dialogs": {
+        "source": {
+            "type": "registry",
+            "id": "cordova-plugin-dialogs"
+        },
+        "is_top_level": false,
+        "variables": {}
     }
 }
