@@ -125,8 +125,9 @@ diary.register('long-description', function(d){
 });
 diary.register('geo-aware', diaryLocationService);
 
+
 // ****************************************************************************
-// * CONTACT                                                                  *
+// * CONTACT  -> child of -> DIARY                                                                *
 // ****************************************************************************
 var contact = app.createDomain({name: 'contact', label: 'Contact'});
 contact.register('color', '#EECF20');
@@ -161,7 +162,7 @@ contact.register('short-description', function(d){
 
 
 // ****************************************************************************
-// * MARK PATCH                                                                  *
+// * MARK PATCH -> child of -> DIARY                                                                 *
 // ****************************************************************************
 var mark_patch = app.createDomain({name: 'mark_patch', label: 'mark_patch'});
 mark_patch.register('color', '#EECF20');
@@ -192,6 +193,174 @@ mark_patch.register('short-description', function(d){
 		return 'mark_patch';	
 	}
 });
+
+// ****************************************************************************
+// * POOP SAMPLE - AS CHILD OF DIARY 										  *
+// ****************************************************************************
+var poopSampleForDiary = app.createDomain({name: 'fecal-sample', label:'Fecal Sample'});
+poopSampleForDiary.register('form-fields', {
+	"location": { "type": "text" }
+});
+registerStartAndEndServices(poopSampleForDiary);
+poopSampleForDiary.register('long-description', function(d){
+	var title = d.location;
+	if(!title || title.length == 0) {
+		title = d.id || d._id;
+	}
+	var h1 = 'Fecal sample from ' + title;
+	var h2 = '';
+	var div = '';
+
+	return '<h1>'+h1+'</h1>' +
+		'<h3>' + h2 + '</h3>' +
+		'<div style="font-style:italic;">' + div + '</div>';
+});
+poopSampleForDiary.register('short-description', function(){
+	return 'Fecal sample';
+});
+
+
+// ****************************************************************************
+// * COLLECTION - AS CHILD OF DIARY 										  *
+// ****************************************************************************
+var collectionForDiary = app.createDomain({name: 'collection', label:'collection'});
+collectionForDiary.register('form-fields', {
+	"location": { "type": "text" }
+});
+registerStartAndEndServices(collectionForDiary);
+collectionForDiary.register('long-description', function(d){
+	var title = d.location;
+	if(!title || title.length == 0) {
+		title = d.id || d._id;
+	}
+	var h1 = 'Collection from ' + title;
+	var h2 = '';
+	var div = '';
+
+	return '<h1>'+h1+'</h1>' +
+		'<h3>' + h2 + '</h3>' +
+		'<div style="font-style:italic;">' + div + '</div>';
+});
+collectionForDiary.register('short-description', function(){
+	return 'Collection';
+});
+
+// ****************************************************************************
+// * PLANT SAMPLE - AS CHILD OF DIARY 										  *
+// ****************************************************************************
+var plantSampleForDiary = app.createDomain({name: 'plant sample', label:'plant sample'});
+plantSampleForDiary.register('form-fields', {
+	"location": { "type": "text" }
+});
+registerStartAndEndServices(plantSampleForDiary);
+plantSampleForDiary.register('long-description', function(d){
+	var title = d.location;
+	if(!title || title.length == 0) {
+		title = d.id || d._id;
+	}
+	var h1 = 'Plant sample from ' + title;
+	var h2 = '';
+	var div = '';
+
+	return '<h1>'+h1+'</h1>' +
+		'<h3>' + h2 + '</h3>' +
+		'<div style="font-style:italic;">' + div + '</div>';
+});
+plantSampleForDiary.register('short-description', function(){
+	return 'Plant sample';
+});
+
+
+// ****************************************************************************
+// ****************************************************************************
+// ****************************************************************************
+// ****************************************************************************
+// 						contacts
+// ****************************************************************************
+// ****************************************************************************
+// ****************************************************************************
+// ****************************************************************************
+
+
+// ****************************************************************************
+// * POOP SAMPLE - AS CHILD OF CONTACT 										  *
+// ****************************************************************************
+var poopSample = app.createDomain({name: 'fecal-sample', label:'Fecal Sample'});
+poopSample.register('form-fields', {
+	"location": { "type": "text" }
+});
+registerStartAndEndServices(poopSample);
+poopSample.register('long-description', function(d){
+	var title = d.location;
+	if(!title || title.length == 0) {
+		title = d.id || d._id;
+	}
+	var h1 = 'Fecal sample from ' + title;
+	var h2 = '';
+	var div = '';
+
+	return '<h1>'+h1+'</h1>' + 
+		'<h3>' + h2 + '</h3>' + 
+		'<div style="font-style:italic;">' + div + '</div>';
+});
+poopSample.register('short-description', function(){
+	return 'Fecal sample';
+});
+
+
+
+// ****************************************************************************
+// * PLANT SAMPLE - AS CHILD OF CONTACT 										  *
+// ****************************************************************************
+var plantSampleForContact = app.createDomain({name: 'plant sample', label:'plant sample'});
+plantSampleForContact.register('form-fields', {
+	"location": { "type": "text" }
+});
+registerStartAndEndServices(plantSampleForContact);
+plantSampleForContact.register('long-description', function(d){
+	var title = d.location;
+	if(!title || title.length == 0) {
+		title = d.id || d._id;
+	}
+	var h1 = 'Plant sample from ' + title;
+	var h2 = '';
+	var div = '';
+
+	return '<h1>'+h1+'</h1>' +
+		'<h3>' + h2 + '</h3>' +
+		'<div style="font-style:italic;">' + div + '</div>';
+});
+plantSampleForContact.register('short-description', function(){
+	return 'Plant sample';
+});
+
+
+// ****************************************************************************
+// * SCAN SAMPLE - AS CHILD OF CONTACT 										  *
+// ****************************************************************************
+var scanSample = app.createDomain({name: 'scan sample', label:'scan sample'});
+scanSample.register('form-fields', {
+	"location": { "type": "text" }
+});
+registerStartAndEndServices(scanSample);
+scanSample.register('long-description', function(d){
+	var title = d.location;
+	if(!title || title.length == 0) {
+		title = d.id || d._id;
+	}
+	var h1 = 'Scan sample from ' + title;
+	var h2 = '';
+	var div = '';
+
+	return '<h1>'+h1+'</h1>' +
+		'<h3>' + h2 + '</h3>' +
+		'<div style="font-style:italic;">' + div + '</div>';
+});
+scanSample.register('short-description', function(){
+	return 'Scan sample';
+});
+
+
 
 
 
@@ -297,30 +466,7 @@ focalBehavior.register('long-description', function(d){
 // 		'<div style="font-style:italic;">' + div + '</div>';
 // });
 
-// ****************************************************************************
-// * POOP SAMPLE                                                              *
-// ****************************************************************************
-var poopSample = app.createDomain({name: 'fecal-sample', label:'Fecal Sample'});
-poopSample.register('form-fields', {
-	"location": { "type": "text" }
-});
-registerStartAndEndServices(poopSample);
-poopSample.register('long-description', function(d){
-	var title = d.location;
-	if(!title || title.length == 0) {
-		title = d.id || d._id;
-	}
-	var h1 = 'Fecal sample from ' + title;
-	var h2 = '';
-	var div = '';
 
-	return '<h1>'+h1+'</h1>' + 
-		'<h3>' + h2 + '</h3>' + 
-		'<div style="font-style:italic;">' + div + '</div>';
-});
-poopSample.register('short-description', function(){
-	return 'Fecal sample';
-});
 
 // ****************************************************************************
 // * TREE MARKINGS SAMPLE                                                              *
@@ -384,30 +530,21 @@ animal.register('short-description', function(d){ return d.name; });
 // * SET DOMAIN RELATIONSHIPS                                                 *
 // ****************************************************************************
 
+diary.register('contacts', 		contact);
+diary.register('collections', 	poopSampleForDiary);
+diary.register('collections', 	plantSampleForDiary);
+diary.register('mark patches',	mark_patch);
 
-// contact.register(focalSample, 'groupCompostions');
-// contact.register(focalSample, 'rollCallCensuses');
-// contact.register(focalSample, 'experiments');
-// contact.register(feedingBout, 'feedingBouts');
-// contact.register(focalSample, 'groupScans');
-// contact.register(focalSample, 'focalSamples');
-// contact.register(focal, 'processing');
-// contact.register(focal, 'resourcePatches');
-// focalSample.register(feedingBout, 'feedingBouts');
-// focalSample.register(feedingBout, 'feedingBouts');
+contact.register('focal samples', 	focalSample);
+contact.register('scan samples', 	scanSample);
+contact.register('collections', 	poopSample);
+contact.register('collections', 	plantSampleForContact);
+contact.register('mark patches', 	mark_patch);
 
-diary.register('contacts', contact);
 
-diary.register('mark_patches', mark_patch);
-//
-// diary.register('collections', poopSample);
-// diary.register('collections', treeMarking);
 
-contact.register('mark_patches', mark_patch);
 
-contact.register('focals', focalSample);
-contact.register('collections', poopSample);
-contact.register('collections', treeMarking);
+
 
 // focalSample.register('observations', socialFocalBehavior, {inline: true});
 focalSample.register('observations', focalBehavior, {inline: true});
