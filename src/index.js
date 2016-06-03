@@ -46,9 +46,81 @@ function dateEqual(d1, d2){
 // This should probably be moved to framework and just go on the top-level domain
 var diaryLocationService = function(diary, locationData, settings){
 	console.log('dLS');
+	
 	if (!dateEqual(new Date(), moment(diary.eventDate).toDate())) return false;
-	//if (settings.user !== diary.observerId) return false;
+	console.log('inside');
+	
+	
+	if(!window.geo) {
+		console.log("geo not found, creating");
+		window.geo = {};
+	}
+	
+	var key = moment(diary.eventDate).format('YYYYMMDD');
+	if(!window.geo[key]) {
+		var fromStorage = window.localStorage.getItem(key);
+		if(fromStorage) {
+			window.geo[key] = JSON.parse(fromStorage);
+		} else {
+			window.geo[key] = {};			
+		}
+	}
+	
+	var geo = window.geo[key];
+	if (!geo.footprint || 
+		!geo.timestamps || 
+		geo.footprint.coordinates.length != geo.timestamps.length){
+		console.log("footprint not found, creating");
+		geo.footprint = {
+			type: 'LineString',
+			coordinates: [ ]
+		};
+		geo.timestamps = [];
+	}
+		
 
+	geo.footprint.coordinates.push([
+		locationData.coords.longitude,
+		locationData.coords.latitude,
+		locationData.coords.altitude,
+	]);
+	geo.timestamps.push(new Date().getTime());
+	
+	window.localStorage.setItem(key, JSON.stringify(geo));
+	
+	console.log(window.geo);
+	
+	console.log("Saved location (" + geo.footprint.coordinates.length + " points)");
+
+	
+	
+	//if (settings.user !== diary.observerId) return false;
+	
+	/*
+	var storage = window.localStorage;
+	
+	if(debugCount == 1) { // clears storage on app restart -- this is just for dev/debugging
+		storage.clear();
+	}
+	
+	var geodata = storage.getItem('geodata');
+	if(!geodata) {
+		geodata = "";
+	} else {
+		geodata += ",";
+	}
+	
+	console.log(geodata);
+	
+	geodata += latestCoordinates.timestamp.getTime() + "," + latestCoordinates.coords.latitude + "," + latestCoordinates.coords.longitude;
+	storage.setItem('geodata', geodata);
+	*/
+	
+	
+	
+	
+	
+/*
 	if(!diary.geo) {
 		console.log("geo not found, creating");
 		diary.geo = {};
@@ -75,7 +147,7 @@ var diaryLocationService = function(diary, locationData, settings){
 	console.log(diary.geo);
 	
 	console.log("Saved location (" + diary.geo.footprint.coordinates.length + " points)");
-
+*/
 
 
 	return true;
