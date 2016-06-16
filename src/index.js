@@ -204,11 +204,11 @@ diary.register('geo-aware', diaryLocationService);
 var contact = app.createDomain({name: 'contact', label: 'Contact'});
 contact.register('color', '#EECF20');
 contact.register('form-fields', {
+	title: { type: "text", required: true },
 	taxon: { type: "lookup", domain: "taxon" },
 	subjectId: { type: "lookup", domain: "animal-group" },
-	title: { type: "text", required: true },
-	samplingProtocol: { type: "text" }, 
-	basisOfRecord: { type: "text" } 
+	samplingProtocol: { type: "lookup", domain: "sampling-protocol"  }
+	//, basisOfRecord: { type: "text" } 
 });
 
 registerStartAndEndServices(contact);
@@ -394,7 +394,7 @@ focalSample.register('color', '#FB6725');
 focalSample.register('form-fields', {
 	"subjectId": { "type": "lookup", "domain": "animal", "features": [ "inline-create" ] },
 	"title": { "type": "text" },
-	"samplingProtocol": { "type": "text" }
+	"samplingProtocol": { type: "lookup", domain: "sampling-protocol"  }	
 });
 registerStartAndEndServices(focalSample);
 focalSample.register('concurrent', false);
@@ -516,6 +516,8 @@ createSimpleCodeDomain('age-class', 'Age Class');
 createSimpleCodeDomain('sex', 'Sex');
 createSimpleCodeDomain('focal-behavior-type', 'Behavior Type');
 // createSimpleCodeDomain('social-focal-behavior-type', 'Social behavior type');
+createSimpleCodeDomain('sampling-protocol', 'Sampling Protocol');
+						
 
 var user = createSimpleCodeDomain('user', 'User');
 user.register('setting-lookup', true);
@@ -523,15 +525,15 @@ user.register('setting-lookup', true);
 var animal = app.createDomain({name: 'animal', label: 'Animal'});
 animal.register('code-domain', true);
 animal.register('form-fields', {
-	"name": { "type": "text" },
+	"name":  { "type": "text" },
 	"taxon": { "type": "lookup", "domain": "taxon" },
-	"age": { "type": "lookup", "domain": "age-class" },
-	"sex": { "type": "lookup", "domain": "sex" },
+	"age":   { "type": "lookup", "domain": "age-class" },
+	"sex":   { "type": "lookup", "domain": "sex" },
 	"group": { "type": "lookup", "domain": "animal-group" }
 });
 animal.register('short-description', function(d){ return d.name; });
 
-
+// ,	"sampling":   { "type": "lookup", "domain": "sampling-protocol" }
 
 // ****************************************************************************
 // * SET DOMAIN RELATIONSHIPS                                                 *

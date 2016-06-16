@@ -21,9 +21,6 @@
         },
         "org.ethoinformatics.cordova.hockeyappplugin": {
             "PACKAGE_NAME": "com.deliveryrelay.rider"
-        },
-        "com.transistorsoft.cordova.background-geolocation": {
-            "PACKAGE_NAME": "com.deliveryrelay.rider"
         }
     },
     "dependent_plugins": {
