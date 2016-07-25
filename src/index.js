@@ -190,6 +190,9 @@ diary.register('short-description', function(d){
 	// return moment(d.eventDate, 'YYYY-MM-DD').format('MM/DD/YY');
 		return moment(d.eventDate, 'YYYY-MM-DD').format('YYYY-MM-DD');
 });
+// diary.register('icon', function() {
+// 	return "something.png";
+// });
 diary.register('long-description', function(d){
 	var h1 = 'Diary for ' + d.eventDate;
 
