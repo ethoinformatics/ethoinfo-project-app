@@ -11,6 +11,7 @@ build/Release
 dist/platforms
 dist/www/bundle.js
 dist/www/img/MapQuest/*
+dist/www/osm/*
 .DS_Store
 
 # Dependency directory
