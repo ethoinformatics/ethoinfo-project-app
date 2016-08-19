@@ -10,7 +10,7 @@ build/Release
 .lock-wscript
 dist/platforms
 dist/www/bundle.js
-dist/www/img/MapQuest/*
+dist/www/img/*
 dist/www/osm/*
 .DS_Store
 
