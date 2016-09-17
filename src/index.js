@@ -13,18 +13,38 @@ require('./background-mode');
 var app = require('ethoinfo-framework'),
 moment = require('moment');
 
+
+///////////////////////////////
+//
+// SETTING DB DETAILS
+//
+///////////////////////////////
+
 app.setting('couch-base-url', 'http://demo.ethoinformatics.org:5984/tonytest2');
 app.setting('couch-username', 'supermonkey');
 
-//app.setting('map-center', [-14.2031200, 23.7611400]); // Loloma, Zambia
-// app.setting('map-center', [41.3839, -73.9405]); // garrison NY
+
+///////////////////////////////
+//
+// CONFIGURING THE MAP
+//
+///////////////////////////////
+
+// app.setting('map-center', [-14.2031200, 23.7611400]); // Loloma, Zambia
+// app.setting('map-center', [41.3839, -73.9405]); // Garrison NY
 app.setting('map-center', [-0.638333, -76.15]); // tiputini
+// app.setting('tile-layer-url', 'http://{s}.tile.openstreetmap.se/hydda/full/{z}/{x}/{y}.png');
+app.setting('map-tile-layer-url', 'img/tiles/{z}/{x}/{y}.png');
+app.setting('map-tile-layer-max-zoom', 19);
+app.setting('map-tile-layer-min-zoom', 10);
+app.setting('map-tile-layer-id', 'examples.map-i875mjb7');
 
 
-
-app.setting('tile-layer-url', 'http://{s}.tile.openstreetmap.se/hydda/full/{z}/{x}/{y}.png');
-app.setting('tile-layer-local', 'img/tiles/{z}/{x}/{y}.png');
-
+///////////////////////////////
+//
+// REGISTERING BASIC SERVICES
+//
+///////////////////////////////
 
 function registerStartAndEndServices(domain){
 	domain.register('get-begin-time', function(d){ return d.beginTime || d.timestamp; });
@@ -165,6 +185,14 @@ var truncateString = function(str, length) {
 		return str;
 	}
 }
+
+
+///////////////////////////////
+//
+// CONFIGURING THE DATA FIELDS
+//
+///////////////////////////////
+
 
 // ****************************************************************************
 // * DIARY                                                                    *
@@ -370,8 +398,6 @@ scanSample.register('short-description', function(){
 
 
 
-
-
 // ****************************************************************************
 // * OBSERVER ACTIVITY                                                        *
 // ****************************************************************************
@@ -536,9 +562,12 @@ animal.register('short-description', function(d){ return d.name; });
 
 // ,	"sampling":   { "type": "lookup", "domain": "sampling-protocol" }
 
-// ****************************************************************************
-// * SET DOMAIN RELATIONSHIPS                                                 *
-// ****************************************************************************
+
+///////////////////////////////
+//
+// SET DOMAIN RELATIONSHIPS
+//
+///////////////////////////////
 
 diary.register('contacts', 		contact);
 diary.register('collections', 	poopSample);
@@ -550,18 +579,20 @@ contact.register('scan samples', 	scanSample);
 contact.register('collections', 	poopSample);
 contact.register('collections', 	plantSample);
 contact.register('mark patches', 	mark_patch);
-
-
-
-
-
+contact.register('collections', 	treeMarking);
 
 // focalSample.register('observations', socialFocalBehavior, {inline: true});
 focalSample.register('observations', focalBehavior, {inline: true});
 focalSample.register('collections', poopSample);
 focalSample.register('collections', treeMarking);
 
-// setup fake device for desktop
+
+///////////////////////////////
+//
+// SETUP FAKE DEVICE FOR DESKTOP
+//
+///////////////////////////////
+
 if(window.device === undefined) {
 	console.log("Defining device for in-browser testing");
 	device = {
